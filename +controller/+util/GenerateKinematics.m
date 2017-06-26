@@ -9,80 +9,121 @@ addpath(FROST_PATH)
 frost_addpath;
 
 % Load model
-cassie = flat_ground_walking.CASSIE('urdf/cassie.urdf');
+cassie = CASSIE('urdf/cassie.urdf');
 % cassie.ExportKinematics(PATH);
 
 % Export Toe Height and Jacobians
 X = SymVariable('x',[22,1]);
 pL = cassie.ContactPoints.LeftToeBottom.computeCartesianPosition;
 pR = cassie.ContactPoints.RightToeBottom.computeCartesianPosition;
+
 LeftToe = SymFunction('LeftToeBottom',pL,X);
 RightToe = SymFunction('RightToeBottom',pR,X);
-% LeftToeHeight = SymFunction('LeftToeHeight',pL(3),X);
-% RightToeHeight = SymFunction('RightToeHeight',pR(3),X);
+
+J_pL = jacobian(pL,X);
+J_pR = jacobian(pR,X);
+
+J_LeftToe = SymFunction('J_LeftToeBottom', J_pL, X);
+J_RightToe = SymFunction('J_RightToeBottom', J_pR, X);
 
 LeftToe.export(PATH, 'ForceExport', true);
-LeftToe.export(PATH, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+J_LeftToe.export(PATH, 'ForceExport', true);
 RightToe.export(PATH, 'ForceExport', true);
-RightToe.export(PATH, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+J_RightToe.export(PATH, 'ForceExport', true);
 
-LeftToe.exportJacobian(PATH, 'ForceExport', true);
-LeftToe.exportJacobian(PATH, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
-RightToe.exportJacobian(PATH, 'ForceExport', true);
-RightToe.exportJacobian(PATH, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+% Export Toe Height and Jacobians ( at toe joint)
+l_foot_frame = cassie.Joints(getJointIndices(cassie, 'toe_joint_left'));
+r_foot_frame = cassie.Joints(getJointIndices(cassie, 'toe_joint_right'));
+
+X = SymVariable('x',[22,1]);
+pL = l_foot_frame.computeCartesianPosition;
+pR = r_foot_frame.computeCartesianPosition;
+
+LeftToe = SymFunction('LeftToeJoint',pL,X);
+RightToe = SymFunction('RightToeJoint',pR,X);
 
 
+J_pL = jacobian(pL,X);
+J_pR = jacobian(pR,X);
+
+J_LeftToe = SymFunction('J_LeftToeJoint', J_pL, X);
+J_RightToe = SymFunction('J_RightToeJoint', J_pR, X);
+
+LeftToe.export(PATH, 'ForceExport', true);
+J_LeftToe.export(PATH, 'ForceExport', true);
+RightToe.export(PATH, 'ForceExport', true);
+J_RightToe.export(PATH, 'ForceExport', true);
+
+%% Forward Kinemtics for output control
+
+toePos = cassie.Joints(14).computeCartesianPosition - cassie.Joints(9).computeCartesianPosition;
+toePos = subs(toePos, cassie.States.x([1:6,7:9,12]),zeros(10,1));
+toePos = subs(toePos, cassie.States.x(13), -cassie.States.x(11) + deg2rad(13));
+
+qLL = sqrt(toePos(1).^2 + toePos(3).^2);
+qLA = asin(toePos(1)./qLL);
+dqLL = jacobian(qLL, cassie.States.x)*cassie.States.dx;
+dqLA = jacobian(qLA, cassie.States.x)*cassie.States.dx;
+export(qLL, qLA, 'File', [PATH, 'qLA_qLL_FK'], 'Vars', {SymVariable(cassie.States.x(10)), SymVariable(cassie.States.x(11))}, 'ForceExport', true);
+export(qLL, qLA, 'File', [PATH,'qLA_qLL_FK'], 'Vars', {SymVariable(cassie.States.x(10)), SymVariable(cassie.States.x(11))}, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+
+export(dqLL, dqLA, 'File', [PATH,'dqLA_dqLL_FK'], 'Vars', {SymVariable(cassie.States.x(10)), SymVariable(cassie.States.x(11)), SymVariable(cassie.States.dx(10)), SymVariable(cassie.States.dx(11))}, 'ForceExport', true);
+export(dqLL, dqLA, 'File', [PATH,'dqLA_dqLL_FK'], 'Vars', {SymVariable(cassie.States.x(10)), SymVariable(cassie.States.x(11)), SymVariable(cassie.States.dx(10)), SymVariable(cassie.States.dx(11))}, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+
+
+
+%% Inverse Kinematics for output control
+
+% Solve for qKnee
+qLL = SymVariable('qLL',[1,1]);
+dqLL = SymVariable('dqLL', [1,1]);
+expr = tovector(SymExpression([char(qLL.^2 - (toePos(1).^2 + toePos(3).^2)), '==0']));
+vars = SymVariable('x$11$1');
+qKnee = eval_math_fun('Values@First', eval_math_fun('Solve', {expr,vars}));
+export(qKnee, 'File', [PATH, 'qKnee_IK'], 'Vars', {qLL}, 'ForceExport', true);
+export(qKnee, 'File', [PATH, 'qKnee_IK'], 'Vars', {qLL}, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+
+% Solve for qFlexion
+qLA = SymVariable('qLA',[1,1]);
+dqLA = SymVariable('dqLA',[1,1]);
+expr = tovector(SymExpression([char(sin(qLA) - toePos(1)./qLL), '==0']));
+vars = SymExpression('x$10$1');
+qFlexion1 = eval_math_fun('Values@Part',{eval_math_fun('Solve',{expr,vars}), '1'});
+qFlexion2 = eval_math_fun('Values@Part',{eval_math_fun('Solve',{expr,vars}), '2'});
+qFlexion3 = eval_math_fun('Values@Part',{eval_math_fun('Solve',{expr,vars}), '3'});
+qFlexion4 = eval_math_fun('Values@Part',{eval_math_fun('Solve',{expr,vars}), '4'});
+
+qFlexion1 = subs(qFlexion1, cassie.States.x(11), qKnee);
+qFlexion2 = subs(qFlexion2, cassie.States.x(11), qKnee);
+qFlexion3 = subs(qFlexion3, cassie.States.x(11), qKnee);
+qFlexion4 = subs(qFlexion4, cassie.States.x(11), qKnee);
+
+export(qFlexion1, 'File', [PATH,'qFlexion_IK1'], 'Vars', {qLA, qLL}, 'ForceExport', true);
+export(qFlexion2, 'File', [PATH,'qFlexion_IK2'], 'Vars', {qLA, qLL}, 'ForceExport', true);
+export(qFlexion3, 'File', [PATH,'qFlexion_IK3'], 'Vars', {qLA, qLL}, 'ForceExport', true);
+export(qFlexion4, 'File', [PATH,'qFlexion_IK4'], 'Vars', {qLA, qLL}, 'ForceExport', true);
+
+% Solve for dqKnee
+dqKnee = jacobian(qKnee, qLL)*dqLL;
+export(dqKnee, 'File', [PATH,'dqKnee_IK'], 'Vars', {qLL, dqLL}, 'ForceExport', true);
+export(dqKnee, 'File', [PATH,'dqKnee_IK'], 'Vars', {qLL, dqLL}, 'TemplateHeader', 'res/templateMin.h', 'TemplateFile', 'res/templateMin.c', 'BuildMex', false, 'ForceExport', true);
+
+% Solve for dqFlexion
+dqFlexion1 = jacobian(qFlexion1, [qLA, qLL])*[dqLA; dqLL];
+dqFlexion2 = jacobian(qFlexion2, [qLA, qLL])*[dqLA; dqLL];
+dqFlexion3 = jacobian(qFlexion3, [qLA, qLL])*[dqLA; dqLL];
+dqFlexion4 = jacobian(qFlexion4, [qLA, qLL])*[dqLA; dqLL];
+
+export(dqFlexion1, 'File', [PATH,'dqFlexion_IK1'], 'Vars', {qLA, qLL, dqLA, dqLL}, 'ForceExport', true);
+export(dqFlexion2, 'File', [PATH,'dqFlexion_IK2'], 'Vars', {qLA, qLL, dqLA, dqLL}, 'ForceExport', true);
+export(dqFlexion3, 'File', [PATH,'dqFlexion_IK3'], 'Vars', {qLA, qLL, dqLA, dqLL}, 'ForceExport', true);
+export(dqFlexion4, 'File', [PATH,'dqFlexion_IK4'], 'Vars', {qLA, qLL, dqLA, dqLL}, 'ForceExport', true);
+%% Modify files to work in simulink
 
 current_dir = pwd;
 cd(PATH);
 !ren *.cc *.c
 !ren *.hh *.h
 cd(current_dir);
-
-%% Forward Kinemtics for output control
-syms qFlexion qKnee qLA qLL dqFlexion dqKnee dqLA dqLL
-H10 = [cos(qFlexion), -sin(qFlexion), 0; sin(qFlexion), cos(qFlexion), 0; 0,0,1];
-H21 = [cos(qKnee), -sin(qKnee), 0; sin(qKnee), cos(qKnee), -0.12; 0,0,1];
-H32 = [cos(-qKnee+deg2rad(13)), -sin(-qKnee+deg2rad(13)), 0.0674; sin(-qKnee+deg2rad(13)), cos(-qKnee+deg2rad(13)), -0.4955; 0,0,1];
-H43 = [1, 0, -0.04; 0, 1, -0.408; 0,0,1];
-H = H10*H21*H32*H43;
-toe_position = H(1:2,end);
-qLL = sqrt(simplify(toe_position(1)^2 + toe_position(2)^2));
-qLA = simplify(asin(toe_position(1)/qLL));
-dqLL = simplify(jacobian(qLL, [qFlexion; qKnee])*[dqFlexion; dqKnee]);
-dqLA = simplify(jacobian(qLA, [qFlexion; qKnee])*[dqFlexion; dqKnee]);
-
-matlabFunction(toe_position,'File',[PATH,'FK_hipflexion_to_toe'],'Vars',{qFlexion,qKnee},'Outputs',{'hip_flexion_to_toe'});
-matlabFunction(qLA, qLL,'File',[PATH,'FK_qFlexion_qKnee_to_qLA_qLL'],'Vars',{qFlexion,qKnee},'Outputs',{'qLA', 'qLL'});
-matlabFunction(dqLA, dqLL,'File',[PATH,'FK_dqFlexion_dqKnee_to_dqLA_dqLL'],'Vars',{qFlexion,qKnee,dqFlexion,dqKnee},'Outputs',{'dqLA', 'dqLL'});
-
-
-%% Inverse Kinematics for output control
-syms qLA qLL dqLA dqLL
-% solving for qKnee
-tmp = simplify(toe_position(1)^2 + toe_position(2)^2);
-solution = solve(qLL^2  == tmp, qKnee, 'ReturnConditions', true, 'Real', true);
-k = 0;
-sol_qKnee = simplify(subs(solution.qKnee));
-matlabFunction(sol_qKnee(1),'File',[PATH,'IK_qLL_to_qKnee'],'Vars',{qLL},'Outputs',{'qKnee'});
-matlabFunction(jacobian(sol_qKnee(1), qLL)*dqLL,'File',[PATH,'IK_dqLL_to_dqKnee'],'Vars',{qLL, dqLL},'Outputs',{'dqKnee'});
-% solving for qFlexion
-tmp = simplify(asin(toe_position(1)/sqrt(simplify(toe_position(1)^2 + toe_position(2)^2))));
-solution = solve(qLA  == tmp, qFlexion, 'ReturnConditions', true, 'Real', true);
-k = 0;
-sol_qFlexion = simplify(subs(solution.qFlexion));
-matlabFunction(sol_qFlexion(1),'File',[PATH,'IK_qLA_qKnee_to_qFlexion'],'Vars',{qLA, qKnee},'Outputs',{'qFlexion'});
-matlabFunction(jacobian(sol_qFlexion(1), [qLA, qKnee])*[dqLA; dqKnee],'File',[PATH,'IK_dqLA_qKnee_to_dqFlexion'],'Vars',{qLA, qKnee, dqLA, dqKnee},'Outputs',{'dqFlexion'});
-
-
-
-%% GRF Estimation
-% syms qPitch x z
-% R = @(th) [cos(th), -sin(th); sin(th), cos(th)];
-% toe_pos = R(qPitch) * toe_position;
-% qAll = [qPitch; qKnee; qFlexion]; 
-% solution = solve(toe_pos == [x;z], qAll, 'ReturnConditions', true, 'Real', true);
-
-
 
 

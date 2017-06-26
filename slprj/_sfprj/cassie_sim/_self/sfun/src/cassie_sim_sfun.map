@@ -1,0 +1,1377 @@
+ cassie_sim_sfun
+
+ Timestamp is 5948113d (Mon Jun 19 14:00:29 2017)
+
+ Preferred load address is 0000000180000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000b210H .text$mn                CODE
+ 0001:0000b210 0000007bH .text$x                 CODE
+ 0002:00000000 000004a0H .idata$5                DATA
+ 0002:000004a0 00000008H .CRT$XCA                DATA
+ 0002:000004a8 00000008H .CRT$XCZ                DATA
+ 0002:000004b0 00000008H .CRT$XIA                DATA
+ 0002:000004b8 00000008H .CRT$XIAA               DATA
+ 0002:000004c0 00000008H .CRT$XIC                DATA
+ 0002:000004c8 00000008H .CRT$XIZ                DATA
+ 0002:000004d0 00001e10H .rdata                  DATA
+ 0002:000022e0 00000008H .rtc$IAA                DATA
+ 0002:000022e8 00000008H .rtc$IZZ                DATA
+ 0002:000022f0 00000008H .rtc$TAA                DATA
+ 0002:000022f8 00000008H .rtc$TZZ                DATA
+ 0002:00002300 00000c5cH .xdata                  DATA
+ 0002:00002f60 00000055H .edata                  DATA
+ 0002:00002fb8 000000a0H .idata$2                DATA
+ 0002:00003058 00000014H .idata$3                DATA
+ 0002:00003070 000004a0H .idata$4                DATA
+ 0002:00003510 00000d70H .idata$6                DATA
+ 0003:00000000 00000198H .data                   DATA
+ 0003:000001a0 000006b8H .bss                    DATA
+ 0004:00000000 000009f0H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       __guard_flags              0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_table         0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_count         0000000000000000     <absolute>
+ 0000:00000000       __ImageBase                0000000180000000     <linker-defined>
+ 0001:00000000       cassie_sim_debug_initialize 0000000180001000 f   cassie_sim_sfun.obj
+ 0001:00000070       cassie_sim_initializer     0000000180001070 f   cassie_sim_sfun.obj
+ 0001:00000080       cassie_sim_register_exported_symbols 0000000180001080 f   cassie_sim_sfun.obj
+ 0001:00000090       cassie_sim_terminator      0000000180001090 f   cassie_sim_sfun.obj
+ 0001:000000a0       load_cassie_sim_optimization_info 00000001800010a0 f   cassie_sim_sfun.obj
+ 0001:00000150       sf_cassie_sim_autoinheritance_info 0000000180001150 f   cassie_sim_sfun.obj
+ 0001:00000250       sf_cassie_sim_get_eml_resolved_functions_info 0000000180001250 f   cassie_sim_sfun.obj
+ 0001:00000320       sf_cassie_sim_jit_fallback_info 0000000180001320 f   cassie_sim_sfun.obj
+ 0001:00000420       sf_cassie_sim_method_dispatcher 0000000180001420 f   cassie_sim_sfun.obj
+ 0001:00000450       sf_cassie_sim_process_check_sum_call 0000000180001450 f   cassie_sim_sfun.obj
+ 0001:00000700       sf_cassie_sim_third_party_uses_info 0000000180001700 f   cassie_sim_sfun.obj
+ 0001:00000800       sf_cassie_sim_updateBuildInfo_args_info 0000000180001800 f   cassie_sim_sfun.obj
+ 0001:00000900       unload_cassie_sim_optimization_info 0000000180001900 f   cassie_sim_sfun.obj
+ 0001:00001630       c2_cassie_sim_method_dispatcher 0000000180002630 f   c2_cassie_sim.obj
+ 0001:00003800       sf_c2_cassie_sim_get_autoinheritance_info 0000000180004800 f   c2_cassie_sim.obj
+ 0001:00003c70       sf_c2_cassie_sim_get_check_sum 0000000180004c70 f   c2_cassie_sim.obj
+ 0001:00003ce0       sf_c2_cassie_sim_get_eml_resolved_functions_info 0000000180004ce0 f   c2_cassie_sim.obj
+ 0001:00003d60       sf_c2_cassie_sim_get_post_codegen_info 0000000180004d60 f   c2_cassie_sim.obj
+ 0001:00003e20       sf_c2_cassie_sim_jit_fallback_info 0000000180004e20 f   c2_cassie_sim.obj
+ 0001:00003f70       sf_c2_cassie_sim_third_party_uses_info 0000000180004f70 f   c2_cassie_sim.obj
+ 0001:00003f80       sf_c2_cassie_sim_updateBuildInfo_args_info 0000000180004f80 f   c2_cassie_sim.obj
+ 0001:00006030       ProcessMexSfunctionEveryCall 0000000180007030 f   cassie_sim_sfun_registry.obj
+ 0001:00006890       _ssGetAbsTol               0000000180007890 f   cassie_sim_sfun_registry.obj
+ 0001:000068d0       _ssGetCallSystemNumFcnCallDestinations 00000001800078d0 f   cassie_sim_sfun_registry.obj
+ 0001:00006910       _ssGetCompInputPortSymbolicDimsId 0000000180007910 f   cassie_sim_sfun_registry.obj
+ 0001:00006950       _ssGetCompOutputPortSymbolicDimsId 0000000180007950 f   cassie_sim_sfun_registry.obj
+ 0001:00006990       _ssGetCurrentInputPortWidth 0000000180007990 f   cassie_sim_sfun_registry.obj
+ 0001:000069f0       _ssGetCurrentOutputPortWidth 00000001800079f0 f   cassie_sim_sfun_registry.obj
+ 0001:00006a50       _ssGetInputPortSignalFcn   0000000180007a50 f   cassie_sim_sfun_registry.obj
+ 0001:00006d00       _ssGetInputPortSignalPtrsFcn 0000000180007d00 f   cassie_sim_sfun_registry.obj
+ 0001:00006fb0       _ssGetNumSymbolicDims      0000000180007fb0 f   cassie_sim_sfun_registry.obj
+ 0001:00007000       _ssGetSymbolicDim          0000000180008000 f   cassie_sim_sfun_registry.obj
+ 0001:00007040       _ssRegisterSymbolicDims    0000000180008040 f   cassie_sim_sfun_registry.obj
+ 0001:00007090       _ssRegisterSymbolicDimsDivide 0000000180008090 f   cassie_sim_sfun_registry.obj
+ 0001:000070d0       _ssRegisterSymbolicDimsExpr 00000001800080d0 f   cassie_sim_sfun_registry.obj
+ 0001:00007120       _ssRegisterSymbolicDimsIntValue 0000000180008120 f   cassie_sim_sfun_registry.obj
+ 0001:00007160       _ssRegisterSymbolicDimsMinus 0000000180008160 f   cassie_sim_sfun_registry.obj
+ 0001:000071a0       _ssRegisterSymbolicDimsMultiply 00000001800081a0 f   cassie_sim_sfun_registry.obj
+ 0001:000071e0       _ssRegisterSymbolicDimsPlus 00000001800081e0 f   cassie_sim_sfun_registry.obj
+ 0001:00007220       _ssRegisterSymbolicDimsString 0000000180008220 f   cassie_sim_sfun_registry.obj
+ 0001:00007270       _ssSetCompDWorkSymbolicDimsId 0000000180008270 f   cassie_sim_sfun_registry.obj
+ 0001:000072b0       _ssSetCompInputPortSymbolicDimsId 00000001800082b0 f   cassie_sim_sfun_registry.obj
+ 0001:000072f0       _ssSetCompOutputPortSymbolicDimsId 00000001800082f0 f   cassie_sim_sfun_registry.obj
+ 0001:00007330       _ssSetInputPortDirectFeedThroughFcn 0000000180008330 f   cassie_sim_sfun_registry.obj
+ 0001:000074c0       _ssSetInputPortMatrixDimensions 00000001800084c0 f   cassie_sim_sfun_registry.obj
+ 0001:00007560       _ssSetInputPortReusableFcn 0000000180008560 f   cassie_sim_sfun_registry.obj
+ 0001:00007600       _ssSetInputPortSymbolicDimsId 0000000180008600 f   cassie_sim_sfun_registry.obj
+ 0001:00007640       _ssSetInputPortVectorDimension 0000000180008640 f   cassie_sim_sfun_registry.obj
+ 0001:000076a0       _ssSetOutputPortMatrixDimensions 00000001800086a0 f   cassie_sim_sfun_registry.obj
+ 0001:00007740       _ssSetOutputPortReusableFcn 0000000180008740 f   cassie_sim_sfun_registry.obj
+ 0001:000077e0       _ssSetOutputPortSymbolicDimsId 00000001800087e0 f   cassie_sim_sfun_registry.obj
+ 0001:00007820       _ssSetOutputPortVectorDimension 0000000180008820 f   cassie_sim_sfun_registry.obj
+ 0001:00007880       _ssSetStateAbsTol          0000000180008880 f   cassie_sim_sfun_registry.obj
+ 0001:000078f0       _ssSetSymbolicDimsSupport  00000001800088f0 f   cassie_sim_sfun_registry.obj
+ 0001:00007920       callCustomFcn              0000000180008920 f   cassie_sim_sfun_registry.obj
+ 0001:00007970       mdlGetSimState             0000000180008970 f   cassie_sim_sfun_registry.obj
+ 0001:00007a80       mdlSetSimState             0000000180008a80 f   cassie_sim_sfun_registry.obj
+ 0001:00007e90       mexFunction                0000000180008e90 f   cassie_sim_sfun_registry.obj
+ 0001:00008940       sf_machine_global_initializer 0000000180009940 f   cassie_sim_sfun_registry.obj
+ 0001:000089a0       sf_machine_global_initializer_called 00000001800099a0 f   cassie_sim_sfun_registry.obj
+ 0001:000089b0       sf_machine_global_method_dispatcher 00000001800099b0 f   cassie_sim_sfun_registry.obj
+ 0001:00008a20       sf_machine_global_terminator 0000000180009a20 f   cassie_sim_sfun_registry.obj
+ 0001:00008a50       sf_mex_unlock_call         0000000180009a50 f   cassie_sim_sfun_registry.obj
+ 0001:00008af0       sf_process_autoinheritance_call 0000000180009af0 f   cassie_sim_sfun_registry.obj
+ 0001:00008c00       sf_process_check_sum_call  0000000180009c00 f   cassie_sim_sfun_registry.obj
+ 0001:00008c20       sf_process_get_eml_resolved_functions_info_call 0000000180009c20 f   cassie_sim_sfun_registry.obj
+ 0001:00008d20       sf_process_get_jit_fallback_info_call 0000000180009d20 f   cassie_sim_sfun_registry.obj
+ 0001:00008e30       sf_process_get_third_party_uses_info_call 0000000180009e30 f   cassie_sim_sfun_registry.obj
+ 0001:00008f40       sf_process_get_updateBuildInfo_args_info_call 0000000180009f40 f   cassie_sim_sfun_registry.obj
+ 0001:00009050       sf_register_machine_exported_symbols 000000018000a050 f   cassie_sim_sfun_registry.obj
+ 0001:00009060       ssCloneAndAddZcSignalInfo  000000018000a060 f   cassie_sim_sfun_registry.obj
+ 0001:000090a0       ssCreateAndAddZcSignalInfo 000000018000a0a0 f   cassie_sim_sfun_registry.obj
+ 0001:000090e0       ssGetDTypeIdFromMxArray    000000018000a0e0 f   cassie_sim_sfun_registry.obj
+ 0001:000091b0       ssGetIsInputPortElementContinuous 000000018000a1b0 f   cassie_sim_sfun_registry.obj
+ 0001:00009220       ssGetIsZeroCrossControlDisabled 000000018000a220 f   cassie_sim_sfun_registry.obj
+ 0001:00009260       ssGetNumZcSignals          000000018000a260 f   cassie_sim_sfun_registry.obj
+ 0001:000092a0       ssGetParameterTuningCompliance 000000018000a2a0 f   cassie_sim_sfun_registry.obj
+ 0001:000092e0       ssGetSFuncBlockHandle      000000018000a2e0 f   cassie_sim_sfun_registry.obj
+ 0001:00009320       ssGetZcSignalIsZcElementDisc 000000018000a320 f   cassie_sim_sfun_registry.obj
+ 0001:00009390       ssGetZcSignalName          000000018000a390 f   cassie_sim_sfun_registry.obj
+ 0001:000093e0       ssGetZcSignalNeedsEventNotification 000000018000a3e0 f   cassie_sim_sfun_registry.obj
+ 0001:00009420       ssGetZcSignalType          000000018000a420 f   cassie_sim_sfun_registry.obj
+ 0001:00009460       ssGetZcSignalVector        000000018000a460 f   cassie_sim_sfun_registry.obj
+ 0001:000094b0       ssGetZcSignalWidth         000000018000a4b0 f   cassie_sim_sfun_registry.obj
+ 0001:000094f0       ssGetZcSignalZcEventType   000000018000a4f0 f   cassie_sim_sfun_registry.obj
+ 0001:00009530       ssGetZcSignalZcEvents      000000018000a530 f   cassie_sim_sfun_registry.obj
+ 0001:00009580       ssGetZcSignalZcTol         000000018000a580 f   cassie_sim_sfun_registry.obj
+ 0001:000095c0       ssIsRunTimeParamTunable    000000018000a5c0 f   cassie_sim_sfun_registry.obj
+ 0001:00009600       ssSetIsInputPortUsedForContZcSignal 000000018000a600 f   cassie_sim_sfun_registry.obj
+ 0001:00009640       ssSetZcSignalIsZcElementDisc 000000018000a640 f   cassie_sim_sfun_registry.obj
+ 0001:000096a0       ssSetZcSignalName          000000018000a6a0 f   cassie_sim_sfun_registry.obj
+ 0001:000096d0       ssSetZcSignalNeedsEventNotification 000000018000a6d0 f   cassie_sim_sfun_registry.obj
+ 0001:00009710       ssSetZcSignalType          000000018000a710 f   cassie_sim_sfun_registry.obj
+ 0001:00009750       ssSetZcSignalWidth         000000018000a750 f   cassie_sim_sfun_registry.obj
+ 0001:00009790       ssSetZcSignalZcEventType   000000018000a790 f   cassie_sim_sfun_registry.obj
+ 0001:000097d0       ssSetZcSignalZcTol         000000018000a7d0 f   cassie_sim_sfun_registry.obj
+ 0001:00009810       ssWarning                  000000018000a810 f   cassie_sim_sfun_registry.obj
+ 0001:000098f0       ssWriteRTWMx2dMatParam     000000018000a8f0 f   cassie_sim_sfun_registry.obj
+ 0001:00009940       ssWriteRTWMxVectParam      000000018000a940 f   cassie_sim_sfun_registry.obj
+ 0001:00009980       ssWriteRTWNameValuePair    000000018000a980 f   cassie_sim_sfun_registry.obj
+ 0001:00009b70       ssWriteRTWParamSettings    000000018000ab70 f   cassie_sim_sfun_registry.obj
+ 0001:00009e40       ssWriteRTWParameters       000000018000ae40 f   cassie_sim_sfun_registry.obj
+ 0001:0000a030       ssWriteRTWStr              000000018000b030 f   cassie_sim_sfun_registry.obj
+ 0001:0000a050       ssWriteRTWWorkVect         000000018000b050 f   cassie_sim_sfun_registry.obj
+ 0001:0000a3d0       sf_load_rtw_optimization_info 000000018000b3d0 f   sf_runtime:sf_runtime.dll
+ 0001:0000a3d6       sf_debug_initialize_machine 000000018000b3d6 f   sf_runtime:sf_runtime.dll
+ 0001:0000a3dc       sf_debug_set_machine_event_thresholds 000000018000b3dc f   sf_runtime:sf_runtime.dll
+ 0001:0000a3e2       sf_debug_set_machine_data_thresholds 000000018000b3e2 f   sf_runtime:sf_runtime.dll
+ 0001:0000a3e8       sf_init_ChartRunTimeInfo   000000018000b3e8 f   sf_runtime:sf_runtime.dll
+ 0001:0000a3ee       sf_free_ChartRunTimeInfo   000000018000b3ee f   sf_runtime:sf_runtime.dll
+ 0001:0000a3f4       sf_get_chart_instance_ptr  000000018000b3f4 f   sf_runtime:sf_runtime.dll
+ 0001:0000a3fa       sf_rtw_info_uint_prop      000000018000b3fa f   sf_runtime:sf_runtime.dll
+ 0001:0000a400       sf_update_buildInfo        000000018000b400 f   sf_runtime:sf_runtime.dll
+ 0001:0000a406       sf_is_chart_inlinable      000000018000b406 f   sf_runtime:sf_runtime.dll
+ 0001:0000a40c       sf_mark_chart_reusable_outputs 000000018000b40c f   sf_runtime:sf_runtime.dll
+ 0001:0000a412       sf_mark_chart_expressionable_inputs 000000018000b412 f   sf_runtime:sf_runtime.dll
+ 0001:0000a418       sim_mode_is_rtw_gen        000000018000b418 f   sf_runtime:sf_runtime.dll
+ 0001:0000a41e       sim_mode_is_external       000000018000b41e f   sf_runtime:sf_runtime.dll
+ 0001:0000a424       sim_mode_is_modelref_sim   000000018000b424 f   sf_runtime:sf_runtime.dll
+ 0001:0000a42a       sf_clear_rtw_identifier    000000018000b42a f   sf_runtime:sf_runtime.dll
+ 0001:0000a430       sf_set_rtw_dwork_info      000000018000b430 f   sf_runtime:sf_runtime.dll
+ 0001:0000a436       sf_get_time                000000018000b436 f   sf_runtime:sf_runtime.dll
+ 0001:0000a43c       sf_is_first_init_cond      000000018000b43c f   sf_runtime:sf_runtime.dll
+ 0001:0000a442       sf_set_chart_accesses_machine_info 000000018000b442 f   sf_runtime:sf_runtime.dll
+ 0001:0000a448       sf_register_codegen_names_for_scoped_functions_defined_by_chart 000000018000b448 f   sf_runtime:sf_runtime.dll
+ 0001:0000a44e       sf_mex_call_debug          000000018000b44e f   sf_runtime:sf_runtime.dll
+ 0001:0000a454       sf_mex_error_message       000000018000b454 f   sf_runtime:sf_runtime.dll
+ 0001:0000a45a       sf_mex_addfield            000000018000b45a f   sf_runtime:sf_runtime.dll
+ 0001:0000a460       sf_mex_createstruct        000000018000b460 f   sf_runtime:sf_runtime.dll
+ 0001:0000a466       sf_mex_create              000000018000b466 f   sf_runtime:sf_runtime.dll
+ 0001:0000a46c       sf_mex_createcellmatrix    000000018000b46c f   sf_runtime:sf_runtime.dll
+ 0001:0000a472       sf_mex_setcell             000000018000b472 f   sf_runtime:sf_runtime.dll
+ 0001:0000a478       sf_mex_getcell             000000018000b478 f   sf_runtime:sf_runtime.dll
+ 0001:0000a47e       sf_mex_assign              000000018000b47e f   sf_runtime:sf_runtime.dll
+ 0001:0000a484       sf_mex_dup                 000000018000b484 f   sf_runtime:sf_runtime.dll
+ 0001:0000a48a       sf_mex_destroy             000000018000b48a f   sf_runtime:sf_runtime.dll
+ 0001:0000a490       sf_mex_import              000000018000b490 f   sf_runtime:sf_runtime.dll
+ 0001:0000a496       sf_mex_decode_encoded_mx_struct_array 000000018000b496 f   sf_runtime:sf_runtime.dll
+ 0001:0000a49c       ssGetInputPortSignal_wrapper 000000018000b49c f   sf_runtime:sf_runtime.dll
+ 0001:0000a4a2       ssGetOutputPortSignal_wrapper 000000018000b4a2 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4a8       sf_debug_initialize_chart  000000018000b4a8 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4ae       sf_debug_call              000000018000b4ae f   sf_runtime:sf_runtime.dll
+ 0001:0000a4b4       eml_debug_line_call        000000018000b4b4 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4ba       cv_eml_eval                000000018000b4ba f   sf_runtime:sf_runtime.dll
+ 0001:0000a4c0       cv_eml_init_script         000000018000b4c0 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4c6       cv_eml_init_fcn            000000018000b4c6 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4cc       cv_script_eval             000000018000b4cc f   sf_runtime:sf_runtime.dll
+ 0001:0000a4d2       cv_script_init_script      000000018000b4d2 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4d8       cv_script_init_fcn         000000018000b4d8 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4de       sf_debug_reset_current_state_configuration 000000018000b4de f   sf_runtime:sf_runtime.dll
+ 0001:0000a4e4       sf_debug_check_for_state_inconsistency 000000018000b4e4 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4ea       sf_debug_set_chart_data_props 000000018000b4ea f   sf_runtime:sf_runtime.dll
+ 0001:0000a4f0       sf_debug_set_chart_data_compiled_props 000000018000b4f0 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4f6       sf_debug_symbol_scope_push 000000018000b4f6 f   sf_runtime:sf_runtime.dll
+ 0001:0000a4fc       sf_debug_symbol_scope_push_eml 000000018000b4fc f   sf_runtime:sf_runtime.dll
+ 0001:0000a502       sf_debug_symbol_scope_pop  000000018000b502 f   sf_runtime:sf_runtime.dll
+ 0001:0000a508       sf_debug_symbol_scope_add_eml 000000018000b508 f   sf_runtime:sf_runtime.dll
+ 0001:0000a50e       sf_debug_symbol_scope_add_eml_importable 000000018000b50e f   sf_runtime:sf_runtime.dll
+ 0001:0000a514       sf_debug_set_instance_data_value_ptr 000000018000b514 f   sf_runtime:sf_runtime.dll
+ 0001:0000a51a       sf_debug_set_chart_disable_implicit_casting 000000018000b51a f   sf_runtime:sf_runtime.dll
+ 0001:0000a520       sf_debug_set_chart_event_thresholds 000000018000b520 f   sf_runtime:sf_runtime.dll
+ 0001:0000a526       sf_debug_set_chart_state_info 000000018000b526 f   sf_runtime:sf_runtime.dll
+ 0001:0000a52c       sf_debug_set_chart_decomposition 000000018000b52c f   sf_runtime:sf_runtime.dll
+ 0001:0000a532       sf_debug_set_chart_substate_count 000000018000b532 f   sf_runtime:sf_runtime.dll
+ 0001:0000a538       sf_debug_data_range_wrapper 000000018000b538 f   sf_runtime:sf_runtime.dll
+ 0001:0000a53e       sf_debug_cv_init_trans     000000018000b53e f   sf_runtime:sf_runtime.dll
+ 0001:0000a544       sf_debug_cv_init_chart     000000018000b544 f   sf_runtime:sf_runtime.dll
+ 0001:0000a54a       sf_debug_cv_init_state     000000018000b54a f   sf_runtime:sf_runtime.dll
+ 0001:0000a550       sf_debug_get_script_id     000000018000b550 f   sf_runtime:sf_runtime.dll
+ 0001:0000a556       sf_debug_set_script_translation 000000018000b556 f   sf_runtime:sf_runtime.dll
+ 0001:0000a55c       sf_get_ChartInfoStruct_CodeGen 000000018000b55c f   sf_runtime:sf_runtime.dll
+ 0001:0000a562       sf_get_isEnhancedMooreMachine 000000018000b562 f   sf_runtime:sf_runtime.dll
+ 0001:0000a568       sf_set_compiledInfo        000000018000b568 f   sf_runtime:sf_runtime.dll
+ 0001:0000a56e       callMdlMethodAndReportError 000000018000b56e f   sf_runtime:sf_runtime.dll
+ 0001:0000a574       call_sf_machine_global_method_dispatcher 000000018000b574 f   sf_runtime:sf_runtime.dll
+ 0001:0000a57a       sf_mex_error_direct_call   000000018000b57a f   sf_runtime:sf_runtime.dll
+ 0001:0000a580       sf_clear_error_manager_info 000000018000b580 f   sf_runtime:sf_runtime.dll
+ 0001:0000a586       sf_debug_create_debug_instance_struct 000000018000b586 f   sf_runtime:sf_runtime.dll
+ 0001:0000a58c       sf_debug_terminate         000000018000b58c f   sf_runtime:sf_runtime.dll
+ 0001:0000a592       sf_debug_api               000000018000b592 f   sf_runtime:sf_runtime.dll
+ 0001:0000a598       mxIsChar                   000000018000b598 f   libmx:libmx.dll
+ 0001:0000a59e       mxGetPr                    000000018000b59e f   libmx:libmx.dll
+ 0001:0000a5a4       mxGetScalar                000000018000b5a4 f   libmx:libmx.dll
+ 0001:0000a5aa       mxDestroyArray             000000018000b5aa f   libmx:libmx.dll
+ 0001:0000a5b0       mxCreateDoubleMatrix_730   000000018000b5b0 f   libmx:libmx.dll
+ 0001:0000a5b6       mxGetString_730            000000018000b5b6 f   libmx:libmx.dll
+ 0001:0000a5bc       mxDuplicateArray           000000018000b5bc f   libmx:libmx.dll
+ 0001:0000a5c2       mxSetField_730             000000018000b5c2 f   libmx:libmx.dll
+ 0001:0000a5c8       mxCreateDoubleScalar       000000018000b5c8 f   libmx:libmx.dll
+ 0001:0000a5ce       mxCreateString             000000018000b5ce f   libmx:libmx.dll
+ 0001:0000a5d4       mxCreateCellMatrix_730     000000018000b5d4 f   libmx:libmx.dll
+ 0001:0000a5da       mxCreateCellArray_730      000000018000b5da f   libmx:libmx.dll
+ 0001:0000a5e0       mxCreateStructMatrix_730   000000018000b5e0 f   libmx:libmx.dll
+ 0001:0000a5e6       mxCreateStructArray_730    000000018000b5e6 f   libmx:libmx.dll
+ 0001:0000a5ec       mxCalloc                   000000018000b5ec f   libmx:libmx.dll
+ 0001:0000a5f2       mxGetM                     000000018000b5f2 f   libmx:libmx.dll
+ 0001:0000a5f8       mxGetClassID               000000018000b5f8 f   libmx:libmx.dll
+ 0001:0000a5fe       mxIsNumeric                000000018000b5fe f   libmx:libmx.dll
+ 0001:0000a604       mxIsComplex                000000018000b604 f   libmx:libmx.dll
+ 0001:0000a60a       mxGetN                     000000018000b60a f   libmx:libmx.dll
+ 0001:0000a610       mexMakeArrayPersistent     000000018000b610 f   libmex:libmex.dll
+ 0001:0000a616       mexErrMsgTxt               000000018000b616 f   libmex:libmex.dll
+ 0001:0000a61c       mexWarnMsgTxt              000000018000b61c f   libmex:libmex.dll
+ 0001:0000a622       mexCallMATLABWithObject    000000018000b622 f   libmex:libmex.dll
+ 0001:0000a628       mexLock                    000000018000b628 f   libmex:libmex.dll
+ 0001:0000a62e       mexUnlock                  000000018000b62e f   libmex:libmex.dll
+ 0001:0000a634       mexIsLocked                000000018000b634 f   libmex:libmex.dll
+ 0001:0000a63a       utMalloc                   000000018000b63a f   libut:libut.dll
+ 0001:0000a640       utFree                     000000018000b640 f   libut:libut.dll
+ 0001:0000a646       muDoubleScalarAsin         000000018000b646 f   libmwmathutil:libmwmathutil.dll
+ 0001:0000a64c       muDoubleScalarAtan2        000000018000b64c f   libmwmathutil:libmwmathutil.dll
+ 0001:0000a652       emlrtNameCaptureMxArrayR2016a 000000018000b652 f   libemlrt:libemlrt.dll
+ 0001:0000a658       __GSHandlerCheck           000000018000b658 f   MSVCRT:gshandler.obj
+ 0001:0000a678       __GSHandlerCheckCommon     000000018000b678 f   MSVCRT:gshandler.obj
+ 0001:0000a6f0       __security_check_cookie    000000018000b6f0 f   MSVCRT:amdsecgs.obj
+ 0001:0000a710       strcmp                     000000018000b710 f   MSVCRT:MSVCR120.dll
+ 0001:0000a716       memcpy                     000000018000b716 f   MSVCRT:MSVCR120.dll
+ 0001:0000a71c       memset                     000000018000b71c f   MSVCRT:MSVCR120.dll
+ 0001:0000a722       free                       000000018000b722 f   MSVCRT:MSVCR120.dll
+ 0001:0000a728       malloc                     000000018000b728 f   MSVCRT:MSVCR120.dll
+ 0001:0000a72e       sprintf                    000000018000b72e f   MSVCRT:MSVCR120.dll
+ 0001:0000a794       NtCurrentTeb               000000018000b794 f i MSVCRT:crtdll.obj
+ 0001:0000a7a0       _CRT_INIT                  000000018000b7a0 f   MSVCRT:crtdll.obj
+ 0001:0000a9ec       _DllMainCRTStartup         000000018000b9ec f   MSVCRT:crtdll.obj
+ 0001:0000ab64       __raise_securityfailure    000000018000bb64 f   MSVCRT:gs_report.obj
+ 0001:0000abb0       __report_gsfailure         000000018000bbb0 f   MSVCRT:gs_report.obj
+ 0001:0000ac84       __report_rangecheckfailure 000000018000bc84 f   MSVCRT:gs_report.obj
+ 0001:0000ac98       __report_securityfailure   000000018000bc98 f   MSVCRT:gs_report.obj
+ 0001:0000ad34       __report_securityfailureEx 000000018000bd34 f   MSVCRT:gs_report.obj
+ 0001:0000ae42       __CppXcptFilter            000000018000be42 f   MSVCRT:MSVCR120.dll
+ 0001:0000ae48       _amsg_exit                 000000018000be48 f   MSVCRT:MSVCR120.dll
+ 0001:0000ae50       _FindPESection             000000018000be50 f   MSVCRT:pesect.obj
+ 0001:0000aea0       _IsNonwritableInCurrentImage 000000018000bea0 f   MSVCRT:pesect.obj
+ 0001:0000aef0       _ValidateImageBase         000000018000bef0 f   MSVCRT:pesect.obj
+ 0001:0000af20       __atonexitinit             000000018000bf20 f   MSVCRT:atonexit.obj
+ 0001:0000af70       _onexit                    000000018000bf70 f   MSVCRT:atonexit.obj
+ 0001:0000b020       atexit                     000000018000c020 f   MSVCRT:atonexit.obj
+ 0001:0000b038       __security_init_cookie     000000018000c038 f   MSVCRT:gs_support.obj
+ 0001:0000b0e4       DllMain                    000000018000c0e4 f   MSVCRT:dllmain.obj
+ 0001:0000b108       _malloc_crt                000000018000c108 f   MSVCRT:MSVCR120.dll
+ 0001:0000b110       _RTC_Initialize            000000018000c110 f   MSVCRT:initsect.obj
+ 0001:0000b148       _RTC_Terminate             000000018000c148 f   MSVCRT:initsect.obj
+ 0001:0000b180       _initterm                  000000018000c180 f   MSVCRT:MSVCR120.dll
+ 0001:0000b186       _initterm_e                000000018000c186 f   MSVCRT:MSVCR120.dll
+ 0001:0000b18c       __clean_type_info_names    000000018000c18c f   MSVCRT:tncleanup.obj
+ 0001:0000b198       __C_specific_handler       000000018000c198 f   MSVCRT:MSVCR120.dll
+ 0001:0000b19e       __crt_debugger_hook        000000018000c19e f   MSVCRT:MSVCR120.dll
+ 0001:0000b1a4       __crtUnhandledException    000000018000c1a4 f   MSVCRT:MSVCR120.dll
+ 0001:0000b1aa       __crtTerminateProcess      000000018000c1aa f   MSVCRT:MSVCR120.dll
+ 0001:0000b1b0       __crtCaptureCurrentContext 000000018000c1b0 f   MSVCRT:MSVCR120.dll
+ 0001:0000b1b6       __crtCapturePreviousContext 000000018000c1b6 f   MSVCRT:MSVCR120.dll
+ 0001:0000b1bc       _lock                      000000018000c1bc f   MSVCRT:MSVCR120.dll
+ 0001:0000b1c2       _unlock                    000000018000c1c2 f   MSVCRT:MSVCR120.dll
+ 0001:0000b1c8       _calloc_crt                000000018000c1c8 f   MSVCRT:MSVCR120.dll
+ 0001:0000b1ce       __dllonexit                000000018000c1ce f   MSVCRT:MSVCR120.dll
+ 0001:0000b1d4       __clean_type_info_names_internal 000000018000c1d4 f   MSVCRT:MSVCR120.dll
+ 0001:0000b1da       EncodePointer              000000018000c1da f   kernel32:KERNEL32.dll
+ 0001:0000b1e0       DecodePointer              000000018000c1e0 f   kernel32:KERNEL32.dll
+ 0001:0000b1e6       IsDebuggerPresent          000000018000c1e6 f   kernel32:KERNEL32.dll
+ 0001:0000b1ec       IsProcessorFeaturePresent  000000018000c1ec f   kernel32:KERNEL32.dll
+ 0001:0000b1f2       QueryPerformanceCounter    000000018000c1f2 f   kernel32:KERNEL32.dll
+ 0001:0000b1f8       GetCurrentProcessId        000000018000c1f8 f   kernel32:KERNEL32.dll
+ 0001:0000b1fe       GetCurrentThreadId         000000018000c1fe f   kernel32:KERNEL32.dll
+ 0001:0000b204       GetSystemTimeAsFileTime    000000018000c204 f   kernel32:KERNEL32.dll
+ 0001:0000b20a       DisableThreadLibraryCalls  000000018000c20a f   kernel32:KERNEL32.dll
+ 0002:00000000       __imp_GetSystemTimeAsFileTime 000000018000d000     kernel32:KERNEL32.dll
+ 0002:00000008       __imp_GetCurrentThreadId   000000018000d008     kernel32:KERNEL32.dll
+ 0002:00000010       __imp_GetCurrentProcessId  000000018000d010     kernel32:KERNEL32.dll
+ 0002:00000018       __imp_QueryPerformanceCounter 000000018000d018     kernel32:KERNEL32.dll
+ 0002:00000020       __imp_IsProcessorFeaturePresent 000000018000d020     kernel32:KERNEL32.dll
+ 0002:00000028       __imp_IsDebuggerPresent    000000018000d028     kernel32:KERNEL32.dll
+ 0002:00000030       __imp_DecodePointer        000000018000d030     kernel32:KERNEL32.dll
+ 0002:00000038       __imp_EncodePointer        000000018000d038     kernel32:KERNEL32.dll
+ 0002:00000040       __imp_DisableThreadLibraryCalls 000000018000d040     kernel32:KERNEL32.dll
+ 0002:00000048       \177KERNEL32_NULL_THUNK_DATA 000000018000d048     kernel32:KERNEL32.dll
+ 0002:00000050       __imp___clean_type_info_names_internal 000000018000d050     MSVCRT:MSVCR120.dll
+ 0002:00000058       __imp__onexit              000000018000d058     MSVCRT:MSVCR120.dll
+ 0002:00000060       __imp___dllonexit          000000018000d060     MSVCRT:MSVCR120.dll
+ 0002:00000068       __imp__calloc_crt          000000018000d068     MSVCRT:MSVCR120.dll
+ 0002:00000070       __imp__unlock              000000018000d070     MSVCRT:MSVCR120.dll
+ 0002:00000078       __imp__lock                000000018000d078     MSVCRT:MSVCR120.dll
+ 0002:00000080       __imp___crtCapturePreviousContext 000000018000d080     MSVCRT:MSVCR120.dll
+ 0002:00000088       __imp___crtCaptureCurrentContext 000000018000d088     MSVCRT:MSVCR120.dll
+ 0002:00000090       __imp___crtTerminateProcess 000000018000d090     MSVCRT:MSVCR120.dll
+ 0002:00000098       __imp___crtUnhandledException 000000018000d098     MSVCRT:MSVCR120.dll
+ 0002:000000a0       __imp___crt_debugger_hook  000000018000d0a0     MSVCRT:MSVCR120.dll
+ 0002:000000a8       __imp___C_specific_handler 000000018000d0a8     MSVCRT:MSVCR120.dll
+ 0002:000000b0       __imp__initterm_e          000000018000d0b0     MSVCRT:MSVCR120.dll
+ 0002:000000b8       __imp__initterm            000000018000d0b8     MSVCRT:MSVCR120.dll
+ 0002:000000c0       __imp__malloc_crt          000000018000d0c0     MSVCRT:MSVCR120.dll
+ 0002:000000c8       __imp__amsg_exit           000000018000d0c8     MSVCRT:MSVCR120.dll
+ 0002:000000d0       __imp___CppXcptFilter      000000018000d0d0     MSVCRT:MSVCR120.dll
+ 0002:000000d8       __imp_sprintf              000000018000d0d8     MSVCRT:MSVCR120.dll
+ 0002:000000e0       __imp_malloc               000000018000d0e0     MSVCRT:MSVCR120.dll
+ 0002:000000e8       __imp_free                 000000018000d0e8     MSVCRT:MSVCR120.dll
+ 0002:000000f0       __imp_memset               000000018000d0f0     MSVCRT:MSVCR120.dll
+ 0002:000000f8       __imp_memcpy               000000018000d0f8     MSVCRT:MSVCR120.dll
+ 0002:00000100       __imp_strcmp               000000018000d100     MSVCRT:MSVCR120.dll
+ 0002:00000108       \177MSVCR120_NULL_THUNK_DATA 000000018000d108     MSVCRT:MSVCR120.dll
+ 0002:00000110       __imp_emlrtNameCaptureMxArrayR2016a 000000018000d110     libemlrt:libemlrt.dll
+ 0002:00000118       \177libemlrt_NULL_THUNK_DATA 000000018000d118     libemlrt:libemlrt.dll
+ 0002:00000120       __imp_mexErrMsgTxt         000000018000d120     libmex:libmex.dll
+ 0002:00000128       __imp_mexWarnMsgTxt        000000018000d128     libmex:libmex.dll
+ 0002:00000130       __imp_mexCallMATLABWithObject 000000018000d130     libmex:libmex.dll
+ 0002:00000138       __imp_mexIsLocked          000000018000d138     libmex:libmex.dll
+ 0002:00000140       __imp_mexUnlock            000000018000d140     libmex:libmex.dll
+ 0002:00000148       __imp_mexLock              000000018000d148     libmex:libmex.dll
+ 0002:00000150       __imp_mexMakeArrayPersistent 000000018000d150     libmex:libmex.dll
+ 0002:00000158       \177libmex_NULL_THUNK_DATA 000000018000d158     libmex:libmex.dll
+ 0002:00000160       __imp_muDoubleScalarAtan2  000000018000d160     libmwmathutil:libmwmathutil.dll
+ 0002:00000168       __imp_muDoubleScalarAsin   000000018000d168     libmwmathutil:libmwmathutil.dll
+ 0002:00000170       \177libmwmathutil_NULL_THUNK_DATA 000000018000d170     libmwmathutil:libmwmathutil.dll
+ 0002:00000178       __imp_mxGetN               000000018000d178     libmx:libmx.dll
+ 0002:00000180       __imp_mxIsComplex          000000018000d180     libmx:libmx.dll
+ 0002:00000188       __imp_mxIsNumeric          000000018000d188     libmx:libmx.dll
+ 0002:00000190       __imp_mxGetClassID         000000018000d190     libmx:libmx.dll
+ 0002:00000198       __imp_mxGetM               000000018000d198     libmx:libmx.dll
+ 0002:000001a0       __imp_mxCalloc             000000018000d1a0     libmx:libmx.dll
+ 0002:000001a8       __imp_mxCreateStructArray_730 000000018000d1a8     libmx:libmx.dll
+ 0002:000001b0       __imp_mxCreateStructMatrix_730 000000018000d1b0     libmx:libmx.dll
+ 0002:000001b8       __imp_mxCreateCellArray_730 000000018000d1b8     libmx:libmx.dll
+ 0002:000001c0       __imp_mxCreateCellMatrix_730 000000018000d1c0     libmx:libmx.dll
+ 0002:000001c8       __imp_mxCreateString       000000018000d1c8     libmx:libmx.dll
+ 0002:000001d0       __imp_mxCreateDoubleScalar 000000018000d1d0     libmx:libmx.dll
+ 0002:000001d8       __imp_mxSetField_730       000000018000d1d8     libmx:libmx.dll
+ 0002:000001e0       __imp_mxDuplicateArray     000000018000d1e0     libmx:libmx.dll
+ 0002:000001e8       __imp_mxGetString_730      000000018000d1e8     libmx:libmx.dll
+ 0002:000001f0       __imp_mxCreateDoubleMatrix_730 000000018000d1f0     libmx:libmx.dll
+ 0002:000001f8       __imp_mxDestroyArray       000000018000d1f8     libmx:libmx.dll
+ 0002:00000200       __imp_mxGetScalar          000000018000d200     libmx:libmx.dll
+ 0002:00000208       __imp_mxIsChar             000000018000d208     libmx:libmx.dll
+ 0002:00000210       __imp_mxGetPr              000000018000d210     libmx:libmx.dll
+ 0002:00000218       \177libmx_NULL_THUNK_DATA  000000018000d218     libmx:libmx.dll
+ 0002:00000220       __imp_utMalloc             000000018000d220     libut:libut.dll
+ 0002:00000228       __imp_utFree               000000018000d228     libut:libut.dll
+ 0002:00000230       \177libut_NULL_THUNK_DATA  000000018000d230     libut:libut.dll
+ 0002:00000238       __imp_sf_mex_error_direct_call 000000018000d238     sf_runtime:sf_runtime.dll
+ 0002:00000240       __imp_sf_clear_error_manager_info 000000018000d240     sf_runtime:sf_runtime.dll
+ 0002:00000248       __imp_sf_is_chart_inlinable 000000018000d248     sf_runtime:sf_runtime.dll
+ 0002:00000250       __imp_sf_get_isEnhancedMooreMachine 000000018000d250     sf_runtime:sf_runtime.dll
+ 0002:00000258       __imp_sf_debug_api         000000018000d258     sf_runtime:sf_runtime.dll
+ 0002:00000260       __imp_sf_get_ChartInfoStruct_CodeGen 000000018000d260     sf_runtime:sf_runtime.dll
+ 0002:00000268       __imp_sf_mark_chart_reusable_outputs 000000018000d268     sf_runtime:sf_runtime.dll
+ 0002:00000270       __imp_sf_debug_set_script_translation 000000018000d270     sf_runtime:sf_runtime.dll
+ 0002:00000278       __imp_sf_debug_get_script_id 000000018000d278     sf_runtime:sf_runtime.dll
+ 0002:00000280       __imp_sf_debug_cv_init_state 000000018000d280     sf_runtime:sf_runtime.dll
+ 0002:00000288       __imp_sf_debug_cv_init_chart 000000018000d288     sf_runtime:sf_runtime.dll
+ 0002:00000290       __imp_sf_debug_cv_init_trans 000000018000d290     sf_runtime:sf_runtime.dll
+ 0002:00000298       __imp_sf_debug_data_range_wrapper 000000018000d298     sf_runtime:sf_runtime.dll
+ 0002:000002a0       __imp_sf_debug_set_chart_substate_count 000000018000d2a0     sf_runtime:sf_runtime.dll
+ 0002:000002a8       __imp_sf_debug_set_chart_decomposition 000000018000d2a8     sf_runtime:sf_runtime.dll
+ 0002:000002b0       __imp_sf_debug_set_chart_state_info 000000018000d2b0     sf_runtime:sf_runtime.dll
+ 0002:000002b8       __imp_call_sf_machine_global_method_dispatcher 000000018000d2b8     sf_runtime:sf_runtime.dll
+ 0002:000002c0       __imp_sf_debug_set_chart_disable_implicit_casting 000000018000d2c0     sf_runtime:sf_runtime.dll
+ 0002:000002c8       __imp_sf_debug_set_instance_data_value_ptr 000000018000d2c8     sf_runtime:sf_runtime.dll
+ 0002:000002d0       __imp_sf_debug_symbol_scope_add_eml_importable 000000018000d2d0     sf_runtime:sf_runtime.dll
+ 0002:000002d8       __imp_sf_debug_symbol_scope_add_eml 000000018000d2d8     sf_runtime:sf_runtime.dll
+ 0002:000002e0       __imp_sf_debug_symbol_scope_pop 000000018000d2e0     sf_runtime:sf_runtime.dll
+ 0002:000002e8       __imp_sf_debug_symbol_scope_push_eml 000000018000d2e8     sf_runtime:sf_runtime.dll
+ 0002:000002f0       __imp_sf_debug_symbol_scope_push 000000018000d2f0     sf_runtime:sf_runtime.dll
+ 0002:000002f8       __imp_sf_debug_set_chart_data_compiled_props 000000018000d2f8     sf_runtime:sf_runtime.dll
+ 0002:00000300       __imp_sf_debug_set_chart_data_props 000000018000d300     sf_runtime:sf_runtime.dll
+ 0002:00000308       __imp_sf_debug_check_for_state_inconsistency 000000018000d308     sf_runtime:sf_runtime.dll
+ 0002:00000310       __imp_sf_debug_reset_current_state_configuration 000000018000d310     sf_runtime:sf_runtime.dll
+ 0002:00000318       __imp_cv_script_init_fcn   000000018000d318     sf_runtime:sf_runtime.dll
+ 0002:00000320       __imp_cv_script_init_script 000000018000d320     sf_runtime:sf_runtime.dll
+ 0002:00000328       __imp_cv_script_eval       000000018000d328     sf_runtime:sf_runtime.dll
+ 0002:00000330       __imp_cv_eml_init_fcn      000000018000d330     sf_runtime:sf_runtime.dll
+ 0002:00000338       __imp_cv_eml_init_script   000000018000d338     sf_runtime:sf_runtime.dll
+ 0002:00000340       __imp_cv_eml_eval          000000018000d340     sf_runtime:sf_runtime.dll
+ 0002:00000348       __imp_callMdlMethodAndReportError 000000018000d348     sf_runtime:sf_runtime.dll
+ 0002:00000350       __imp_sf_debug_set_chart_event_thresholds 000000018000d350     sf_runtime:sf_runtime.dll
+ 0002:00000358       __imp_sf_set_compiledInfo  000000018000d358     sf_runtime:sf_runtime.dll
+ 0002:00000360       __imp_eml_debug_line_call  000000018000d360     sf_runtime:sf_runtime.dll
+ 0002:00000368       __imp_sf_debug_call        000000018000d368     sf_runtime:sf_runtime.dll
+ 0002:00000370       __imp_sf_debug_initialize_chart 000000018000d370     sf_runtime:sf_runtime.dll
+ 0002:00000378       __imp_ssGetOutputPortSignal_wrapper 000000018000d378     sf_runtime:sf_runtime.dll
+ 0002:00000380       __imp_ssGetInputPortSignal_wrapper 000000018000d380     sf_runtime:sf_runtime.dll
+ 0002:00000388       __imp_sf_mex_decode_encoded_mx_struct_array 000000018000d388     sf_runtime:sf_runtime.dll
+ 0002:00000390       __imp_sf_mex_import        000000018000d390     sf_runtime:sf_runtime.dll
+ 0002:00000398       __imp_sf_mex_destroy       000000018000d398     sf_runtime:sf_runtime.dll
+ 0002:000003a0       __imp_sf_mex_dup           000000018000d3a0     sf_runtime:sf_runtime.dll
+ 0002:000003a8       __imp_sf_mex_assign        000000018000d3a8     sf_runtime:sf_runtime.dll
+ 0002:000003b0       __imp_sf_mex_getcell       000000018000d3b0     sf_runtime:sf_runtime.dll
+ 0002:000003b8       __imp_sf_mex_setcell       000000018000d3b8     sf_runtime:sf_runtime.dll
+ 0002:000003c0       __imp_sf_mex_createcellmatrix 000000018000d3c0     sf_runtime:sf_runtime.dll
+ 0002:000003c8       __imp_sf_mex_create        000000018000d3c8     sf_runtime:sf_runtime.dll
+ 0002:000003d0       __imp_sf_mex_createstruct  000000018000d3d0     sf_runtime:sf_runtime.dll
+ 0002:000003d8       __imp_sf_mex_addfield      000000018000d3d8     sf_runtime:sf_runtime.dll
+ 0002:000003e0       __imp_sf_mex_error_message 000000018000d3e0     sf_runtime:sf_runtime.dll
+ 0002:000003e8       __imp_sf_mex_call_debug    000000018000d3e8     sf_runtime:sf_runtime.dll
+ 0002:000003f0       __imp_sf_register_codegen_names_for_scoped_functions_defined_by_chart 000000018000d3f0     sf_runtime:sf_runtime.dll
+ 0002:000003f8       __imp_sf_set_chart_accesses_machine_info 000000018000d3f8     sf_runtime:sf_runtime.dll
+ 0002:00000400       __imp_sf_is_first_init_cond 000000018000d400     sf_runtime:sf_runtime.dll
+ 0002:00000408       __imp_sf_get_time          000000018000d408     sf_runtime:sf_runtime.dll
+ 0002:00000410       __imp_sf_set_rtw_dwork_info 000000018000d410     sf_runtime:sf_runtime.dll
+ 0002:00000418       __imp_sf_clear_rtw_identifier 000000018000d418     sf_runtime:sf_runtime.dll
+ 0002:00000420       __imp_sim_mode_is_modelref_sim 000000018000d420     sf_runtime:sf_runtime.dll
+ 0002:00000428       __imp_sim_mode_is_external 000000018000d428     sf_runtime:sf_runtime.dll
+ 0002:00000430       __imp_sim_mode_is_rtw_gen  000000018000d430     sf_runtime:sf_runtime.dll
+ 0002:00000438       __imp_sf_mark_chart_expressionable_inputs 000000018000d438     sf_runtime:sf_runtime.dll
+ 0002:00000440       __imp_sf_debug_terminate   000000018000d440     sf_runtime:sf_runtime.dll
+ 0002:00000448       __imp_sf_update_buildInfo  000000018000d448     sf_runtime:sf_runtime.dll
+ 0002:00000450       __imp_sf_rtw_info_uint_prop 000000018000d450     sf_runtime:sf_runtime.dll
+ 0002:00000458       __imp_sf_get_chart_instance_ptr 000000018000d458     sf_runtime:sf_runtime.dll
+ 0002:00000460       __imp_sf_free_ChartRunTimeInfo 000000018000d460     sf_runtime:sf_runtime.dll
+ 0002:00000468       __imp_sf_init_ChartRunTimeInfo 000000018000d468     sf_runtime:sf_runtime.dll
+ 0002:00000470       __imp_sf_debug_set_machine_data_thresholds 000000018000d470     sf_runtime:sf_runtime.dll
+ 0002:00000478       __imp_sf_debug_set_machine_event_thresholds 000000018000d478     sf_runtime:sf_runtime.dll
+ 0002:00000480       __imp_sf_debug_initialize_machine 000000018000d480     sf_runtime:sf_runtime.dll
+ 0002:00000488       __imp_sf_debug_create_debug_instance_struct 000000018000d488     sf_runtime:sf_runtime.dll
+ 0002:00000490       __imp_sf_load_rtw_optimization_info 000000018000d490     sf_runtime:sf_runtime.dll
+ 0002:00000498       \177sf_runtime_NULL_THUNK_DATA 000000018000d498     sf_runtime:sf_runtime.dll
+ 0002:000004a0       __xc_a                     000000018000d4a0     MSVCRT:cinitexe.obj
+ 0002:000004a8       __xc_z                     000000018000d4a8     MSVCRT:cinitexe.obj
+ 0002:000004b0       __xi_a                     000000018000d4b0     MSVCRT:cinitexe.obj
+ 0002:000004c8       __xi_z                     000000018000d4c8     MSVCRT:cinitexe.obj
+ 0002:000004d0       ??_C@_0BB@FLJEPEHM@sf_get_check_sum?$AA@ 000000018000d4d0     cassie_sim_sfun.obj
+ 0002:000004e8       ??_C@_07MHDNFCJE@machine?$AA@ 000000018000d4e8     cassie_sim_sfun.obj
+ 0002:000004f0       ??_C@_05PGKDIPIO@chart?$AA@ 000000018000d4f0     cassie_sim_sfun.obj
+ 0002:000004f8       ??_C@_06JJLAMBGK@target?$AA@ 000000018000d4f8     cassie_sim_sfun.obj
+ 0002:00000500       ??_C@_0BJ@FMGCKEMJ@get_autoinheritance_info?$AA@ 000000018000d500     cassie_sim_sfun.obj
+ 0002:00000520       ??_C@_0BH@LFHKEDCL@3eJKngvXahckVl2Oge1P2D?$AA@ 000000018000d520     cassie_sim_sfun.obj
+ 0002:00000538       ??_C@_0CA@EADCEDHE@get_eml_resolved_functions_info?$AA@ 000000018000d538     cassie_sim_sfun.obj
+ 0002:00000558       ??_C@_0BK@OHOOMENA@get_third_party_uses_info?$AA@ 000000018000d558     cassie_sim_sfun.obj
+ 0002:00000578       ??_C@_0BI@BBBOCLKG@sz0IFZ7llEgpaVW6URmymPE?$AA@ 000000018000d578     cassie_sim_sfun.obj
+ 0002:00000590       ??_C@_0BG@LBHKCKOM@get_jit_fallback_info?$AA@ 000000018000d590     cassie_sim_sfun.obj
+ 0002:000005a8       ??_C@_0BO@DEKBDHJJ@get_updateBuildInfo_args_info?$AA@ 000000018000d5a8     cassie_sim_sfun.obj
+ 0002:000005c8       ??_C@_04DAKGNGLA@sfun?$AA@ 000000018000d5c8     cassie_sim_sfun.obj
+ 0002:000005d0       ??_C@_0L@JKBBJNPF@cassie_sim?$AA@ 000000018000d5d0     cassie_sim_sfun.obj
+ 0002:000005dc       ??_C@_02IAFNLFPG@qz?$AA@   000000018000d5dc     c2_cassie_sim.obj
+ 0002:000005e0       ??_C@_02KLHAOGDF@qy?$AA@   000000018000d5e0     c2_cassie_sim.obj
+ 0002:000005e4       ??_C@_02LCGLNHHE@qx?$AA@   000000018000d5e4     c2_cassie_sim.obj
+ 0002:000005e8       ??_C@_02GDKJGMDN@qq?$AA@   000000018000d5e8     c2_cassie_sim.obj
+ 0002:000005ec       ??_C@_03MMKAHJNL@qaR?$AA@  000000018000d5ec     c2_cassie_sim.obj
+ 0002:000005f0       ??_C@_03MAPFJGDK@qjR?$AA@  000000018000d5f0     c2_cassie_sim.obj
+ 0002:000005f4       ??_C@_03NDACAOMF@qsR?$AA@  000000018000d5f4     c2_cassie_sim.obj
+ 0002:000005f8       ??_C@_03BIOBEGAE@qaL?$AA@  000000018000d5f8     c2_cassie_sim.obj
+ 0002:000005fc       ??_C@_03BELEKJOF@qjL?$AA@  000000018000d5fc     c2_cassie_sim.obj
+ 0002:00000600       ??_C@_03HEDDBBK@qsL?$AA@   000000018000d600     c2_cassie_sim.obj
+ 0002:00000604       ??_C@_03JOIAKGH@dqq?$AA@   000000018000d604     c2_cassie_sim.obj
+ 0002:00000608       ??_C@_04EHHEIAFH@dqaR?$AA@ 000000018000d608     c2_cassie_sim.obj
+ 0002:00000610       ??_C@_04ELCBGPLG@dqjR?$AA@ 000000018000d610     c2_cassie_sim.obj
+ 0002:00000618       ??_C@_04FINGPHEJ@dqsR?$AA@ 000000018000d618     c2_cassie_sim.obj
+ 0002:00000620       ??_C@_04JDDFLPII@dqaL?$AA@ 000000018000d620     c2_cassie_sim.obj
+ 0002:00000628       ??_C@_04JPGAFAGJ@dqjL?$AA@ 000000018000d628     c2_cassie_sim.obj
+ 0002:00000630       ??_C@_04IMJHMIJG@dqsL?$AA@ 000000018000d630     c2_cassie_sim.obj
+ 0002:00000638       ??_C@_02HKLCFNHM@qp?$AA@   000000018000d638     c2_cassie_sim.obj
+ 0002:0000063c       ??_C@_03BAPDDLCG@dqp?$AA@  000000018000d63c     c2_cassie_sim.obj
+ 0002:00000640       ??_C@_06ODCJABFF@nargin?$AA@ 000000018000d640     c2_cassie_sim.obj
+ 0002:00000648       ??_C@_07GFKJCDMF@nargout?$AA@ 000000018000d648     c2_cassie_sim.obj
+ 0002:00000650       ??_C@_07EPCMHIAC@outputs?$AA@ 000000018000d650     c2_cassie_sim.obj
+ 0002:00000658       ??_C@_01IIACKFLH@q?$AA@    000000018000d658     c2_cassie_sim.obj
+ 0002:0000065c       ??_C@_02HJEEANKG@dq?$AA@   000000018000d65c     c2_cassie_sim.obj
+ 0002:00000660       ??_C@_02DFPDMLLL@qw?$AA@   000000018000d660     c2_cassie_sim.obj
+ 0002:00000664       ??_C@_04FBAPEKPH@roll?$AA@ 000000018000d664     c2_cassie_sim.obj
+ 0002:0000066c       ??_C@_05NCNFOFLM@pitch?$AA@ 000000018000d66c     c2_cassie_sim.obj
+ 0002:00000674       ??_C@_03OBOHIBND@yaw?$AA@  000000018000d674     c2_cassie_sim.obj
+ 0002:00000678       ??_C@_01EANLCPLP@y?$AA@    000000018000d678     c2_cassie_sim.obj
+ 0002:00000680       ??_C@_0BI@GHCBHDNH@is_active_c2_cassie_sim?$AA@ 000000018000d680     c2_cassie_sim.obj
+ 0002:000006a0       ??_C@_0EN@NHAAPIGF@D?3?2Graduate?2robots?2GitHub?2Cassie@ 000000018000d6a0     c2_cassie_sim.obj
+ 0002:000006f0       ??_C@_09GNENBKCD@structure?$AA@ 000000018000d6f0     c2_cassie_sim.obj
+ 0002:00000700       ??_C@_0BF@JMKNOABP@vectorNavOrientation?$AA@ 000000018000d700     c2_cassie_sim.obj
+ 0002:00000718       ??_C@_0BJ@NGKHLEHA@vectorNavAngularVelocity?$AA@ 000000018000d718     c2_cassie_sim.obj
+ 0002:00000738       ??_C@_0BM@MGFBIHPM@vectorNavLinearAcceleration?$AA@ 000000018000d738     c2_cassie_sim.obj
+ 0002:00000758       ??_C@_0BH@CIHIDBAP@vectorNavMagneticField?$AA@ 000000018000d758     c2_cassie_sim.obj
+ 0002:00000770       ??_C@_0BC@JCNPCNEF@vectorNavPressure?$AA@ 000000018000d770     c2_cassie_sim.obj
+ 0002:00000788       ??_C@_0BF@FKCJPHEC@vectorNavTemperature?$AA@ 000000018000d788     c2_cassie_sim.obj
+ 0002:000007a0       ??_C@_0O@FBFHKIAG@motorPosition?$AA@ 000000018000d7a0     c2_cassie_sim.obj
+ 0002:000007b0       ??_C@_0O@DDHCEBOL@motorVelocity?$AA@ 000000018000d7b0     c2_cassie_sim.obj
+ 0002:000007c0       ??_C@_0O@GKLNEBFD@jointPosition?$AA@ 000000018000d7c0     c2_cassie_sim.obj
+ 0002:000007d0       ??_C@_0O@IJIKILO@jointVelocity?$AA@ 000000018000d7d0     c2_cassie_sim.obj
+ 0002:000007e0       ??_C@_05LNKCELPI@radio?$AA@ 000000018000d7e0     c2_cassie_sim.obj
+ 0002:000007e8       ??_C@_0O@LOFIDLAC@stateOfCharge?$AA@ 000000018000d7e8     c2_cassie_sim.obj
+ 0002:000007f8       ??_C@_06DJIHEMFI@status?$AA@ 000000018000d7f8     c2_cassie_sim.obj
+ 0002:00000800       ??_C@_0BAB@FMPOACFE@789ce554d14ec23014ed0c127dc09818@ 000000018000d800     c2_cassie_sim.obj
+ 0002:00000910       ??_C@_0BAB@IEPINLGH@ce38d3c504d53045e7cc03346c035af4@ 000000018000d910     c2_cassie_sim.obj
+ 0002:00000a20       ??_C@_0BAB@MEKCEADP@678e68c01c8a678ecd99ae9767ed3317@ 000000018000da20     c2_cassie_sim.obj
+ 0002:00000b30       ??_C@_0FN@ELIJJBL@6362a9014a1234847fb25fef95ffe1ff@ 000000018000db30     c2_cassie_sim.obj
+ 0002:00000b8d       ??_C@_00CNPNBAHC@?$AA@     000000018000db8d     c2_cassie_sim.obj
+ 0002:00000b90       ??_C@_07ONPBMBOP@message?$AA@ 000000018000db90     c2_cassie_sim.obj
+ 0002:00000b98       ??_C@_05KKCIMGE@error?$AA@ 000000018000db98     c2_cassie_sim.obj
+ 0002:00000ba0       ??_C@_08DNPJAFPH@checksum?$AA@ 000000018000dba0     c2_cassie_sim.obj
+ 0002:00000bac       ??_C@_06LMJKBNEF@inputs?$AA@ 000000018000dbac     c2_cassie_sim.obj
+ 0002:00000bb8       ??_C@_0L@HHPOFMCB@parameters?$AA@ 000000018000dbb8     c2_cassie_sim.obj
+ 0002:00000bc4       ??_C@_06MPPADOBF@locals?$AA@ 000000018000dbc4     c2_cassie_sim.obj
+ 0002:00000bd0       ??_C@_0BA@GNIFLIGG@postCodegenInfo?$AA@ 000000018000dbd0     c2_cassie_sim.obj
+ 0002:00000be0       ??_C@_04IAGNFIBA@size?$AA@ 000000018000dbe0     c2_cassie_sim.obj
+ 0002:00000be8       ??_C@_04GPMDFGEJ@type?$AA@ 000000018000dbe8     c2_cassie_sim.obj
+ 0002:00000bf0       ??_C@_0L@EKHILPHI@complexity?$AA@ 000000018000dbf0     c2_cassie_sim.obj
+ 0002:00000bfc       ??_C@_04BHIIPFEC@base?$AA@ 000000018000dbfc     c2_cassie_sim.obj
+ 0002:00000c04       ??_C@_05LFJLPLPG@fixpt?$AA@ 000000018000dc04     c2_cassie_sim.obj
+ 0002:00000c10       ??_C@_0BB@IBODCOLK@isFixedPointType?$AA@ 000000018000dc10     c2_cassie_sim.obj
+ 0002:00000c28       ??_C@_0N@FNBJKNNB@fallbackType?$AA@ 000000018000dc28     c2_cassie_sim.obj
+ 0002:00000c38       ??_C@_0P@LHIHPNIN@fallbackReason?$AA@ 000000018000dc38     c2_cassie_sim.obj
+ 0002:00000c48       ??_C@_0BD@JNJMKOMN@hiddenFallbackType?$AA@ 000000018000dc48     c2_cassie_sim.obj
+ 0002:00000c60       ??_C@_0BF@MIPJDBOP@hiddenFallbackReason?$AA@ 000000018000dc60     c2_cassie_sim.obj
+ 0002:00000c78       ??_C@_0BD@MBPFBLBL@incompatibleSymbol?$AA@ 000000018000dc78     c2_cassie_sim.obj
+ 0002:00000c8c       ??_C@_03PKHLKDKD@pre?$AA@  000000018000dc8c     c2_cassie_sim.obj
+ 0002:00000c90       ??_C@_0P@DFMNDNBL@hasBreakpoints?$AA@ 000000018000dc90     c2_cassie_sim.obj
+ 0002:00000ca0       ??_C@_04CGFJFPFD@none?$AA@ 000000018000dca0     c2_cassie_sim.obj
+ 0002:00000ca8       ??_C@_0CB@OGALNHBM@exportedFunctionsUsedByThisChart@ 000000018000dca8     c2_cassie_sim.obj
+ 0002:00000cd0       ??_C@_0BK@PBMGMDMC@exportedFunctionsChecksum?$AA@ 000000018000dcd0     c2_cassie_sim.obj
+ 0002:00000cf0       ??_C@_0O@MGONKHEL@chartChecksum?$AA@ 000000018000dcf0     c2_cassie_sim.obj
+ 0002:00000d00       ??_C@_07LLOMCJOI@varInfo?$AA@ 000000018000dd00     c2_cassie_sim.obj
+ 0002:00000d10       ??_C@_0HG@PCLPLPCG@100?5S1x3?8type?8?0?8srcId?8?0?8name?8?0?8a@ 000000018000dd10     c2_cassie_sim.obj
+ 0002:00000d88       ??_C@_0P@FJGKMAOK@eML_blk_kernel?$AA@ 000000018000dd88     c2_cassie_sim.obj
+ 0002:00000d98       ??_C@_0BE@BHNAFKED@Quaternion_to_Euler?$AA@ 000000018000dd98     c2_cassie_sim.obj
+ 0002:00000db0       ??_C@_0CE@GCOMPGOI@gatewayCannotBeInlinedMultipleTi@ 000000018000ddb0     c2_cassie_sim.obj
+ 0002:00000dd8       ??_C@_0BA@MNMMMMOJ@Embedded?5MATLAB?$AA@ 000000018000ddd8     c2_cassie_sim.obj
+ 0002:00000de8       ??_C@_0BD@LODGPJN@StateflowChartType?$AA@ 000000018000dde8     c2_cassie_sim.obj
+ 0002:00000e00       ??_C@_0CO@DMGIOHMB@Could?5not?5allocate?5memory?5for?5ch@ 000000018000de00     c2_cassie_sim.obj
+ 0002:00000e30       ??_C@_0GC@MMKNCHHP@Stateflow?5Internal?5Error?3?6Error?5@ 000000018000de30     c2_cassie_sim.obj
+ 0002:00000e98       __real@3fcd0ad2c7c63f7d    000000018000de98     c2_cassie_sim.obj
+ 0002:00000ea0       __real@3ff0000000000000    000000018000dea0     c2_cassie_sim.obj
+ 0002:00000ea8       __real@4000000000000000    000000018000dea8     c2_cassie_sim.obj
+ 0002:00000eb0       __real@4008000000000000    000000018000deb0     c2_cassie_sim.obj
+ 0002:00000eb8       __real@4024000000000000    000000018000deb8     c2_cassie_sim.obj
+ 0002:00000ec0       __real@402a000000000000    000000018000dec0     c2_cassie_sim.obj
+ 0002:00000ec8       __real@bff0000000000000    000000018000dec8     c2_cassie_sim.obj
+ 0002:00000ed0       __real@c000000000000000    000000018000ded0     c2_cassie_sim.obj
+ 0002:00000ee0       DYNAMIC_DIMENSION_DEF      000000018000dee0     cassie_sim_sfun_registry.obj
+ 0002:00000f00       _ssBadLevel2InputAccessMsg 000000018000df00     cassie_sim_sfun_registry.obj
+ 0002:00001090       _ssBadLevel2ReusableInputAccessMsg 000000018000e090     cassie_sim_sfun_registry.obj
+ 0002:00001190       _ssBadLevel2DirectFeedMsg  000000018000e190     cassie_sim_sfun_registry.obj
+ 0002:000012d0       _ssBadLevel2DirectFeedSolutionMsg 000000018000e2d0     cassie_sim_sfun_registry.obj
+ 0002:00001340       _ssBadLevel2ZeroDirectFeedMsg 000000018000e340     cassie_sim_sfun_registry.obj
+ 0002:00001480       _ssBadLevel2ZeroDirectFeedMsg2 000000018000e480     cassie_sim_sfun_registry.obj
+ 0002:00001568       ??_C@_0O@EMPBGPFO@sf_mex_unlock?$AA@ 000000018000e568     cassie_sim_sfun_registry.obj
+ 0002:00001578       ??_C@_0BG@IBKJPFO@Unsuccessful?5command?4?$AA@ 000000018000e578     cassie_sim_sfun_registry.obj
+ 0002:00001590       ??_C@_06EJFCAODB@sfc_sf?$AA@ 000000018000e590     cassie_sim_sfun_registry.obj
+ 0002:00001598       ??_C@_0BD@NMFAPBEK@mdlInitializeSizes?$AA@ 000000018000e598     cassie_sim_sfun_registry.obj
+ 0002:000015b0       ??_C@_0BJ@PBIFPMMD@mdlInitializeSampleTimes?$AA@ 000000018000e5b0     cassie_sim_sfun_registry.obj
+ 0002:000015d0       ??_C@_0CE@KLHPLFLE@Incorrect?5absolute?5tolerance?5val@ 000000018000e5d0     cassie_sim_sfun_registry.obj
+ 0002:00001600       ??_C@_0HG@PJFFKILG@To?5have?5a?5variable?5sample?5time?0?5@ 000000018000e600     cassie_sim_sfun_registry.obj
+ 0002:00001678       ??_C@_07KEMHKLEK@sf_sfun?$AA@ 000000018000e678     cassie_sim_sfun_registry.obj
+ 0002:00001680       ??_C@_0P@MPEDGIBG@block?5?8?$CFs?8?3?5?$CFs?$AA@ 000000018000e680     cassie_sim_sfun_registry.obj
+ 0002:00001690       ??_C@_0M@HFFOIJBL@Fatal?5Error?$AA@ 000000018000e690     cassie_sim_sfun_registry.obj
+ 0002:0000169c       ??_C@_05NFCMEHKM@modal?$AA@ 000000018000e69c     cassie_sim_sfun_registry.obj
+ 0002:000016a8       ??_C@_08DPAFNJAF@errordlg?$AA@ 000000018000e6a8     cassie_sim_sfun_registry.obj
+ 0002:000016c0       ??_C@_0GM@NCOEMALC@The?5macro?5ssSetInputPortReusable@ 000000018000e6c0     cassie_sim_sfun_registry.obj
+ 0002:00001730       ??_C@_0GO@JBNJGGGF@The?5macro?5ssSetOutputPortReusabl@ 000000018000e730     cassie_sim_sfun_registry.obj
+ 0002:000017a0       ??_C@_0DN@EDCPKDFF@Invalid?5SSWRITE_VALUE_type?5passe@ 000000018000e7a0     cassie_sim_sfun_registry.obj
+ 0002:000017e0       ??_C@_0CP@COAHDLED@Invalid?5name?5passed?5to?5ssWriteRT@ 000000018000e7e0     cassie_sim_sfun_registry.obj
+ 0002:00001810       ??_C@_0EE@GLEHIFPL@Invalid?5number?5of?5rows?5or?5column@ 000000018000e810     cassie_sim_sfun_registry.obj
+ 0002:00001858       ??_C@_0DH@BINNMHJO@Invalid?5value?5?$CINULL?$CJ?5passed?5to?5s@ 000000018000e858     cassie_sim_sfun_registry.obj
+ 0002:00001890       ??_C@_0DK@PPMMKFDB@Invalid?5SSWRITE_VALUE_type?5passe@ 000000018000e890     cassie_sim_sfun_registry.obj
+ 0002:000018d0       ??_C@_0DB@HCPGIJON@Invalid?5arguments?5passed?5to?5ssWr@ 000000018000e8d0     cassie_sim_sfun_registry.obj
+ 0002:00001908       ??_C@_0BE@OBOJGMOM@SFcnParamSettings?5?$HL?$AA@ 000000018000e908     cassie_sim_sfun_registry.obj
+ 0002:00001920       ??_C@_0DN@CGOCENGG@Invalid?5SSWRITE_VALUE_type?5passe@ 000000018000e920     cassie_sim_sfun_registry.obj
+ 0002:00001960       ??_C@_01CELHOKLL@?$HN?$AA@ 000000018000e960     cassie_sim_sfun_registry.obj
+ 0002:00001964       ??_C@_05DHHBANHM@RWork?$AA@ 000000018000e964     cassie_sim_sfun_registry.obj
+ 0002:0000196c       ??_C@_05FOGAPPCE@IWork?$AA@ 000000018000e96c     cassie_sim_sfun_registry.obj
+ 0002:00001974       ??_C@_05HKLJKMHH@PWork?$AA@ 000000018000e974     cassie_sim_sfun_registry.obj
+ 0002:00001980       ??_C@_0GB@GFODOFFG@Invalid?5work?5vector?5name?5?$CIvectNa@ 000000018000e980     cassie_sim_sfun_registry.obj
+ 0002:000019e8       ??_C@_0DN@PDLPCICK@nNames?5argument?5to?5ssWriteRTWWor@ 000000018000e9e8     cassie_sim_sfun_registry.obj
+ 0002:00001a28       ??_C@_0CP@MILANHFN@Invalid?5arguments?5passed?5to?5ssWr@ 000000018000ea28     cassie_sim_sfun_registry.obj
+ 0002:00001a58       ??_C@_0N@FPDCMLNJ@Num?$CFsDefines?$AA@ 000000018000ea58     cassie_sim_sfun_registry.obj
+ 0002:00001a68       ??_C@_0L@HMFJKAEE@?$CFsDefine?5?$HL?$AA@ 000000018000ea68     cassie_sim_sfun_registry.obj
+ 0002:00001a74       ??_C@_04FABLJDN@Name?$AA@  000000018000ea74     cassie_sim_sfun_registry.obj
+ 0002:00001a7c       ??_C@_05IBAMDCFI@Width?$AA@ 000000018000ea7c     cassie_sim_sfun_registry.obj
+ 0002:00001a88       ??_C@_0L@CECHCPAP@StartIndex?$AA@ 000000018000ea88     cassie_sim_sfun_registry.obj
+ 0002:00001aa0       ??_C@_0KG@IFBMNKEB@Error?5in?5ssWriteRTWWorkVect?4?5?5Th@ 000000018000eaa0     cassie_sim_sfun_registry.obj
+ 0002:00001b48       ??_C@_0DH@BBMNHACP@?$CFs?5must?5be?5called?5with?5at?5least?5@ 000000018000eb48     cassie_sim_sfun_registry.obj
+ 0002:00001b80       ??_C@_0CM@GDGLCJDD@?$CFs?5called?5with?5too?5many?5left?5han@ 000000018000eb80     cassie_sim_sfun_registry.obj
+ 0002:00001bb0       ??_C@_0ED@OKJJAFCJ@The?54th?5right?5hand?5argument?0?5FLA@ 000000018000ebb0     cassie_sim_sfun_registry.obj
+ 0002:00001bf8       ??_C@_0BK@LLGLBEPA@Invalid?5flag?5passed?5to?5?$CFs?$AA@ 000000018000ebf8     cassie_sim_sfun_registry.obj
+ 0002:00001c18       ??_C@_0BD@OAOBGOLA@simulink_only_sfcn?$AA@ 000000018000ec18     cassie_sim_sfun_registry.obj
+ 0002:00001c30       ??_C@_0JK@CJIBLHJF@S?9function?5name?5mismatch?4?5Name?5i@ 000000018000ec30     cassie_sim_sfun_registry.obj
+ 0002:00001cd0       ??_C@_0DA@DCMEFFND@Unexpected?5call?5to?5mdlInitialize@ 000000018000ecd0     cassie_sim_sfun_registry.obj
+ 0002:00001d00       ??_C@_0CI@BDILINDL@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000ed00     cassie_sim_sfun_registry.obj
+ 0002:00001d28       ??_C@_0CJ@DNAKGJD@Unexpected?5call?5to?5mdlSetOutputP@ 000000018000ed28     cassie_sim_sfun_registry.obj
+ 0002:00001d58       ??_C@_0DA@OOOCOJGO@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000ed58     cassie_sim_sfun_registry.obj
+ 0002:00001d88       ??_C@_0DB@FMFJBHIH@Unexpected?5call?5to?5mdlSetOutputP@ 000000018000ed88     cassie_sim_sfun_registry.obj
+ 0002:00001dc0       ??_C@_0DC@LPGACLKL@Unexpected?5call?5to?5mdlSetDefault@ 000000018000edc0     cassie_sim_sfun_registry.obj
+ 0002:00001df8       ??_C@_0DF@OHIOLCOF@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000edf8     cassie_sim_sfun_registry.obj
+ 0002:00001e30       ??_C@_0DG@LLALKLBE@Unexpected?5call?5to?5mdlSetOutputP@ 000000018000ee30     cassie_sim_sfun_registry.obj
+ 0002:00001e68       ??_C@_0CN@LBOEHFLM@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000ee68     cassie_sim_sfun_registry.obj
+ 0002:00001e98       ??_C@_0CO@KMKLFKNE@Unexpected?5call?5to?5mdlSetOutputP@ 000000018000ee98     cassie_sim_sfun_registry.obj
+ 0002:00001ec8       ??_C@_0CL@JAIJJBAI@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000eec8     cassie_sim_sfun_registry.obj
+ 0002:00001ef8       ??_C@_0CM@MNCLOINF@Unexpected?5call?5to?5mdlSetOutputP@ 000000018000eef8     cassie_sim_sfun_registry.obj
+ 0002:00001f28       ??_C@_0CO@OMIMJGF@Unexpected?5call?5to?5mdlSetDefault@ 000000018000ef28     cassie_sim_sfun_registry.obj
+ 0002:00001f58       ??_C@_0DA@LNAAAFDE@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000ef58     cassie_sim_sfun_registry.obj
+ 0002:00001f88       ??_C@_0DB@PLLPLNN@Unexpected?5call?5to?5mdlSetOutputP@ 000000018000ef88     cassie_sim_sfun_registry.obj
+ 0002:00001fc0       ??_C@_0DD@MOEEGKHI@Unexpected?5call?5to?5mdlSetDefault@ 000000018000efc0     cassie_sim_sfun_registry.obj
+ 0002:00001ff8       ??_C@_0CM@HDDIPBHF@Unexpected?5call?5to?5mdlSetInputPo@ 000000018000eff8     cassie_sim_sfun_registry.obj
+ 0002:00002028       ??_C@_0CE@JOMFECJO@Unexpected?5call?5to?5mdlSetWorkWid@ 000000018000f028     cassie_sim_sfun_registry.obj
+ 0002:00002050       ??_C@_0BK@KLFHBKND@Unexpected?5call?5to?5mdlRTW?$AA@ 000000018000f050     cassie_sim_sfun_registry.obj
+ 0002:00002070       ??_C@_0CL@HOPJILOF@Unexpected?5call?5to?5mdlInitialize@ 000000018000f070     cassie_sim_sfun_registry.obj
+ 0002:000020a0       ??_C@_0BM@JEIMJPOB@Unexpected?5call?5to?5mdlStart?$AA@ 000000018000f0a0     cassie_sim_sfun_registry.obj
+ 0002:000020c0       ??_C@_0BN@CLHMOMMN@Unexpected?5call?5to?5mdlEnable?$AA@ 000000018000f0c0     cassie_sim_sfun_registry.obj
+ 0002:000020e0       ??_C@_0BO@BCMJPGOP@Unexpected?5call?5to?5mdlDisable?$AA@ 000000018000f0e0     cassie_sim_sfun_registry.obj
+ 0002:00002100       ??_C@_0CG@FOAEDOAD@Unexpected?5call?5to?5mdlCheckParam@ 000000018000f100     cassie_sim_sfun_registry.obj
+ 0002:00002128       ??_C@_0CI@KIHLGLHP@Unexpected?5call?5to?5mdlProcessPar@ 000000018000f128     cassie_sim_sfun_registry.obj
+ 0002:00002150       ??_C@_0CC@DCKOELLK@Unexpected?5call?5to?5mdlExtModeExe@ 000000018000f150     cassie_sim_sfun_registry.obj
+ 0002:00002178       ??_C@_0BN@LNBOMBLO@Unexpected?5call?5to?5mdlUpdate?$AA@ 000000018000f178     cassie_sim_sfun_registry.obj
+ 0002:00002198       ??_C@_0CC@EJAAFOAP@Unexpected?5call?5to?5mdlDerivative@ 000000018000f198     cassie_sim_sfun_registry.obj
+ 0002:000021c0       ??_C@_0CC@KEMPIKAM@Unexpected?5call?5to?5mdlGetSimStat@ 000000018000f1c0     cassie_sim_sfun_registry.obj
+ 0002:000021e8       ??_C@_0CC@KLNBFMIP@Unexpected?5call?5to?5mdlSetSimStat@ 000000018000f1e8     cassie_sim_sfun_registry.obj
+ 0002:00002210       ??_C@_0CH@KPHFBGAC@Invalid?5flag?5encountered?5in?5simu@ 000000018000f210     cassie_sim_sfun_registry.obj
+ 0002:00002238       __real@41602cbca0000000    000000018000f238     cassie_sim_sfun_registry.obj
+ 0002:00002240       _pDefaultRawDllMain        000000018000f240     MSVCRT:crtdll.obj
+ 0002:00002240       _pRawDllMain               000000018000f240     MSVCRT:crtdll.obj
+ 0002:00002258       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 000000018000f258     MSVCRT:initsect.obj
+ 0002:0000225c       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 000000018000f25c     MSVCRT:initsect.obj
+ 0002:00002260       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 000000018000f260     MSVCRT:initsect.obj
+ 0002:00002264       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 000000018000f264     MSVCRT:initsect.obj
+ 0002:00002268       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 000000018000f268     MSVCRT:initsect.obj
+ 0002:0000226c       ?value@?$integral_constant@_N$0A@@std@@2_NB 000000018000f26c     MSVCRT:tncleanup.obj
+ 0002:0000226d       ?value@?$integral_constant@_N$00@std@@2_NB 000000018000f26d     MSVCRT:tncleanup.obj
+ 0002:00002270       _load_config_used          000000018000f270     MSVCRT:loadcfg.obj
+ 0002:000022e0       __rtc_iaa                  000000018000f2e0     MSVCRT:initsect.obj
+ 0002:000022e8       __rtc_izz                  000000018000f2e8     MSVCRT:initsect.obj
+ 0002:000022f0       __rtc_taa                  000000018000f2f0     MSVCRT:initsect.obj
+ 0002:000022f8       __rtc_tzz                  000000018000f2f8     MSVCRT:initsect.obj
+ 0002:00002fb8       __IMPORT_DESCRIPTOR_sf_runtime 000000018000ffb8     sf_runtime:sf_runtime.dll
+ 0002:00002fcc       __IMPORT_DESCRIPTOR_libmx  000000018000ffcc     libmx:libmx.dll
+ 0002:00002fe0       __IMPORT_DESCRIPTOR_libmex 000000018000ffe0     libmex:libmex.dll
+ 0002:00002ff4       __IMPORT_DESCRIPTOR_libut  000000018000fff4     libut:libut.dll
+ 0002:00003008       __IMPORT_DESCRIPTOR_libmwmathutil 0000000180010008     libmwmathutil:libmwmathutil.dll
+ 0002:0000301c       __IMPORT_DESCRIPTOR_libemlrt 000000018001001c     libemlrt:libemlrt.dll
+ 0002:00003030       __IMPORT_DESCRIPTOR_MSVCR120 0000000180010030     MSVCRT:MSVCR120.dll
+ 0002:00003044       __IMPORT_DESCRIPTOR_KERNEL32 0000000180010044     kernel32:KERNEL32.dll
+ 0002:00003058       __NULL_IMPORT_DESCRIPTOR   0000000180010058     sf_runtime:sf_runtime.dll
+ 0003:00000158       DYNAMIC_DIMENSION          0000000180012158     cassie_sim_sfun_registry.obj
+ 0003:00000180       __security_cookie          0000000180012180     MSVCRT:gs_cookie.obj
+ 0003:00000188       __security_cookie_complement 0000000180012188     MSVCRT:gs_cookie.obj
+ 0003:00000190       _fltused                   0000000180012190     MSVCRT:dllsupp.obj
+ 0003:00000194       __native_dllmain_reason    0000000180012194     MSVCRT:natstart.obj
+ 0003:000001c0       sfGlobalDebugInstanceStruct 00000001800121c0     cassie_sim_sfun_registry.obj
+ 0003:00000818       ?__type_info_root_node@@3U__type_info_node@@A 0000000180012818     MSVCRT:tncleanup.obj
+ 0003:00000828       _cassie_simMachineNumber_  0000000180012828     <common>
+ 0003:00000830       __native_startup_lock      0000000180012830     <common>
+ 0003:00000838       __native_startup_state     0000000180012838     <common>
+ 0003:00000840       __onexitend                0000000180012840     <common>
+ 0003:00000848       __onexitbegin              0000000180012848     <common>
+ 0003:00000850       __dyn_tls_init_callback    0000000180012850     <common>
+
+ entry point at        0001:0000a9ec
+
+ Static symbols
+
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     libut:libut.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     MSVCRT:MSVCR120.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     libut:libut.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwmathutil:libmwmathutil.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwmathutil:libmwmathutil.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0000:00000000       .debug$S                   0000000180000000     sf_runtime:sf_runtime.dll
+ 0001:00000930       c2_b_emlrt_marshallIn      0000000180001930 f   c2_cassie_sim.obj
+ 0001:00000a20       c2_b_error                 0000000180001a20 f   c2_cassie_sim.obj
+ 0001:00000b40       c2_b_sf_marshallIn         0000000180001b40 f   c2_cassie_sim.obj
+ 0001:00000c10       c2_b_sf_marshallOut        0000000180001c10 f   c2_cassie_sim.obj
+ 0001:00001430       c2_c_emlrt_marshallIn      0000000180002430 f   c2_cassie_sim.obj
+ 0001:000014a0       c2_c_sf_marshallIn         00000001800024a0 f   c2_cassie_sim.obj
+ 0001:000015c0       c2_c_sf_marshallOut        00000001800025c0 f   c2_cassie_sim.obj
+ 0001:00001660       c2_d_emlrt_marshallIn      0000000180002660 f   c2_cassie_sim.obj
+ 0001:00001710       c2_d_sf_marshallIn         0000000180002710 f   c2_cassie_sim.obj
+ 0001:00001800       c2_d_sf_marshallOut        0000000180002800 f   c2_cassie_sim.obj
+ 0001:000018a0       c2_e_emlrt_marshallIn      00000001800028a0 f   c2_cassie_sim.obj
+ 0001:00001920       c2_e_sf_marshallIn         0000000180002920 f   c2_cassie_sim.obj
+ 0001:00001a60       c2_e_sf_marshallOut        0000000180002a60 f   c2_cassie_sim.obj
+ 0001:00001ae0       c2_emlrt_marshallIn        0000000180002ae0 f   c2_cassie_sim.obj
+ 0001:00001b40       c2_error                   0000000180002b40 f   c2_cassie_sim.obj
+ 0001:00001c00       c2_f_emlrt_marshallIn      0000000180002c00 f   c2_cassie_sim.obj
+ 0001:00001cc0       c2_f_sf_marshallIn         0000000180002cc0 f   c2_cassie_sim.obj
+ 0001:00001de0       c2_f_sf_marshallOut        0000000180002de0 f   c2_cassie_sim.obj
+ 0001:00001e90       c2_g_emlrt_marshallIn      0000000180002e90 f   c2_cassie_sim.obj
+ 0001:00001f40       c2_g_sf_marshallOut        0000000180002f40 f   c2_cassie_sim.obj
+ 0001:00001ff0       c2_i_emlrt_marshallIn      0000000180002ff0 f   c2_cassie_sim.obj
+ 0001:00002090       c2_j_emlrt_marshallIn      0000000180003090 f   c2_cassie_sim.obj
+ 0001:000020f0       c2_mpower                  00000001800030f0 f   c2_cassie_sim.obj
+ 0001:00002100       c2_outputs_bus_io          0000000180003100 f   c2_cassie_sim.obj
+ 0001:000022b0       c2_sf_marshallIn           00000001800032b0 f   c2_cassie_sim.obj
+ 0001:00002440       c2_sf_marshallOut          0000000180003440 f   c2_cassie_sim.obj
+ 0001:00002520       c2_update_debugger_state_c2_cassie_sim 0000000180003520 f   c2_cassie_sim.obj
+ 0001:00002530       chart_debug_initialization 0000000180003530 f   c2_cassie_sim.obj
+ 0001:00002af0       chart_debug_initialize_data_addresses 0000000180003af0 f   c2_cassie_sim.obj
+ 0001:00002bf0       disable_c2_cassie_sim      0000000180003bf0 f   c2_cassie_sim.obj
+ 0001:00002c10       enable_c2_cassie_sim       0000000180003c10 f   c2_cassie_sim.obj
+ 0001:00002c30       finalize_c2_cassie_sim     0000000180003c30 f   c2_cassie_sim.obj
+ 0001:00002c40       get_sim_state_c2_cassie_sim 0000000180003c40 f   c2_cassie_sim.obj
+ 0001:00002dc0       initSimStructsc2_cassie_sim 0000000180003dc0 f   c2_cassie_sim.obj
+ 0001:00002dd0       init_dsm_address_info      0000000180003dd0 f   c2_cassie_sim.obj
+ 0001:00002de0       init_script_number_translation 0000000180003de0 f   c2_cassie_sim.obj
+ 0001:00002e30       init_simulink_io_address   0000000180003e30 f   c2_cassie_sim.obj
+ 0001:00002e80       initialize_c2_cassie_sim   0000000180003e80 f   c2_cassie_sim.obj
+ 0001:00002ed0       initialize_params_c2_cassie_sim 0000000180003ed0 f   c2_cassie_sim.obj
+ 0001:00002ee0       mdlProcessParameters_c2_cassie_sim 0000000180003ee0 f   c2_cassie_sim.obj
+ 0001:00002f70       mdlRTW_c2_cassie_sim       0000000180003f70 f   c2_cassie_sim.obj
+ 0001:00002fb0       mdlSetWorkWidths_c2_cassie_sim 0000000180003fb0 f   c2_cassie_sim.obj
+ 0001:000032e0       mdlStart_c2_cassie_sim     00000001800042e0 f   c2_cassie_sim.obj
+ 0001:00003480       mdl_start_c2_cassie_sim    0000000180004480 f   c2_cassie_sim.obj
+ 0001:00003490       set_sim_state_c2_cassie_sim 0000000180004490 f   c2_cassie_sim.obj
+ 0001:00003f90       sf_gateway_c2_cassie_sim   0000000180004f90 f   c2_cassie_sim.obj
+ 0001:00005c80       sf_get_instance_specialization 0000000180006c80 f   c2_cassie_sim.obj
+ 0001:00005c90       sf_get_sim_state_info_c2_cassie_sim 0000000180006c90 f   c2_cassie_sim.obj
+ 0001:00005da0       sf_opaque_disable_c2_cassie_sim 0000000180006da0 f   c2_cassie_sim.obj
+ 0001:00005dc0       sf_opaque_enable_c2_cassie_sim 0000000180006dc0 f   c2_cassie_sim.obj
+ 0001:00005de0       sf_opaque_gateway_c2_cassie_sim 0000000180006de0 f   c2_cassie_sim.obj
+ 0001:00005df0       sf_opaque_get_sim_state_c2_cassie_sim 0000000180006df0 f   c2_cassie_sim.obj
+ 0001:00005e10       sf_opaque_initialize_c2_cassie_sim 0000000180006e10 f   c2_cassie_sim.obj
+ 0001:00005ea0       sf_opaque_set_sim_state_c2_cassie_sim 0000000180006ea0 f   c2_cassie_sim.obj
+ 0001:00005ec0       sf_opaque_terminate_c2_cassie_sim 0000000180006ec0 f   c2_cassie_sim.obj
+ 0001:00005f30       ProcessMexSfunctionCmdLineCall 0000000180006f30 f   cassie_sim_sfun_registry.obj
+ 0001:00006170       _CreateSimStruct           0000000180007170 f   cassie_sim_sfun_registry.obj
+ 0001:00006290       _ProcessMexSfunctionCmdLineCall 0000000180007290 f   cassie_sim_sfun_registry.obj
+ 0001:00006750       _RegNumInputPortsCB        0000000180007750 f   cassie_sim_sfun_registry.obj
+ 0001:000067a0       _RegNumOutputPortsCB       00000001800077a0 f   cassie_sim_sfun_registry.obj
+ 0001:000067f0       _ssFatalError              00000001800077f0 f   cassie_sim_sfun_registry.obj
+ 0001:00007930       mdlDerivatives             0000000180008930 f   cassie_sim_sfun_registry.obj
+ 0001:00007940       mdlDisable                 0000000180008940 f   cassie_sim_sfun_registry.obj
+ 0001:00007950       mdlEnable                  0000000180008950 f   cassie_sim_sfun_registry.obj
+ 0001:00007960       mdlExtModeExec             0000000180008960 f   cassie_sim_sfun_registry.obj
+ 0001:00007990       mdlGetTimeOfNextVarHit     0000000180008990 f   cassie_sim_sfun_registry.obj
+ 0001:000079c0       mdlInitializeConditions    00000001800089c0 f   cassie_sim_sfun_registry.obj
+ 0001:000079d0       mdlInitializeSampleTimes   00000001800089d0 f   cassie_sim_sfun_registry.obj
+ 0001:000079f0       mdlInitializeSizes         00000001800089f0 f   cassie_sim_sfun_registry.obj
+ 0001:00007a10       mdlOutputs                 0000000180008a10 f   cassie_sim_sfun_registry.obj
+ 0001:00007a20       mdlProcessParameters       0000000180008a20 f   cassie_sim_sfun_registry.obj
+ 0001:00007a40       mdlRTW                     0000000180008a40 f   cassie_sim_sfun_registry.obj
+ 0001:00007ab0       mdlSetWorkWidths           0000000180008ab0 f   cassie_sim_sfun_registry.obj
+ 0001:00007ad0       mdlStart                   0000000180008ad0 f   cassie_sim_sfun_registry.obj
+ 0001:00007ae0       mdlTerminate               0000000180008ae0 f   cassie_sim_sfun_registry.obj
+ 0001:00007af0       mdlUpdate                  0000000180008af0 f   cassie_sim_sfun_registry.obj
+ 0001:00007b00       mdlZeroCrossings           0000000180008b00 f   cassie_sim_sfun_registry.obj
+ 0001:00007b10       mdl_derivatives_processing 0000000180008b10 f   cassie_sim_sfun_registry.obj
+ 0001:00007b40       mdl_disable_processing     0000000180008b40 f   cassie_sim_sfun_registry.obj
+ 0001:00007b60       mdl_enable_processing      0000000180008b60 f   cassie_sim_sfun_registry.obj
+ 0001:00007b80       mdl_ext_mode_exec_processing 0000000180008b80 f   cassie_sim_sfun_registry.obj
+ 0001:00007bb0       mdl_initialize_conditions_processing 0000000180008bb0 f   cassie_sim_sfun_registry.obj
+ 0001:00007be0       mdl_outputs_continuous_legacy 0000000180008be0 f   cassie_sim_sfun_registry.obj
+ 0001:00007c60       mdl_outputs_processing     0000000180008c60 f   cassie_sim_sfun_registry.obj
+ 0001:00007d00       mdl_start_processing       0000000180008d00 f   cassie_sim_sfun_registry.obj
+ 0001:00007dc0       mdl_terminate_processing   0000000180008dc0 f   cassie_sim_sfun_registry.obj
+ 0001:00007e40       mdl_update_processing      0000000180008e40 f   cassie_sim_sfun_registry.obj
+ 0001:00007e70       mdl_zeroCrossings_processing 0000000180008e70 f   cassie_sim_sfun_registry.obj
+ 0001:00008848       $LN148                     0000000180009848     cassie_sim_sfun_registry.obj
+ 0001:00008910       sf_debug_api_wrapper       0000000180009910 f   cassie_sim_sfun_registry.obj
+ 0001:00009164       $LN17                      000000018000a164     cassie_sim_sfun_registry.obj
+ 0001:00009b40       $LN28                      000000018000ab40     cassie_sim_sfun_registry.obj
+ 0001:00009e0c       $LN47                      000000018000ae0c     cassie_sim_sfun_registry.obj
+ 0001:0000a014       $LN42                      000000018000b014     cassie_sim_sfun_registry.obj
+ 0001:0000a6e0       $$000000                   000000018000b6e0     MSVCRT:amdsecgs.obj
+ 0001:0000a734       pre_c_init                 000000018000b734 f   MSVCRT:crtdll.obj
+ 0001:0000aa2c       __DllMainCRTStartup        000000018000ba2c f   MSVCRT:crtdll.obj
+ 0001:0000b210       __DllMainCRTStartup$filt$0 000000018000c210 f   MSVCRT:crtdll.obj
+ 0001:0000b235       __DllMainCRTStartup$fin$1  000000018000c235 f   MSVCRT:crtdll.obj
+ 0001:0000b250       _IsNonwritableInCurrentImage$filt$0 000000018000c250 f   MSVCRT:pesect.obj
+ 0001:0000b270       _onexit$fin$0              000000018000c270 f   MSVCRT:atonexit.obj
+ 0002:000004b8       pcinit                     000000018000d4b8     MSVCRT:crtdll.obj
+ 0002:000004c0       pinit                      000000018000d4c0     MSVCRT:atonexit.obj
+ 0002:00002248       GS_ExceptionPointers       000000018000f248     MSVCRT:gs_report.obj
+ 0002:00002300       $unwind$load_cassie_sim_optimization_info 000000018000f300     cassie_sim_sfun.obj
+ 0002:00002310       $unwind$unload_cassie_sim_optimization_info 000000018000f310     cassie_sim_sfun.obj
+ 0002:00002318       $unwind$sf_cassie_sim_method_dispatcher 000000018000f318     cassie_sim_sfun.obj
+ 0002:00002320       $unwind$sf_cassie_sim_process_check_sum_call 000000018000f320     cassie_sim_sfun.obj
+ 0002:00002334       $chain$0$sf_cassie_sim_process_check_sum_call 000000018000f334     cassie_sim_sfun.obj
+ 0002:00002348       $chain$1$sf_cassie_sim_process_check_sum_call 000000018000f348     cassie_sim_sfun.obj
+ 0002:00002358       $unwind$sf_cassie_sim_autoinheritance_info 000000018000f358     cassie_sim_sfun.obj
+ 0002:00002370       $unwind$sf_cassie_sim_get_eml_resolved_functions_info 000000018000f370     cassie_sim_sfun.obj
+ 0002:00002384       $unwind$sf_cassie_sim_third_party_uses_info 000000018000f384     cassie_sim_sfun.obj
+ 0002:0000239c       $unwind$sf_cassie_sim_jit_fallback_info 000000018000f39c     cassie_sim_sfun.obj
+ 0002:000023b4       $unwind$sf_cassie_sim_updateBuildInfo_args_info 000000018000f3b4     cassie_sim_sfun.obj
+ 0002:000023cc       $unwind$cassie_sim_debug_initialize 000000018000f3cc     cassie_sim_sfun.obj
+ 0002:000023d4       $unwind$sf_c2_cassie_sim_get_eml_resolved_functions_info 000000018000f3d4     c2_cassie_sim.obj
+ 0002:000023e4       $unwind$sf_c2_cassie_sim_get_check_sum 000000018000f3e4     c2_cassie_sim.obj
+ 0002:000023ec       $unwind$chart_debug_initialization 000000018000f3ec     c2_cassie_sim.obj
+ 0002:000023f8       $chain$0$chart_debug_initialization 000000018000f3f8     c2_cassie_sim.obj
+ 0002:0000240c       $chain$5$chart_debug_initialization 000000018000f40c     c2_cassie_sim.obj
+ 0002:00002430       $chain$6$chart_debug_initialization 000000018000f430     c2_cassie_sim.obj
+ 0002:00002450       $chain$7$chart_debug_initialization 000000018000f450     c2_cassie_sim.obj
+ 0002:00002460       $unwind$chart_debug_initialize_data_addresses 000000018000f460     c2_cassie_sim.obj
+ 0002:00002468       $chain$0$chart_debug_initialize_data_addresses 000000018000f468     c2_cassie_sim.obj
+ 0002:0000247c       $chain$1$chart_debug_initialize_data_addresses 000000018000f47c     c2_cassie_sim.obj
+ 0002:0000248c       $unwind$initialize_c2_cassie_sim 000000018000f48c     c2_cassie_sim.obj
+ 0002:00002494       $unwind$enable_c2_cassie_sim 000000018000f494     c2_cassie_sim.obj
+ 0002:0000249c       $unwind$disable_c2_cassie_sim 000000018000f49c     c2_cassie_sim.obj
+ 0002:000024a4       $unwind$get_sim_state_c2_cassie_sim 000000018000f4a4     c2_cassie_sim.obj
+ 0002:000024b0       $unwind$set_sim_state_c2_cassie_sim 000000018000f4b0     c2_cassie_sim.obj
+ 0002:000024d0       $unwind$sf_gateway_c2_cassie_sim 000000018000f4d0     c2_cassie_sim.obj
+ 0002:00002504       $unwind$init_script_number_translation 000000018000f504     c2_cassie_sim.obj
+ 0002:00002510       $unwind$c2_sf_marshallOut  000000018000f510     c2_cassie_sim.obj
+ 0002:00002520       $unwind$c2_emlrt_marshallIn 000000018000f520     c2_cassie_sim.obj
+ 0002:0000252c       $unwind$c2_b_emlrt_marshallIn 000000018000f52c     c2_cassie_sim.obj
+ 0002:00002544       $unwind$c2_sf_marshallIn   000000018000f544     c2_cassie_sim.obj
+ 0002:0000255c       $unwind$c2_b_sf_marshallOut 000000018000f55c     c2_cassie_sim.obj
+ 0002:00002574       $unwind$c2_c_sf_marshallOut 000000018000f574     c2_cassie_sim.obj
+ 0002:0000257c       $unwind$c2_c_emlrt_marshallIn 000000018000f57c     c2_cassie_sim.obj
+ 0002:00002588       $unwind$c2_b_sf_marshallIn 000000018000f588     c2_cassie_sim.obj
+ 0002:00002598       $unwind$c2_d_sf_marshallOut 000000018000f598     c2_cassie_sim.obj
+ 0002:000025a8       $unwind$c2_d_emlrt_marshallIn 000000018000f5a8     c2_cassie_sim.obj
+ 0002:000025bc       $unwind$c2_c_sf_marshallIn 000000018000f5bc     c2_cassie_sim.obj
+ 0002:000025e0       $unwind$c2_e_sf_marshallOut 000000018000f5e0     c2_cassie_sim.obj
+ 0002:000025e8       $unwind$c2_e_emlrt_marshallIn 000000018000f5e8     c2_cassie_sim.obj
+ 0002:000025f4       $unwind$c2_d_sf_marshallIn 000000018000f5f4     c2_cassie_sim.obj
+ 0002:0000260c       $unwind$c2_f_sf_marshallOut 000000018000f60c     c2_cassie_sim.obj
+ 0002:0000261c       $unwind$c2_f_emlrt_marshallIn 000000018000f61c     c2_cassie_sim.obj
+ 0002:00002634       $unwind$c2_e_sf_marshallIn 000000018000f634     c2_cassie_sim.obj
+ 0002:00002660       $unwind$c2_g_sf_marshallOut 000000018000f660     c2_cassie_sim.obj
+ 0002:00002670       $unwind$c2_g_emlrt_marshallIn 000000018000f670     c2_cassie_sim.obj
+ 0002:00002684       $unwind$c2_f_sf_marshallIn 000000018000f684     c2_cassie_sim.obj
+ 0002:000026ac       $unwind$c2_error           000000018000f6ac     c2_cassie_sim.obj
+ 0002:000026b4       $unwind$c2_b_error         000000018000f6b4     c2_cassie_sim.obj
+ 0002:000026bc       $unwind$c2_outputs_bus_io  000000018000f6bc     c2_cassie_sim.obj
+ 0002:000026d8       $unwind$c2_i_emlrt_marshallIn 000000018000f6d8     c2_cassie_sim.obj
+ 0002:000026e0       $unwind$c2_j_emlrt_marshallIn 000000018000f6e0     c2_cassie_sim.obj
+ 0002:000026e8       $unwind$init_simulink_io_address 000000018000f6e8     c2_cassie_sim.obj
+ 0002:000026f0       $unwind$sf_c2_cassie_sim_get_post_codegen_info 000000018000f6f0     c2_cassie_sim.obj
+ 0002:00002704       $unwind$sf_c2_cassie_sim_get_autoinheritance_info 000000018000f704     c2_cassie_sim.obj
+ 0002:0000272c       $unwind$sf_c2_cassie_sim_jit_fallback_info 000000018000f72c     c2_cassie_sim.obj
+ 0002:0000274c       $unwind$sf_get_sim_state_info_c2_cassie_sim 000000018000f74c     c2_cassie_sim.obj
+ 0002:0000275c       $unwind$sf_opaque_initialize_c2_cassie_sim 000000018000f75c     c2_cassie_sim.obj
+ 0002:00002768       $unwind$sf_opaque_enable_c2_cassie_sim 000000018000f768     c2_cassie_sim.obj
+ 0002:00002770       $unwind$sf_opaque_disable_c2_cassie_sim 000000018000f770     c2_cassie_sim.obj
+ 0002:00002778       $unwind$sf_opaque_get_sim_state_c2_cassie_sim 000000018000f778     c2_cassie_sim.obj
+ 0002:00002780       $unwind$sf_opaque_set_sim_state_c2_cassie_sim 000000018000f780     c2_cassie_sim.obj
+ 0002:00002788       $unwind$sf_opaque_terminate_c2_cassie_sim 000000018000f788     c2_cassie_sim.obj
+ 0002:00002790       $chain$0$sf_opaque_terminate_c2_cassie_sim 000000018000f790     c2_cassie_sim.obj
+ 0002:000027a4       $chain$1$sf_opaque_terminate_c2_cassie_sim 000000018000f7a4     c2_cassie_sim.obj
+ 0002:000027b4       $unwind$mdlProcessParameters_c2_cassie_sim 000000018000f7b4     c2_cassie_sim.obj
+ 0002:000027bc       $chain$0$mdlProcessParameters_c2_cassie_sim 000000018000f7bc     c2_cassie_sim.obj
+ 0002:000027d0       $chain$1$mdlProcessParameters_c2_cassie_sim 000000018000f7d0     c2_cassie_sim.obj
+ 0002:000027e4       $chain$2$mdlProcessParameters_c2_cassie_sim 000000018000f7e4     c2_cassie_sim.obj
+ 0002:000027f4       $chain$3$mdlProcessParameters_c2_cassie_sim 000000018000f7f4     c2_cassie_sim.obj
+ 0002:00002804       $unwind$mdlSetWorkWidths_c2_cassie_sim 000000018000f804     c2_cassie_sim.obj
+ 0002:0000280c       $chain$2$mdlSetWorkWidths_c2_cassie_sim 000000018000f80c     c2_cassie_sim.obj
+ 0002:00002828       $chain$3$mdlSetWorkWidths_c2_cassie_sim 000000018000f828     c2_cassie_sim.obj
+ 0002:00002840       $chain$4$mdlSetWorkWidths_c2_cassie_sim 000000018000f840     c2_cassie_sim.obj
+ 0002:00002850       $unwind$mdlRTW_c2_cassie_sim 000000018000f850     c2_cassie_sim.obj
+ 0002:00002858       $unwind$mdlStart_c2_cassie_sim 000000018000f858     c2_cassie_sim.obj
+ 0002:00002864       $unwind$mexFunction        000000018000f864     cassie_sim_sfun_registry.obj
+ 0002:00002878       $unwind$_ssSetInputPortDirectFeedThroughFcn 000000018000f878     cassie_sim_sfun_registry.obj
+ 0002:00002894       $unwind$_ssGetInputPortSignalPtrsFcn 000000018000f894     cassie_sim_sfun_registry.obj
+ 0002:000028a8       $chain$0$_ssGetInputPortSignalPtrsFcn 000000018000f8a8     cassie_sim_sfun_registry.obj
+ 0002:000028bc       $chain$1$_ssGetInputPortSignalPtrsFcn 000000018000f8bc     cassie_sim_sfun_registry.obj
+ 0002:000028cc       $chain$2$_ssGetInputPortSignalPtrsFcn 000000018000f8cc     cassie_sim_sfun_registry.obj
+ 0002:000028e0       $chain$3$_ssGetInputPortSignalPtrsFcn 000000018000f8e0     cassie_sim_sfun_registry.obj
+ 0002:000028f0       $unwind$_ssGetInputPortSignalFcn 000000018000f8f0     cassie_sim_sfun_registry.obj
+ 0002:00002904       $chain$0$_ssGetInputPortSignalFcn 000000018000f904     cassie_sim_sfun_registry.obj
+ 0002:00002918       $chain$1$_ssGetInputPortSignalFcn 000000018000f918     cassie_sim_sfun_registry.obj
+ 0002:00002928       $chain$2$_ssGetInputPortSignalFcn 000000018000f928     cassie_sim_sfun_registry.obj
+ 0002:0000293c       $chain$3$_ssGetInputPortSignalFcn 000000018000f93c     cassie_sim_sfun_registry.obj
+ 0002:0000294c       $unwind$_ssSetInputPortReusableFcn 000000018000f94c     cassie_sim_sfun_registry.obj
+ 0002:00002968       $unwind$_ssSetOutputPortReusableFcn 000000018000f968     cassie_sim_sfun_registry.obj
+ 0002:00002984       $unwind$_ssRegisterSymbolicDimsExpr 000000018000f984     cassie_sim_sfun_registry.obj
+ 0002:0000298c       $unwind$_ssRegisterSymbolicDims 000000018000f98c     cassie_sim_sfun_registry.obj
+ 0002:00002994       $unwind$_ssRegisterSymbolicDimsString 000000018000f994     cassie_sim_sfun_registry.obj
+ 0002:0000299c       $unwind$_ssRegisterSymbolicDimsIntValue 000000018000f99c     cassie_sim_sfun_registry.obj
+ 0002:000029a4       $unwind$_ssRegisterSymbolicDimsPlus 000000018000f9a4     cassie_sim_sfun_registry.obj
+ 0002:000029ac       $unwind$_ssRegisterSymbolicDimsMinus 000000018000f9ac     cassie_sim_sfun_registry.obj
+ 0002:000029b4       $unwind$_ssRegisterSymbolicDimsMultiply 000000018000f9b4     cassie_sim_sfun_registry.obj
+ 0002:000029bc       $unwind$_ssRegisterSymbolicDimsDivide 000000018000f9bc     cassie_sim_sfun_registry.obj
+ 0002:000029c4       $unwind$_ssGetNumSymbolicDims 000000018000f9c4     cassie_sim_sfun_registry.obj
+ 0002:000029cc       $unwind$_ssGetSymbolicDim  000000018000f9cc     cassie_sim_sfun_registry.obj
+ 0002:000029d4       $unwind$_ssSetInputPortSymbolicDimsId 000000018000f9d4     cassie_sim_sfun_registry.obj
+ 0002:000029dc       $unwind$_ssGetCompInputPortSymbolicDimsId 000000018000f9dc     cassie_sim_sfun_registry.obj
+ 0002:000029e4       $unwind$_ssSetCompInputPortSymbolicDimsId 000000018000f9e4     cassie_sim_sfun_registry.obj
+ 0002:000029ec       $unwind$_ssSetOutputPortSymbolicDimsId 000000018000f9ec     cassie_sim_sfun_registry.obj
+ 0002:000029f4       $unwind$_ssGetCompOutputPortSymbolicDimsId 000000018000f9f4     cassie_sim_sfun_registry.obj
+ 0002:000029fc       $unwind$_ssSetCompOutputPortSymbolicDimsId 000000018000f9fc     cassie_sim_sfun_registry.obj
+ 0002:00002a04       $unwind$_ssSetCompDWorkSymbolicDimsId 000000018000fa04     cassie_sim_sfun_registry.obj
+ 0002:00002a0c       $unwind$ssGetIsZeroCrossControlDisabled 000000018000fa0c     cassie_sim_sfun_registry.obj
+ 0002:00002a14       $unwind$ssSetIsInputPortUsedForContZcSignal 000000018000fa14     cassie_sim_sfun_registry.obj
+ 0002:00002a1c       $unwind$ssSetZcSignalIsZcElementDisc 000000018000fa1c     cassie_sim_sfun_registry.obj
+ 0002:00002a2c       $unwind$ssSetZcSignalWidth 000000018000fa2c     cassie_sim_sfun_registry.obj
+ 0002:00002a34       $unwind$ssSetZcSignalZcEventType 000000018000fa34     cassie_sim_sfun_registry.obj
+ 0002:00002a3c       $unwind$ssSetZcSignalType  000000018000fa3c     cassie_sim_sfun_registry.obj
+ 0002:00002a44       $unwind$ssSetZcSignalZcTol 000000018000fa44     cassie_sim_sfun_registry.obj
+ 0002:00002a4c       $unwind$ssSetZcSignalNeedsEventNotification 000000018000fa4c     cassie_sim_sfun_registry.obj
+ 0002:00002a54       $unwind$ssCreateAndAddZcSignalInfo 000000018000fa54     cassie_sim_sfun_registry.obj
+ 0002:00002a5c       $unwind$ssCloneAndAddZcSignalInfo 000000018000fa5c     cassie_sim_sfun_registry.obj
+ 0002:00002a64       $unwind$ssGetNumZcSignals  000000018000fa64     cassie_sim_sfun_registry.obj
+ 0002:00002a6c       $unwind$ssGetZcSignalVector 000000018000fa6c     cassie_sim_sfun_registry.obj
+ 0002:00002a74       $unwind$ssGetZcSignalName  000000018000fa74     cassie_sim_sfun_registry.obj
+ 0002:00002a7c       $unwind$ssGetZcSignalWidth 000000018000fa7c     cassie_sim_sfun_registry.obj
+ 0002:00002a84       $unwind$ssGetZcSignalZcEventType 000000018000fa84     cassie_sim_sfun_registry.obj
+ 0002:00002a8c       $unwind$ssGetZcSignalZcEvents 000000018000fa8c     cassie_sim_sfun_registry.obj
+ 0002:00002a94       $unwind$ssGetZcSignalType  000000018000fa94     cassie_sim_sfun_registry.obj
+ 0002:00002a9c       $unwind$ssGetZcSignalZcTol 000000018000fa9c     cassie_sim_sfun_registry.obj
+ 0002:00002aa4       $unwind$ssGetZcSignalNeedsEventNotification 000000018000faa4     cassie_sim_sfun_registry.obj
+ 0002:00002aac       $unwind$ssGetZcSignalIsZcElementDisc 000000018000faac     cassie_sim_sfun_registry.obj
+ 0002:00002abc       $unwind$ssGetIsInputPortElementContinuous 000000018000fabc     cassie_sim_sfun_registry.obj
+ 0002:00002acc       $unwind$ssGetDTypeIdFromMxArray 000000018000facc     cassie_sim_sfun_registry.obj
+ 0002:00002ad4       $unwind$ssWriteRTWNameValuePair 000000018000fad4     cassie_sim_sfun_registry.obj
+ 0002:00002ae4       $chain$0$ssWriteRTWNameValuePair 000000018000fae4     cassie_sim_sfun_registry.obj
+ 0002:00002af8       $chain$1$ssWriteRTWNameValuePair 000000018000faf8     cassie_sim_sfun_registry.obj
+ 0002:00002b08       $unwind$ssWriteRTWParamSettings 000000018000fb08     cassie_sim_sfun_registry.obj
+ 0002:00002b14       $chain$1$ssWriteRTWParamSettings 000000018000fb14     cassie_sim_sfun_registry.obj
+ 0002:00002b2c       $chain$2$ssWriteRTWParamSettings 000000018000fb2c     cassie_sim_sfun_registry.obj
+ 0002:00002b3c       $chain$3$ssWriteRTWParamSettings 000000018000fb3c     cassie_sim_sfun_registry.obj
+ 0002:00002b54       $chain$4$ssWriteRTWParamSettings 000000018000fb54     cassie_sim_sfun_registry.obj
+ 0002:00002b64       $unwind$ssWriteRTWParameters 000000018000fb64     cassie_sim_sfun_registry.obj
+ 0002:00002b70       $chain$1$ssWriteRTWParameters 000000018000fb70     cassie_sim_sfun_registry.obj
+ 0002:00002b88       $chain$2$ssWriteRTWParameters 000000018000fb88     cassie_sim_sfun_registry.obj
+ 0002:00002b98       $chain$3$ssWriteRTWParameters 000000018000fb98     cassie_sim_sfun_registry.obj
+ 0002:00002bb0       $chain$4$ssWriteRTWParameters 000000018000fbb0     cassie_sim_sfun_registry.obj
+ 0002:00002bc0       $unwind$ssWriteRTWWorkVect 000000018000fbc0     cassie_sim_sfun_registry.obj
+ 0002:00002be8       $unwind$ssWriteRTWMxVectParam 000000018000fbe8     cassie_sim_sfun_registry.obj
+ 0002:00002bf0       $unwind$ssWriteRTWMx2dMatParam 000000018000fbf0     cassie_sim_sfun_registry.obj
+ 0002:00002bf8       $unwind$_ssSetInputPortMatrixDimensions 000000018000fbf8     cassie_sim_sfun_registry.obj
+ 0002:00002c00       $unwind$_ssSetOutputPortMatrixDimensions 000000018000fc00     cassie_sim_sfun_registry.obj
+ 0002:00002c08       $unwind$_ssSetInputPortVectorDimension 000000018000fc08     cassie_sim_sfun_registry.obj
+ 0002:00002c10       $unwind$_ssSetOutputPortVectorDimension 000000018000fc10     cassie_sim_sfun_registry.obj
+ 0002:00002c18       $unwind$ssIsRunTimeParamTunable 000000018000fc18     cassie_sim_sfun_registry.obj
+ 0002:00002c20       $unwind$ssGetSFuncBlockHandle 000000018000fc20     cassie_sim_sfun_registry.obj
+ 0002:00002c28       $unwind$_ssGetCallSystemNumFcnCallDestinations 000000018000fc28     cassie_sim_sfun_registry.obj
+ 0002:00002c30       $unwind$ssGetParameterTuningCompliance 000000018000fc30     cassie_sim_sfun_registry.obj
+ 0002:00002c38       $unwind$ssWarning          000000018000fc38     cassie_sim_sfun_registry.obj
+ 0002:00002c50       $unwind$sf_process_check_sum_call 000000018000fc50     cassie_sim_sfun_registry.obj
+ 0002:00002c58       $unwind$sf_process_autoinheritance_call 000000018000fc58     cassie_sim_sfun_registry.obj
+ 0002:00002c70       $unwind$sf_process_get_third_party_uses_info_call 000000018000fc70     cassie_sim_sfun_registry.obj
+ 0002:00002c88       $unwind$sf_process_get_jit_fallback_info_call 000000018000fc88     cassie_sim_sfun_registry.obj
+ 0002:00002ca0       $unwind$sf_process_get_updateBuildInfo_args_info_call 000000018000fca0     cassie_sim_sfun_registry.obj
+ 0002:00002cb8       $unwind$sf_process_get_eml_resolved_functions_info_call 000000018000fcb8     cassie_sim_sfun_registry.obj
+ 0002:00002cd0       $unwind$sf_mex_unlock_call 000000018000fcd0     cassie_sim_sfun_registry.obj
+ 0002:00002ce0       $unwind$sf_debug_api_wrapper 000000018000fce0     cassie_sim_sfun_registry.obj
+ 0002:00002ce8       $unwind$ProcessMexSfunctionCmdLineCall 000000018000fce8     cassie_sim_sfun_registry.obj
+ 0002:00002cfc       $unwind$sf_machine_global_method_dispatcher 000000018000fcfc     cassie_sim_sfun_registry.obj
+ 0002:00002d0c       $unwind$sf_machine_global_terminator 000000018000fd0c     cassie_sim_sfun_registry.obj
+ 0002:00002d14       $unwind$sf_machine_global_initializer 000000018000fd14     cassie_sim_sfun_registry.obj
+ 0002:00002d20       $unwind$mdlGetSimState     000000018000fd20     cassie_sim_sfun_registry.obj
+ 0002:00002d28       $unwind$mdlSetSimState     000000018000fd28     cassie_sim_sfun_registry.obj
+ 0002:00002d34       $unwind$mdl_start_processing 000000018000fd34     cassie_sim_sfun_registry.obj
+ 0002:00002d44       $unwind$mdl_terminate_processing 000000018000fd44     cassie_sim_sfun_registry.obj
+ 0002:00002d50       $unwind$mdl_outputs_continuous_legacy 000000018000fd50     cassie_sim_sfun_registry.obj
+ 0002:00002d58       $unwind$mdl_outputs_processing 000000018000fd58     cassie_sim_sfun_registry.obj
+ 0002:00002d64       $unwind$mdl_zeroCrossings_processing 000000018000fd64     cassie_sim_sfun_registry.obj
+ 0002:00002d6c       $unwind$mdl_derivatives_processing 000000018000fd6c     cassie_sim_sfun_registry.obj
+ 0002:00002d74       $unwind$mdl_initialize_conditions_processing 000000018000fd74     cassie_sim_sfun_registry.obj
+ 0002:00002d7c       $unwind$mdl_ext_mode_exec_processing 000000018000fd7c     cassie_sim_sfun_registry.obj
+ 0002:00002d84       $unwind$mdlRTW             000000018000fd84     cassie_sim_sfun_registry.obj
+ 0002:00002d90       $unwind$mdl_enable_processing 000000018000fd90     cassie_sim_sfun_registry.obj
+ 0002:00002d98       $unwind$mdl_disable_processing 000000018000fd98     cassie_sim_sfun_registry.obj
+ 0002:00002da0       $unwind$mdl_update_processing 000000018000fda0     cassie_sim_sfun_registry.obj
+ 0002:00002da8       $unwind$ProcessMexSfunctionEveryCall 000000018000fda8     cassie_sim_sfun_registry.obj
+ 0002:00002db0       $unwind$_RegNumInputPortsCB 000000018000fdb0     cassie_sim_sfun_registry.obj
+ 0002:00002db8       $unwind$_RegNumOutputPortsCB 000000018000fdb8     cassie_sim_sfun_registry.obj
+ 0002:00002dc0       $unwind$_CreateSimStruct   000000018000fdc0     cassie_sim_sfun_registry.obj
+ 0002:00002dd8       $unwind$_ssFatalError      000000018000fdd8     cassie_sim_sfun_registry.obj
+ 0002:00002df0       $unwind$_ProcessMexSfunctionCmdLineCall 000000018000fdf0     cassie_sim_sfun_registry.obj
+ 0002:00002e0c       $unwind$__GSHandlerCheckCommon 000000018000fe0c     MSVCRT:gshandler.obj
+ 0002:00002e14       $unwind$__GSHandlerCheck   000000018000fe14     MSVCRT:gshandler.obj
+ 0002:00002e20       $xdatasym                  000000018000fe20     MSVCRT:amdsecgs.obj
+ 0002:00002e24       $unwind$_CRT_INIT          000000018000fe24     MSVCRT:crtdll.obj
+ 0002:00002e40       $unwind$pre_c_init         000000018000fe40     MSVCRT:crtdll.obj
+ 0002:00002e48       $unwind$__DllMainCRTStartup 000000018000fe48     MSVCRT:crtdll.obj
+ 0002:00002e84       $unwind$__DllMainCRTStartup$filt$0 000000018000fe84     MSVCRT:crtdll.obj
+ 0002:00002e8c       $unwind$__DllMainCRTStartup$fin$1 000000018000fe8c     MSVCRT:crtdll.obj
+ 0002:00002e94       $unwind$_DllMainCRTStartup 000000018000fe94     MSVCRT:crtdll.obj
+ 0002:00002ea4       $unwind$__report_securityfailure 000000018000fea4     MSVCRT:gs_report.obj
+ 0002:00002eac       $unwind$__report_securityfailureEx 000000018000feac     MSVCRT:gs_report.obj
+ 0002:00002eb4       $unwind$__report_rangecheckfailure 000000018000feb4     MSVCRT:gs_report.obj
+ 0002:00002ebc       $unwind$__raise_securityfailure 000000018000febc     MSVCRT:gs_report.obj
+ 0002:00002ec4       $unwind$__report_gsfailure 000000018000fec4     MSVCRT:gs_report.obj
+ 0002:00002ecc       $unwind$_IsNonwritableInCurrentImage 000000018000fecc     MSVCRT:pesect.obj
+ 0002:00002ef0       $unwind$_IsNonwritableInCurrentImage$filt$0 000000018000fef0     MSVCRT:pesect.obj
+ 0002:00002ef8       $unwind$atexit             000000018000fef8     MSVCRT:atonexit.obj
+ 0002:00002f00       $unwind$_onexit            000000018000ff00     MSVCRT:atonexit.obj
+ 0002:00002f20       $unwind$_onexit$fin$0      000000018000ff20     MSVCRT:atonexit.obj
+ 0002:00002f28       $unwind$__atonexitinit     000000018000ff28     MSVCRT:atonexit.obj
+ 0002:00002f30       $unwind$__security_init_cookie 000000018000ff30     MSVCRT:gs_support.obj
+ 0002:00002f3c       $unwind$DllMain            000000018000ff3c     MSVCRT:dllmain.obj
+ 0002:00002f44       $unwind$_RTC_Initialize    000000018000ff44     MSVCRT:initsect.obj
+ 0002:00002f50       $unwind$_RTC_Terminate     000000018000ff50     MSVCRT:initsect.obj
+ 0002:00002f60       .edata                     000000018000ff60     cassie_sim_sfun.exp
+ 0002:00002f88       rgpv                       000000018000ff88     cassie_sim_sfun.exp
+ 0002:00002f8c       rgszName                   000000018000ff8c     cassie_sim_sfun.exp
+ 0002:00002f90       rgwOrd                     000000018000ff90     cassie_sim_sfun.exp
+ 0002:00002f92       szName                     000000018000ff92     cassie_sim_sfun.exp
+ 0002:00002fa9       $N00001                    000000018000ffa9     cassie_sim_sfun.exp
+ 0002:00003d8c       .idata$6                   0000000180010d8c     sf_runtime:sf_runtime.dll
+ 0002:00003f04       .idata$6                   0000000180010f04     libmx:libmx.dll
+ 0002:00003f86       .idata$6                   0000000180010f86     libmex:libmex.dll
+ 0002:00003fa8       .idata$6                   0000000180010fa8     libut:libut.dll
+ 0002:00003fde       .idata$6                   0000000180010fde     libmwmathutil:libmwmathutil.dll
+ 0002:00004010       .idata$6                   0000000180011010     libemlrt:libemlrt.dll
+ 0002:00004058       .idata$6                   0000000180011058     MSVCRT:MSVCR120.dll
+ 0002:00004272       .idata$6                   0000000180011272     kernel32:KERNEL32.dll
+ 0003:00000000       c2_debug_family_names      0000000180012000     c2_cassie_sim.obj
+ 0003:000000c0       c2_b_debug_family_names    00000001800120c0     c2_cassie_sim.obj
+ 0003:00000110       ?c2_cv0@?1??c2_error@@9@9  0000000180012110     c2_cassie_sim.obj
+ 0003:00000130       ?c2_cv1@?1??c2_b_error@@9@9 0000000180012130     c2_cassie_sim.obj
+ 0003:00000150       ?c2_cv2@?1??c2_b_error@@9@9 0000000180012150     c2_cassie_sim.obj
+ 0003:00000160       _sfcnName                  0000000180012160     cassie_sim_sfun_registry.obj
+ 0003:000001a0       sRtwOptimizationInfoStruct 00000001800121a0     cassie_sim_sfun.obj
+ 0003:000001a8       sOptimizationInfoFlags     00000001800121a8     cassie_sim_sfun.obj
+ 0003:000001b0       _sfTime_                   00000001800121b0     c2_cassie_sim.obj
+ 0003:000001c8       sfGlobalMdlStartCallCounts 00000001800121c8     cassie_sim_sfun_registry.obj
+ 0003:000001d0       ?errmsg@?O@??ssWriteRTWWorkVect@@9@9 00000001800121d0     cassie_sim_sfun_registry.obj
+ 0003:00000298       __proc_attached            0000000180012298     MSVCRT:crtdll.obj
+ 0003:000002a0       GS_ExceptionRecord         00000001800122a0     MSVCRT:gs_report.obj
+ 0003:00000340       GS_ContextRecord           0000000180012340     MSVCRT:gs_report.obj
+ 0003:00000810       DebuggerWasPresent         0000000180012810     MSVCRT:gs_report.obj
+ 0004:00000000       $pdata$cassie_sim_debug_initialize 0000000180013000     cassie_sim_sfun.obj
+ 0004:0000000c       $pdata$load_cassie_sim_optimization_info 000000018001300c     cassie_sim_sfun.obj
+ 0004:00000018       $pdata$sf_cassie_sim_autoinheritance_info 0000000180013018     cassie_sim_sfun.obj
+ 0004:00000024       $pdata$sf_cassie_sim_get_eml_resolved_functions_info 0000000180013024     cassie_sim_sfun.obj
+ 0004:00000030       $pdata$sf_cassie_sim_jit_fallback_info 0000000180013030     cassie_sim_sfun.obj
+ 0004:0000003c       $pdata$sf_cassie_sim_method_dispatcher 000000018001303c     cassie_sim_sfun.obj
+ 0004:00000048       $pdata$sf_cassie_sim_process_check_sum_call 0000000180013048     cassie_sim_sfun.obj
+ 0004:00000054       $pdata$0$sf_cassie_sim_process_check_sum_call 0000000180013054     cassie_sim_sfun.obj
+ 0004:00000060       $pdata$1$sf_cassie_sim_process_check_sum_call 0000000180013060     cassie_sim_sfun.obj
+ 0004:0000006c       $pdata$sf_cassie_sim_third_party_uses_info 000000018001306c     cassie_sim_sfun.obj
+ 0004:00000078       $pdata$sf_cassie_sim_updateBuildInfo_args_info 0000000180013078     cassie_sim_sfun.obj
+ 0004:00000084       $pdata$unload_cassie_sim_optimization_info 0000000180013084     cassie_sim_sfun.obj
+ 0004:00000090       $pdata$c2_b_emlrt_marshallIn 0000000180013090     c2_cassie_sim.obj
+ 0004:0000009c       $pdata$c2_b_error          000000018001309c     c2_cassie_sim.obj
+ 0004:000000a8       $pdata$c2_b_sf_marshallIn  00000001800130a8     c2_cassie_sim.obj
+ 0004:000000b4       $pdata$c2_b_sf_marshallOut 00000001800130b4     c2_cassie_sim.obj
+ 0004:000000c0       $pdata$c2_c_emlrt_marshallIn 00000001800130c0     c2_cassie_sim.obj
+ 0004:000000cc       $pdata$c2_c_sf_marshallIn  00000001800130cc     c2_cassie_sim.obj
+ 0004:000000d8       $pdata$c2_c_sf_marshallOut 00000001800130d8     c2_cassie_sim.obj
+ 0004:000000e4       $pdata$c2_d_emlrt_marshallIn 00000001800130e4     c2_cassie_sim.obj
+ 0004:000000f0       $pdata$c2_d_sf_marshallIn  00000001800130f0     c2_cassie_sim.obj
+ 0004:000000fc       $pdata$c2_d_sf_marshallOut 00000001800130fc     c2_cassie_sim.obj
+ 0004:00000108       $pdata$c2_e_emlrt_marshallIn 0000000180013108     c2_cassie_sim.obj
+ 0004:00000114       $pdata$c2_e_sf_marshallIn  0000000180013114     c2_cassie_sim.obj
+ 0004:00000120       $pdata$c2_e_sf_marshallOut 0000000180013120     c2_cassie_sim.obj
+ 0004:0000012c       $pdata$c2_emlrt_marshallIn 000000018001312c     c2_cassie_sim.obj
+ 0004:00000138       $pdata$c2_error            0000000180013138     c2_cassie_sim.obj
+ 0004:00000144       $pdata$c2_f_emlrt_marshallIn 0000000180013144     c2_cassie_sim.obj
+ 0004:00000150       $pdata$c2_f_sf_marshallIn  0000000180013150     c2_cassie_sim.obj
+ 0004:0000015c       $pdata$c2_f_sf_marshallOut 000000018001315c     c2_cassie_sim.obj
+ 0004:00000168       $pdata$c2_g_emlrt_marshallIn 0000000180013168     c2_cassie_sim.obj
+ 0004:00000174       $pdata$c2_g_sf_marshallOut 0000000180013174     c2_cassie_sim.obj
+ 0004:00000180       $pdata$c2_i_emlrt_marshallIn 0000000180013180     c2_cassie_sim.obj
+ 0004:0000018c       $pdata$c2_j_emlrt_marshallIn 000000018001318c     c2_cassie_sim.obj
+ 0004:00000198       $pdata$c2_outputs_bus_io   0000000180013198     c2_cassie_sim.obj
+ 0004:000001a4       $pdata$c2_sf_marshallIn    00000001800131a4     c2_cassie_sim.obj
+ 0004:000001b0       $pdata$c2_sf_marshallOut   00000001800131b0     c2_cassie_sim.obj
+ 0004:000001bc       $pdata$chart_debug_initialization 00000001800131bc     c2_cassie_sim.obj
+ 0004:000001c8       $pdata$0$chart_debug_initialization 00000001800131c8     c2_cassie_sim.obj
+ 0004:000001d4       $pdata$5$chart_debug_initialization 00000001800131d4     c2_cassie_sim.obj
+ 0004:000001e0       $pdata$6$chart_debug_initialization 00000001800131e0     c2_cassie_sim.obj
+ 0004:000001ec       $pdata$7$chart_debug_initialization 00000001800131ec     c2_cassie_sim.obj
+ 0004:000001f8       $pdata$chart_debug_initialize_data_addresses 00000001800131f8     c2_cassie_sim.obj
+ 0004:00000204       $pdata$0$chart_debug_initialize_data_addresses 0000000180013204     c2_cassie_sim.obj
+ 0004:00000210       $pdata$1$chart_debug_initialize_data_addresses 0000000180013210     c2_cassie_sim.obj
+ 0004:0000021c       $pdata$disable_c2_cassie_sim 000000018001321c     c2_cassie_sim.obj
+ 0004:00000228       $pdata$enable_c2_cassie_sim 0000000180013228     c2_cassie_sim.obj
+ 0004:00000234       $pdata$get_sim_state_c2_cassie_sim 0000000180013234     c2_cassie_sim.obj
+ 0004:00000240       $pdata$init_script_number_translation 0000000180013240     c2_cassie_sim.obj
+ 0004:0000024c       $pdata$init_simulink_io_address 000000018001324c     c2_cassie_sim.obj
+ 0004:00000258       $pdata$initialize_c2_cassie_sim 0000000180013258     c2_cassie_sim.obj
+ 0004:00000264       $pdata$mdlProcessParameters_c2_cassie_sim 0000000180013264     c2_cassie_sim.obj
+ 0004:00000270       $pdata$0$mdlProcessParameters_c2_cassie_sim 0000000180013270     c2_cassie_sim.obj
+ 0004:0000027c       $pdata$1$mdlProcessParameters_c2_cassie_sim 000000018001327c     c2_cassie_sim.obj
+ 0004:00000288       $pdata$2$mdlProcessParameters_c2_cassie_sim 0000000180013288     c2_cassie_sim.obj
+ 0004:00000294       $pdata$3$mdlProcessParameters_c2_cassie_sim 0000000180013294     c2_cassie_sim.obj
+ 0004:000002a0       $pdata$mdlRTW_c2_cassie_sim 00000001800132a0     c2_cassie_sim.obj
+ 0004:000002ac       $pdata$mdlSetWorkWidths_c2_cassie_sim 00000001800132ac     c2_cassie_sim.obj
+ 0004:000002b8       $pdata$2$mdlSetWorkWidths_c2_cassie_sim 00000001800132b8     c2_cassie_sim.obj
+ 0004:000002c4       $pdata$3$mdlSetWorkWidths_c2_cassie_sim 00000001800132c4     c2_cassie_sim.obj
+ 0004:000002d0       $pdata$4$mdlSetWorkWidths_c2_cassie_sim 00000001800132d0     c2_cassie_sim.obj
+ 0004:000002dc       $pdata$mdlStart_c2_cassie_sim 00000001800132dc     c2_cassie_sim.obj
+ 0004:000002e8       $pdata$set_sim_state_c2_cassie_sim 00000001800132e8     c2_cassie_sim.obj
+ 0004:000002f4       $pdata$sf_c2_cassie_sim_get_autoinheritance_info 00000001800132f4     c2_cassie_sim.obj
+ 0004:00000300       $pdata$sf_c2_cassie_sim_get_check_sum 0000000180013300     c2_cassie_sim.obj
+ 0004:0000030c       $pdata$sf_c2_cassie_sim_get_eml_resolved_functions_info 000000018001330c     c2_cassie_sim.obj
+ 0004:00000318       $pdata$sf_c2_cassie_sim_get_post_codegen_info 0000000180013318     c2_cassie_sim.obj
+ 0004:00000324       $pdata$sf_c2_cassie_sim_jit_fallback_info 0000000180013324     c2_cassie_sim.obj
+ 0004:00000330       $pdata$sf_gateway_c2_cassie_sim 0000000180013330     c2_cassie_sim.obj
+ 0004:0000033c       $pdata$sf_get_sim_state_info_c2_cassie_sim 000000018001333c     c2_cassie_sim.obj
+ 0004:00000348       $pdata$sf_opaque_disable_c2_cassie_sim 0000000180013348     c2_cassie_sim.obj
+ 0004:00000354       $pdata$sf_opaque_enable_c2_cassie_sim 0000000180013354     c2_cassie_sim.obj
+ 0004:00000360       $pdata$sf_opaque_get_sim_state_c2_cassie_sim 0000000180013360     c2_cassie_sim.obj
+ 0004:0000036c       $pdata$sf_opaque_initialize_c2_cassie_sim 000000018001336c     c2_cassie_sim.obj
+ 0004:00000378       $pdata$sf_opaque_set_sim_state_c2_cassie_sim 0000000180013378     c2_cassie_sim.obj
+ 0004:00000384       $pdata$sf_opaque_terminate_c2_cassie_sim 0000000180013384     c2_cassie_sim.obj
+ 0004:00000390       $pdata$0$sf_opaque_terminate_c2_cassie_sim 0000000180013390     c2_cassie_sim.obj
+ 0004:0000039c       $pdata$1$sf_opaque_terminate_c2_cassie_sim 000000018001339c     c2_cassie_sim.obj
+ 0004:000003a8       $pdata$ProcessMexSfunctionCmdLineCall 00000001800133a8     cassie_sim_sfun_registry.obj
+ 0004:000003b4       $pdata$ProcessMexSfunctionEveryCall 00000001800133b4     cassie_sim_sfun_registry.obj
+ 0004:000003c0       $pdata$_CreateSimStruct    00000001800133c0     cassie_sim_sfun_registry.obj
+ 0004:000003cc       $pdata$_ProcessMexSfunctionCmdLineCall 00000001800133cc     cassie_sim_sfun_registry.obj
+ 0004:000003d8       $pdata$_RegNumInputPortsCB 00000001800133d8     cassie_sim_sfun_registry.obj
+ 0004:000003e4       $pdata$_RegNumOutputPortsCB 00000001800133e4     cassie_sim_sfun_registry.obj
+ 0004:000003f0       $pdata$_ssFatalError       00000001800133f0     cassie_sim_sfun_registry.obj
+ 0004:000003fc       $pdata$_ssGetCallSystemNumFcnCallDestinations 00000001800133fc     cassie_sim_sfun_registry.obj
+ 0004:00000408       $pdata$_ssGetCompInputPortSymbolicDimsId 0000000180013408     cassie_sim_sfun_registry.obj
+ 0004:00000414       $pdata$_ssGetCompOutputPortSymbolicDimsId 0000000180013414     cassie_sim_sfun_registry.obj
+ 0004:00000420       $pdata$_ssGetInputPortSignalFcn 0000000180013420     cassie_sim_sfun_registry.obj
+ 0004:0000042c       $pdata$0$_ssGetInputPortSignalFcn 000000018001342c     cassie_sim_sfun_registry.obj
+ 0004:00000438       $pdata$1$_ssGetInputPortSignalFcn 0000000180013438     cassie_sim_sfun_registry.obj
+ 0004:00000444       $pdata$2$_ssGetInputPortSignalFcn 0000000180013444     cassie_sim_sfun_registry.obj
+ 0004:00000450       $pdata$3$_ssGetInputPortSignalFcn 0000000180013450     cassie_sim_sfun_registry.obj
+ 0004:0000045c       $pdata$_ssGetInputPortSignalPtrsFcn 000000018001345c     cassie_sim_sfun_registry.obj
+ 0004:00000468       $pdata$0$_ssGetInputPortSignalPtrsFcn 0000000180013468     cassie_sim_sfun_registry.obj
+ 0004:00000474       $pdata$1$_ssGetInputPortSignalPtrsFcn 0000000180013474     cassie_sim_sfun_registry.obj
+ 0004:00000480       $pdata$2$_ssGetInputPortSignalPtrsFcn 0000000180013480     cassie_sim_sfun_registry.obj
+ 0004:0000048c       $pdata$3$_ssGetInputPortSignalPtrsFcn 000000018001348c     cassie_sim_sfun_registry.obj
+ 0004:00000498       $pdata$_ssGetNumSymbolicDims 0000000180013498     cassie_sim_sfun_registry.obj
+ 0004:000004a4       $pdata$_ssGetSymbolicDim   00000001800134a4     cassie_sim_sfun_registry.obj
+ 0004:000004b0       $pdata$_ssRegisterSymbolicDims 00000001800134b0     cassie_sim_sfun_registry.obj
+ 0004:000004bc       $pdata$_ssRegisterSymbolicDimsDivide 00000001800134bc     cassie_sim_sfun_registry.obj
+ 0004:000004c8       $pdata$_ssRegisterSymbolicDimsExpr 00000001800134c8     cassie_sim_sfun_registry.obj
+ 0004:000004d4       $pdata$_ssRegisterSymbolicDimsIntValue 00000001800134d4     cassie_sim_sfun_registry.obj
+ 0004:000004e0       $pdata$_ssRegisterSymbolicDimsMinus 00000001800134e0     cassie_sim_sfun_registry.obj
+ 0004:000004ec       $pdata$_ssRegisterSymbolicDimsMultiply 00000001800134ec     cassie_sim_sfun_registry.obj
+ 0004:000004f8       $pdata$_ssRegisterSymbolicDimsPlus 00000001800134f8     cassie_sim_sfun_registry.obj
+ 0004:00000504       $pdata$_ssRegisterSymbolicDimsString 0000000180013504     cassie_sim_sfun_registry.obj
+ 0004:00000510       $pdata$_ssSetCompDWorkSymbolicDimsId 0000000180013510     cassie_sim_sfun_registry.obj
+ 0004:0000051c       $pdata$_ssSetCompInputPortSymbolicDimsId 000000018001351c     cassie_sim_sfun_registry.obj
+ 0004:00000528       $pdata$_ssSetCompOutputPortSymbolicDimsId 0000000180013528     cassie_sim_sfun_registry.obj
+ 0004:00000534       $pdata$_ssSetInputPortDirectFeedThroughFcn 0000000180013534     cassie_sim_sfun_registry.obj
+ 0004:00000540       $pdata$_ssSetInputPortMatrixDimensions 0000000180013540     cassie_sim_sfun_registry.obj
+ 0004:0000054c       $pdata$_ssSetInputPortReusableFcn 000000018001354c     cassie_sim_sfun_registry.obj
+ 0004:00000558       $pdata$_ssSetInputPortSymbolicDimsId 0000000180013558     cassie_sim_sfun_registry.obj
+ 0004:00000564       $pdata$_ssSetInputPortVectorDimension 0000000180013564     cassie_sim_sfun_registry.obj
+ 0004:00000570       $pdata$_ssSetOutputPortMatrixDimensions 0000000180013570     cassie_sim_sfun_registry.obj
+ 0004:0000057c       $pdata$_ssSetOutputPortReusableFcn 000000018001357c     cassie_sim_sfun_registry.obj
+ 0004:00000588       $pdata$_ssSetOutputPortSymbolicDimsId 0000000180013588     cassie_sim_sfun_registry.obj
+ 0004:00000594       $pdata$_ssSetOutputPortVectorDimension 0000000180013594     cassie_sim_sfun_registry.obj
+ 0004:000005a0       $pdata$mdlGetSimState      00000001800135a0     cassie_sim_sfun_registry.obj
+ 0004:000005ac       $pdata$mdlRTW              00000001800135ac     cassie_sim_sfun_registry.obj
+ 0004:000005b8       $pdata$mdlSetSimState      00000001800135b8     cassie_sim_sfun_registry.obj
+ 0004:000005c4       $pdata$mdl_derivatives_processing 00000001800135c4     cassie_sim_sfun_registry.obj
+ 0004:000005d0       $pdata$mdl_disable_processing 00000001800135d0     cassie_sim_sfun_registry.obj
+ 0004:000005dc       $pdata$mdl_enable_processing 00000001800135dc     cassie_sim_sfun_registry.obj
+ 0004:000005e8       $pdata$mdl_ext_mode_exec_processing 00000001800135e8     cassie_sim_sfun_registry.obj
+ 0004:000005f4       $pdata$mdl_initialize_conditions_processing 00000001800135f4     cassie_sim_sfun_registry.obj
+ 0004:00000600       $pdata$mdl_outputs_continuous_legacy 0000000180013600     cassie_sim_sfun_registry.obj
+ 0004:0000060c       $pdata$mdl_outputs_processing 000000018001360c     cassie_sim_sfun_registry.obj
+ 0004:00000618       $pdata$mdl_start_processing 0000000180013618     cassie_sim_sfun_registry.obj
+ 0004:00000624       $pdata$mdl_terminate_processing 0000000180013624     cassie_sim_sfun_registry.obj
+ 0004:00000630       $pdata$mdl_update_processing 0000000180013630     cassie_sim_sfun_registry.obj
+ 0004:0000063c       $pdata$mdl_zeroCrossings_processing 000000018001363c     cassie_sim_sfun_registry.obj
+ 0004:00000648       $pdata$mexFunction         0000000180013648     cassie_sim_sfun_registry.obj
+ 0004:00000654       $pdata$sf_debug_api_wrapper 0000000180013654     cassie_sim_sfun_registry.obj
+ 0004:00000660       $pdata$sf_machine_global_initializer 0000000180013660     cassie_sim_sfun_registry.obj
+ 0004:0000066c       $pdata$sf_machine_global_method_dispatcher 000000018001366c     cassie_sim_sfun_registry.obj
+ 0004:00000678       $pdata$sf_machine_global_terminator 0000000180013678     cassie_sim_sfun_registry.obj
+ 0004:00000684       $pdata$sf_mex_unlock_call  0000000180013684     cassie_sim_sfun_registry.obj
+ 0004:00000690       $pdata$sf_process_autoinheritance_call 0000000180013690     cassie_sim_sfun_registry.obj
+ 0004:0000069c       $pdata$sf_process_check_sum_call 000000018001369c     cassie_sim_sfun_registry.obj
+ 0004:000006a8       $pdata$sf_process_get_eml_resolved_functions_info_call 00000001800136a8     cassie_sim_sfun_registry.obj
+ 0004:000006b4       $pdata$sf_process_get_jit_fallback_info_call 00000001800136b4     cassie_sim_sfun_registry.obj
+ 0004:000006c0       $pdata$sf_process_get_third_party_uses_info_call 00000001800136c0     cassie_sim_sfun_registry.obj
+ 0004:000006cc       $pdata$sf_process_get_updateBuildInfo_args_info_call 00000001800136cc     cassie_sim_sfun_registry.obj
+ 0004:000006d8       $pdata$ssCloneAndAddZcSignalInfo 00000001800136d8     cassie_sim_sfun_registry.obj
+ 0004:000006e4       $pdata$ssCreateAndAddZcSignalInfo 00000001800136e4     cassie_sim_sfun_registry.obj
+ 0004:000006f0       $pdata$ssGetDTypeIdFromMxArray 00000001800136f0     cassie_sim_sfun_registry.obj
+ 0004:000006fc       $pdata$ssGetIsInputPortElementContinuous 00000001800136fc     cassie_sim_sfun_registry.obj
+ 0004:00000708       $pdata$ssGetIsZeroCrossControlDisabled 0000000180013708     cassie_sim_sfun_registry.obj
+ 0004:00000714       $pdata$ssGetNumZcSignals   0000000180013714     cassie_sim_sfun_registry.obj
+ 0004:00000720       $pdata$ssGetParameterTuningCompliance 0000000180013720     cassie_sim_sfun_registry.obj
+ 0004:0000072c       $pdata$ssGetSFuncBlockHandle 000000018001372c     cassie_sim_sfun_registry.obj
+ 0004:00000738       $pdata$ssGetZcSignalIsZcElementDisc 0000000180013738     cassie_sim_sfun_registry.obj
+ 0004:00000744       $pdata$ssGetZcSignalName   0000000180013744     cassie_sim_sfun_registry.obj
+ 0004:00000750       $pdata$ssGetZcSignalNeedsEventNotification 0000000180013750     cassie_sim_sfun_registry.obj
+ 0004:0000075c       $pdata$ssGetZcSignalType   000000018001375c     cassie_sim_sfun_registry.obj
+ 0004:00000768       $pdata$ssGetZcSignalVector 0000000180013768     cassie_sim_sfun_registry.obj
+ 0004:00000774       $pdata$ssGetZcSignalWidth  0000000180013774     cassie_sim_sfun_registry.obj
+ 0004:00000780       $pdata$ssGetZcSignalZcEventType 0000000180013780     cassie_sim_sfun_registry.obj
+ 0004:0000078c       $pdata$ssGetZcSignalZcEvents 000000018001378c     cassie_sim_sfun_registry.obj
+ 0004:00000798       $pdata$ssGetZcSignalZcTol  0000000180013798     cassie_sim_sfun_registry.obj
+ 0004:000007a4       $pdata$ssIsRunTimeParamTunable 00000001800137a4     cassie_sim_sfun_registry.obj
+ 0004:000007b0       $pdata$ssSetIsInputPortUsedForContZcSignal 00000001800137b0     cassie_sim_sfun_registry.obj
+ 0004:000007bc       $pdata$ssSetZcSignalIsZcElementDisc 00000001800137bc     cassie_sim_sfun_registry.obj
+ 0004:000007c8       $pdata$ssSetZcSignalNeedsEventNotification 00000001800137c8     cassie_sim_sfun_registry.obj
+ 0004:000007d4       $pdata$ssSetZcSignalType   00000001800137d4     cassie_sim_sfun_registry.obj
+ 0004:000007e0       $pdata$ssSetZcSignalWidth  00000001800137e0     cassie_sim_sfun_registry.obj
+ 0004:000007ec       $pdata$ssSetZcSignalZcEventType 00000001800137ec     cassie_sim_sfun_registry.obj
+ 0004:000007f8       $pdata$ssSetZcSignalZcTol  00000001800137f8     cassie_sim_sfun_registry.obj
+ 0004:00000804       $pdata$ssWarning           0000000180013804     cassie_sim_sfun_registry.obj
+ 0004:00000810       $pdata$ssWriteRTWMx2dMatParam 0000000180013810     cassie_sim_sfun_registry.obj
+ 0004:0000081c       $pdata$ssWriteRTWMxVectParam 000000018001381c     cassie_sim_sfun_registry.obj
+ 0004:00000828       $pdata$ssWriteRTWNameValuePair 0000000180013828     cassie_sim_sfun_registry.obj
+ 0004:00000834       $pdata$0$ssWriteRTWNameValuePair 0000000180013834     cassie_sim_sfun_registry.obj
+ 0004:00000840       $pdata$1$ssWriteRTWNameValuePair 0000000180013840     cassie_sim_sfun_registry.obj
+ 0004:0000084c       $pdata$ssWriteRTWParamSettings 000000018001384c     cassie_sim_sfun_registry.obj
+ 0004:00000858       $pdata$1$ssWriteRTWParamSettings 0000000180013858     cassie_sim_sfun_registry.obj
+ 0004:00000864       $pdata$2$ssWriteRTWParamSettings 0000000180013864     cassie_sim_sfun_registry.obj
+ 0004:00000870       $pdata$3$ssWriteRTWParamSettings 0000000180013870     cassie_sim_sfun_registry.obj
+ 0004:0000087c       $pdata$4$ssWriteRTWParamSettings 000000018001387c     cassie_sim_sfun_registry.obj
+ 0004:00000888       $pdata$ssWriteRTWParameters 0000000180013888     cassie_sim_sfun_registry.obj
+ 0004:00000894       $pdata$1$ssWriteRTWParameters 0000000180013894     cassie_sim_sfun_registry.obj
+ 0004:000008a0       $pdata$2$ssWriteRTWParameters 00000001800138a0     cassie_sim_sfun_registry.obj
+ 0004:000008ac       $pdata$3$ssWriteRTWParameters 00000001800138ac     cassie_sim_sfun_registry.obj
+ 0004:000008b8       $pdata$4$ssWriteRTWParameters 00000001800138b8     cassie_sim_sfun_registry.obj
+ 0004:000008c4       $pdata$ssWriteRTWWorkVect  00000001800138c4     cassie_sim_sfun_registry.obj
+ 0004:000008d0       $pdata$__GSHandlerCheck    00000001800138d0     MSVCRT:gshandler.obj
+ 0004:000008dc       $pdata$__GSHandlerCheckCommon 00000001800138dc     MSVCRT:gshandler.obj
+ 0004:000008f4       $pdata$pre_c_init          00000001800138f4     MSVCRT:crtdll.obj
+ 0004:00000900       $pdata$_CRT_INIT           0000000180013900     MSVCRT:crtdll.obj
+ 0004:0000090c       $pdata$_DllMainCRTStartup  000000018001390c     MSVCRT:crtdll.obj
+ 0004:00000918       $pdata$__DllMainCRTStartup 0000000180013918     MSVCRT:crtdll.obj
+ 0004:00000924       $pdata$__raise_securityfailure 0000000180013924     MSVCRT:gs_report.obj
+ 0004:00000930       $pdata$__report_gsfailure  0000000180013930     MSVCRT:gs_report.obj
+ 0004:0000093c       $pdata$__report_rangecheckfailure 000000018001393c     MSVCRT:gs_report.obj
+ 0004:00000948       $pdata$__report_securityfailure 0000000180013948     MSVCRT:gs_report.obj
+ 0004:00000954       $pdata$__report_securityfailureEx 0000000180013954     MSVCRT:gs_report.obj
+ 0004:00000960       $pdata$_IsNonwritableInCurrentImage 0000000180013960     MSVCRT:pesect.obj
+ 0004:0000096c       $pdata$__atonexitinit      000000018001396c     MSVCRT:atonexit.obj
+ 0004:00000978       $pdata$_onexit             0000000180013978     MSVCRT:atonexit.obj
+ 0004:00000984       $pdata$atexit              0000000180013984     MSVCRT:atonexit.obj
+ 0004:00000990       $pdata$__security_init_cookie 0000000180013990     MSVCRT:gs_support.obj
+ 0004:0000099c       $pdata$DllMain             000000018001399c     MSVCRT:dllmain.obj
+ 0004:000009a8       $pdata$_RTC_Initialize     00000001800139a8     MSVCRT:initsect.obj
+ 0004:000009b4       $pdata$_RTC_Terminate      00000001800139b4     MSVCRT:initsect.obj
+ 0004:000009c0       $pdata$__DllMainCRTStartup$filt$0 00000001800139c0     MSVCRT:crtdll.obj
+ 0004:000009cc       $pdata$__DllMainCRTStartup$fin$1 00000001800139cc     MSVCRT:crtdll.obj
+ 0004:000009d8       $pdata$_IsNonwritableInCurrentImage$filt$0 00000001800139d8     MSVCRT:pesect.obj
+ 0004:000009e4       $pdata$_onexit$fin$0       00000001800139e4     MSVCRT:atonexit.obj

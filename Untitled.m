@@ -1,0 +1,8 @@
+plot(Data.q_abduction_L)
+plot(Data.q_rotation_L)
+plot(Data.q_thigh_L)
+plot(Data.q_thigh_knee_L)
+plot(Data.q_knee_shin_L)
+plot(Data.q_thigh_shin_L)
+plot(Data.q_shin_tarsus_L)
+plot(Data.q_toe_L)

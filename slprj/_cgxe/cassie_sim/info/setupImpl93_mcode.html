@@ -1,0 +1,224 @@
+<!-- saved from url=(0014)about:internet -->
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="2,1" id="srcline1">  1</a></span><span class="line"><span class="comment">%CONTROLLER Controller template.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,2" id="srcline2">  2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,3" id="srcline3">  3</a></span><span class="line"><span class="comment">% Copyright 2017 Mikhail S. Jones</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,4" id="srcline4">  4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,5" id="srcline5">  5</a></span><span class="line"><span class="keyword">classdef</span> Controller &lt; matlab.System &amp; matlab.system.mixin.Propagates <span class="comment">%#codegen</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,6" id="srcline6">  6</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,7" id="srcline7">  7</a></span><span class="line">  <span class="comment">% PROTECTED PROPERTIES ==================================================</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,8" id="srcline8">  8</a></span><span class="line">  <span class="keyword">properties</span> (Access = protected)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,9" id="srcline9">  9</a></span><span class="line">    <span class="comment">% Cassie inputs data structure</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,10" id="srcline10"> 10</a></span><span class="line">    inputs</span></span>
+<span class="srcline"><span class="lineno"><a href="2,11" id="srcline11"> 11</a></span><span class="line">    <span class="comment">% Controller Parameters</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,12" id="srcline12"> 12</a></span><span class="line">    params</span></span>
+<span class="srcline"><span class="lineno"><a href="2,13" id="srcline13"> 13</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,14" id="srcline14"> 14</a></span><span class="line">    <span class="comment">% Proportional Gains</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,15" id="srcline15"> 15</a></span><span class="line">    Kp = 20*ones(10,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,16" id="srcline16"> 16</a></span><span class="line">    <span class="comment">% Derivative Gains</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,17" id="srcline17"> 17</a></span><span class="line">    Kd = 1*ones(10,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,18" id="srcline18"> 18</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,19" id="srcline19"> 19</a></span><span class="line">    <span class="comment">% Allow domain switching</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,20" id="srcline20"> 20</a></span><span class="line">    allow_switching = true;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,21" id="srcline21"> 21</a></span><span class="line">        </span></span>
+<span class="srcline"><span class="lineno"><a href="2,22" id="srcline22"> 22</a></span><span class="line">  <span class="keyword">end</span> <span class="comment">% properties</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,23" id="srcline23"> 23</a></span><span class="line">  </span></span>
+<span class="srcline"><span class="lineno"><a href="2,24" id="srcline24"> 24</a></span><span class="line">  <span class="comment">% Private variables</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,25" id="srcline25"> 25</a></span><span class="line">  <span class="keyword">properties</span>(Access = private)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,26" id="srcline26"> 26</a></span><span class="line">      stanceLeg = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,27" id="srcline27"> 27</a></span><span class="line">      stanceLeg_prev = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,28" id="srcline28"> 28</a></span><span class="line">      t0 = 0;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,29" id="srcline29"> 29</a></span><span class="line">      s_last = 0;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,30" id="srcline30"> 30</a></span><span class="line">      ds_last = 0;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,31" id="srcline31"> 31</a></span><span class="line">      qd_last = zeros(26,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,32" id="srcline32"> 32</a></span><span class="line">      dqd_last = zeros(26,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,33" id="srcline33"> 33</a></span><span class="line">      stepNum = 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,34" id="srcline34"> 34</a></span><span class="line">      <span class="comment">% u continuity sigmoid offset</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,35" id="srcline35"> 35</a></span><span class="line">      u_cont_alpha = zeros(10,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,36" id="srcline36"> 36</a></span><span class="line">      <span class="comment">% u continuity sigmoid decay rate</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,37" id="srcline37"> 37</a></span><span class="line">      u_cont_beta = 30;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,38" id="srcline38"> 38</a></span><span class="line">      u_prev = zeros(10,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,39" id="srcline39"> 39</a></span><span class="line">  <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,40" id="srcline40"> 40</a></span><span class="line">  </span></span>
+<span class="srcline"><span class="lineno"><a href="2,41" id="srcline41"> 41</a></span><span class="line">  <span class="comment">% Pre-computed constants</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,42" id="srcline42"> 42</a></span><span class="line">  <span class="keyword">properties</span>(Access = private, Constant)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,43" id="srcline43"> 43</a></span><span class="line">      TorqueLimits = 1*[4.5; 4.5; 12.2; 12.2; 0.9; 4.5; 4.5; 12.2; 12.2; 0.9];</span></span>
+<span class="srcline"><span class="lineno"><a href="2,44" id="srcline44"> 44</a></span><span class="line">      GearRatios = [25; 25; 16; 16; 50; 25; 25; 16; 16; 50];</span></span>
+<span class="srcline"><span class="lineno"><a href="2,45" id="srcline45"> 45</a></span><span class="line">      ActuatorLimits = [-0.2618, 0.3927; -0.3927, 0.3927; -0.8727, 1.3963; -2.8623, -0.6458; -2.4435, -0.5236; <span class="keyword">...</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,46" id="srcline46"> 46</a></span><span class="line">          -0.2618, 0.3927; -0.3927, 0.3927; -0.8727, 1.3963; -2.8623, -0.6458; -2.4435, -0.5236];</span></span>
+<span class="srcline"><span class="lineno"><a href="2,47" id="srcline47"> 47</a></span><span class="line">  <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,48" id="srcline48"> 48</a></span><span class="line">  </span></span>
+<span class="srcline"><span class="lineno"><a href="2,49" id="srcline49"> 49</a></span><span class="line">  <span class="comment">% PROTECTED METHODS =====================================================</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,50" id="srcline50"> 50</a></span><span class="line">  <span class="keyword">methods</span> (Access = protected)</span></span>
+</pre>
+</div>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="2,51" id="srcline51"> 51</a></span><span class="line">    <span class="keyword">function</span> setupImpl(<span class="var type1" id="S27T50U198">obj</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,52" id="srcline52"> 52</a></span><span class="line">    <span class="comment">%SETUPIMPL Initialize System object.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,53" id="srcline53"> 53</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,54" id="srcline54"> 54</a></span><span class="line">      <span class="comment">% Initialize the Cassie input/output data structures</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,55" id="srcline55"> 55</a></span><span class="line">      <span class="mxinfo " id="T56:U2"><span class="mxinfo " id="T56:U3"><span class="var type1" id="S27T50U202">obj</span>.inputs</span> = <span class="mxinfo " id="T56:U5"><span class="fcn" id="F94N2:B205">CassieInputs</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,56" id="srcline56"> 56</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,57" id="srcline57"> 57</a></span><span class="line">      <span class="comment">% Initialize other properties</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,58" id="srcline58"> 58</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,59" id="srcline59"> 59</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% setupImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,60" id="srcline60"> 60</a></span><span class="line"></span></span>
+</pre>
+<div class="dead">
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="2,61" id="srcline61"> 61</a></span><span class="line">    <span class="keyword">function</span> [inputs, Data] = stepImpl(obj, t, q, dq, ControlParams)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,62" id="srcline62"> 62</a></span><span class="line">    <span class="comment">%STEPIMPL System output and state update equations.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,63" id="srcline63"> 63</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,64" id="srcline64"> 64</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,65" id="srcline65"> 65</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,66" id="srcline66"> 66</a></span><span class="line">      <span class="keyword">if</span> obj.s_last &gt;=1 </span></span>
+<span class="srcline"><span class="lineno"><a href="2,67" id="srcline67"> 67</a></span><span class="line">          obj.stanceLeg = -obj.stanceLeg;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,68" id="srcline68"> 68</a></span><span class="line">          obj.stepNum = obj.stepNum+1;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,69" id="srcline69"> 69</a></span><span class="line">          obj.t0=t;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,70" id="srcline70"> 70</a></span><span class="line">          <span class="keyword">if</span> obj.stanceLeg == 1</span></span>
+<span class="srcline"><span class="lineno"><a href="2,71" id="srcline71"> 71</a></span><span class="line">              obj.params = ControlParams.RightStance;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,72" id="srcline72"> 72</a></span><span class="line">          <span class="keyword">elseif</span> obj.stanceLeg == -1</span></span>
+<span class="srcline"><span class="lineno"><a href="2,73" id="srcline73"> 73</a></span><span class="line">              obj.params = ControlParams.LeftStance;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,74" id="srcline74"> 74</a></span><span class="line">          <span class="keyword">else</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,75" id="srcline75"> 75</a></span><span class="line">              error(<span class="string">'stanceLeg error'</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,76" id="srcline76"> 76</a></span><span class="line">          <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,77" id="srcline77"> 77</a></span><span class="line">      <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,78" id="srcline78"> 78</a></span><span class="line">      params = obj.params</span></span>
+<span class="srcline"><span class="lineno"><a href="2,79" id="srcline79"> 79</a></span><span class="line">      s = (t - t0)*params.ct;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,80" id="srcline80"> 80</a></span><span class="line">      s_last = s;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,81" id="srcline81"> 81</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,82" id="srcline82"> 82</a></span><span class="line">      <span class="comment">%% Compute desired motor positions</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,83" id="srcline83"> 83</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,84" id="srcline84"> 84</a></span><span class="line">      yd = bezier(params.HAlpha,s);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,85" id="srcline85"> 85</a></span><span class="line">      dyd = dbezier(params.HAlpha,s)*params.ct;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,86" id="srcline86"> 86</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="2,87" id="srcline87"> 87</a></span><span class="line">      u=zeros(10,1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,88" id="srcline88"> 88</a></span><span class="line">      <span class="comment">%% PD Control</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,89" id="srcline89"> 89</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,90" id="srcline90"> 90</a></span><span class="line"><span class="comment">%       % Compute PD control law</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,91" id="srcline91"> 91</a></span><span class="line"><span class="comment">%       ya = (state.q.qa - state_desired.q.qa);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,92" id="srcline92"> 92</a></span><span class="line"><span class="comment">%       dya = (state.dq.dqa - state_desired.dq.dqa);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,93" id="srcline93"> 93</a></span><span class="line"><span class="comment">%       u = -(obj.Kp.*ya + obj.Kd.*dya);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,94" id="srcline94"> 94</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,95" id="srcline95"> 95</a></span><span class="line"><span class="comment">%       % Saturate torques</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,96" id="srcline96"> 96</a></span><span class="line"><span class="comment">%       u = saturate(u, -obj.TorqueLimits, obj.TorqueLimits);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,97" id="srcline97"> 97</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,98" id="srcline98"> 98</a></span><span class="line"><span class="comment">%       % Check to see if there was a domain switch</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,99" id="srcline99"> 99</a></span><span class="line"><span class="comment">%       if obj.stanceLeg ~= obj.stanceLeg_prev</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,100" id="srcline100">100</a></span><span class="line"><span class="comment">%           % Compute torque update sigmoid params</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,101" id="srcline101">101</a></span><span class="line"><span class="comment">%           obj.u_cont_alpha = flat_ground_walking.controller.functions. <span class="keyword">...</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,102" id="srcline102">102</a></span><span class="line"><span class="comment">%               TorqueContinuity(u, obj.u_prev, s, obj.u_cont_beta);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,103" id="srcline103">103</a></span><span class="line"><span class="comment">%       end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,104" id="srcline104">104</a></span><span class="line"><span class="comment">%       % Maintain errors across domain switches (sigmoid)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,105" id="srcline105">105</a></span><span class="line"><span class="comment">%       u = u + (2.*obj.u_cont_alpha + -2.*obj.u_cont_alpha./(1+exp(-obj.u_cont_beta*s)));</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,106" id="srcline106">106</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,107" id="srcline107">107</a></span><span class="line"><span class="comment">%       % Final Updates</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,108" id="srcline108">108</a></span><span class="line"><span class="comment">%       obj.u_prev = u;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,109" id="srcline109">109</a></span><span class="line"><span class="comment">%       obj.stanceLeg_prev = obj.stanceLeg;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,110" id="srcline110">110</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,111" id="srcline111">111</a></span><span class="line"><span class="comment">%       % Set desired motor torques</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,112" id="srcline112">112</a></span><span class="line"><span class="comment">%       obj.inputs.setMotorTorques(obj.GearRatios.*u);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,113" id="srcline113">113</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,114" id="srcline114">114</a></span><span class="line"><span class="comment">%       %% Handle impacts and store data</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,115" id="srcline115">115</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,116" id="srcline116">116</a></span><span class="line"><span class="comment">%       % Impact Detection</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,117" id="srcline117">117</a></span><span class="line"><span class="comment">%       if DetectImpact(obj, s_unsat, s_sw)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,118" id="srcline118">118</a></span><span class="line"><span class="comment">%           HandleImpact(obj, t, s, ds, qd, dqd);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,119" id="srcline119">119</a></span><span class="line"><span class="comment">%       end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,120" id="srcline120">120</a></span><span class="line"><span class="comment">%       </span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,121" id="srcline121">121</a></span><span class="line"><span class="comment">%       % Store Data</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,122" id="srcline122">122</a></span><span class="line"><span class="comment">%       Data.t = t;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,123" id="srcline123">123</a></span><span class="line"><span class="comment">%       Data.q = q;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,124" id="srcline124">124</a></span><span class="line"><span class="comment">%       Data.dq = q;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,125" id="srcline125">125</a></span><span class="line"><span class="comment">%       Data.u = u;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,126" id="srcline126">126</a></span><span class="line"><span class="comment">%       Data.stanceLeg = obj.stanceLeg;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,127" id="srcline127">127</a></span><span class="line"><span class="comment">%       Data.s_sw = s_sw;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,128" id="srcline128">128</a></span><span class="line"><span class="comment">%       Data.s_st = s_st;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,129" id="srcline129">129</a></span><span class="line"><span class="comment">%       Data.s = s;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,130" id="srcline130">130</a></span><span class="line"><span class="comment">%       Data.ds = ds;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,131" id="srcline131">131</a></span><span class="line"><span class="comment">%       Data.ya = rad2deg(ya);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,132" id="srcline132">132</a></span><span class="line"><span class="comment">%       Data.dya = rad2deg(dya);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,133" id="srcline133">133</a></span><span class="line"><span class="comment">%       Data.GRF = [GRF_R; GRF_L];</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,134" id="srcline134">134</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,135" id="srcline135">135</a></span><span class="line">      <span class="comment">% Return the updated Cassie inputs data structure</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,136" id="srcline136">136</a></span><span class="line">      inputs = obj.inputs.getStructure;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,137" id="srcline137">137</a></span><span class="line">        </span></span>
+<span class="srcline"><span class="lineno"><a href="2,138" id="srcline138">138</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% stepImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,139" id="srcline139">139</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,140" id="srcline140">140</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,141" id="srcline141">141</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,142" id="srcline142">142</a></span><span class="line">            </span></span>
+<span class="srcline"><span class="lineno"><a href="2,143" id="srcline143">143</a></span><span class="line">    <span class="comment">% Function to compute gait timing variable</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,144" id="srcline144">144</a></span><span class="line">    <span class="keyword">function</span> [s, s_unsat, ds] = GaitTimingVariable(obj, t, GaitParams)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,145" id="srcline145">145</a></span><span class="line">        <span class="comment">% Normal time based phase variable</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,146" id="srcline146">146</a></span><span class="line">        s = GaitParams.ct * (t - obj.t0);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,147" id="srcline147">147</a></span><span class="line">        ds = GaitParams.ct;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,148" id="srcline148">148</a></span><span class="line">        obj.s_last = s;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,149" id="srcline149">149</a></span><span class="line">        s_unsat = s;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,150" id="srcline150">150</a></span><span class="line">        </span></span>
+<span class="srcline"><span class="lineno"><a href="2,151" id="srcline151">151</a></span><span class="line">        <span class="comment">% Saturate s</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,152" id="srcline152">152</a></span><span class="line">        s2 = max(min(s_unsat,2),-1);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,153" id="srcline153">153</a></span><span class="line">        <span class="keyword">if</span> s &gt; 1.0</span></span>
+<span class="srcline"><span class="lineno"><a href="2,154" id="srcline154">154</a></span><span class="line">            s = 1.0;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,155" id="srcline155">155</a></span><span class="line">            ds = max((2 - s2)^4,0)*ds; <span class="comment">% ramp ds down (to avoid torque jumps)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,156" id="srcline156">156</a></span><span class="line">        <span class="keyword">elseif</span> s &lt; -0.0</span></span>
+<span class="srcline"><span class="lineno"><a href="2,157" id="srcline157">157</a></span><span class="line">            s = -0.0;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,158" id="srcline158">158</a></span><span class="line">            ds = max((s2 + 1)^4,0)*ds; <span class="comment">% ramp ds down (to avoid torque jumps)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,159" id="srcline159">159</a></span><span class="line">        <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,160" id="srcline160">160</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,161" id="srcline161">161</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,162" id="srcline162">162</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,163" id="srcline163">163</a></span><span class="line">    <span class="comment">% Function to detect impact</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,164" id="srcline164">164</a></span><span class="line">    <span class="keyword">function</span> impact = DetectImpact(obj, s_unsat, s_sw)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,165" id="srcline165">165</a></span><span class="line">        impact = obj.allow_switching &amp;&amp; ( ((s_unsat &gt;= 0.5) &amp;&amp; (s_sw &gt;= 1)) || (s_unsat &gt;= 1) );</span></span>
+<span class="srcline"><span class="lineno"><a href="2,166" id="srcline166">166</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,167" id="srcline167">167</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,168" id="srcline168">168</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,169" id="srcline169">169</a></span><span class="line">    <span class="comment">% Function to handle impact</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,170" id="srcline170">170</a></span><span class="line">    <span class="keyword">function</span> HandleImpact(obj, t, s, ds, qd, dqd)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,171" id="srcline171">171</a></span><span class="line">        <span class="comment">% Swap legs</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,172" id="srcline172">172</a></span><span class="line">        obj.stanceLeg = -obj.stanceLeg;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,173" id="srcline173">173</a></span><span class="line">        obj.t0 = t;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,174" id="srcline174">174</a></span><span class="line">        obj.stepNum = obj.stepNum + 1;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,175" id="srcline175">175</a></span><span class="line">        obj.s_last = s;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,176" id="srcline176">176</a></span><span class="line">        obj.ds_last = ds;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,177" id="srcline177">177</a></span><span class="line">        obj.qd_last = qd;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,178" id="srcline178">178</a></span><span class="line">        obj.dqd_last = dqd;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,179" id="srcline179">179</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,180" id="srcline180">180</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,181" id="srcline181">181</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,182" id="srcline182">182</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,183" id="srcline183">183</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,184" id="srcline184">184</a></span><span class="line">    <span class="keyword">function</span> resetImpl(~)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,185" id="srcline185">185</a></span><span class="line">    <span class="comment">%RESETIMPL Reset System object states.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,186" id="srcline186">186</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% resetImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,187" id="srcline187">187</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,188" id="srcline188">188</a></span><span class="line">    <span class="keyword">function</span> [out, Data] = getOutputSizeImpl(~)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,189" id="srcline189">189</a></span><span class="line">    <span class="comment">%GETOUTPUTSIZEIMPL Get sizes of output ports.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,190" id="srcline190">190</a></span><span class="line">      out = [1, 1];</span></span>
+<span class="srcline"><span class="lineno"><a href="2,191" id="srcline191">191</a></span><span class="line">      Data = [1, 1];</span></span>
+<span class="srcline"><span class="lineno"><a href="2,192" id="srcline192">192</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% getOutputSizeImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,193" id="srcline193">193</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,194" id="srcline194">194</a></span><span class="line">    <span class="keyword">function</span> [out, Data] = getOutputDataTypeImpl(~)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,195" id="srcline195">195</a></span><span class="line">    <span class="comment">%GETOUTPUTDATATYPEIMPL Get data types of output ports.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,196" id="srcline196">196</a></span><span class="line">      out = <span class="string">'cassieInputsBus'</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,197" id="srcline197">197</a></span><span class="line">      Data = <span class="string">'cassieDataBus'</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,198" id="srcline198">198</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% getOutputDataTypeImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,199" id="srcline199">199</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,200" id="srcline200">200</a></span><span class="line">    <span class="keyword">function</span> [out, Data] = isOutputComplexImpl(~)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,201" id="srcline201">201</a></span><span class="line">    <span class="comment">%ISOUTPUTCOMPLEXIMPL Complexity of output ports.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,202" id="srcline202">202</a></span><span class="line">      out = false;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,203" id="srcline203">203</a></span><span class="line">      Data = false;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,204" id="srcline204">204</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% isOutputComplexImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,205" id="srcline205">205</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="2,206" id="srcline206">206</a></span><span class="line">    <span class="keyword">function</span> [out, Data] = isOutputFixedSizeImpl(~)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,207" id="srcline207">207</a></span><span class="line">    <span class="comment">%ISOUTPUTFIXEDSIZEIMPL Fixed-size or variable-size output ports.</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,208" id="srcline208">208</a></span><span class="line">      out = true;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,209" id="srcline209">209</a></span><span class="line">      Data = true;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,210" id="srcline210">210</a></span><span class="line">    <span class="keyword">end</span> <span class="comment">% isOutputFixedSizeImpl</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,211" id="srcline211">211</a></span><span class="line">  <span class="keyword">end</span> <span class="comment">% methods</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,212" id="srcline212">212</a></span><span class="line"><span class="keyword">end</span> <span class="comment">% classdef</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,213" id="srcline213">213</a></span><span class="line"> </span></span>
+</pre>
+</div>
