@@ -47,6 +47,9 @@ Data.d_torso_angle = zeros(3,1);
 Data.torso_position = zeros(3,1);
 Data.torso_velocity = zeros(3,1);
 
+Data.com_pos = zeros(3,1);
+Data.com_vel = zeros(3,1);
+
 Data.q_abduction_R = 0;
 Data.q_rotation_R = 0;
 Data.q_thigh_R = 0;

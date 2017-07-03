@@ -1,10 +1,10 @@
 /*
  * Automatically Generated from Mathematica.
- * Mon 3 Jul 2017 14:21:55 GMT-04:00
+ * Mon 3 Jul 2017 14:27:49 GMT-04:00
  */
 
-#ifndef J_RIGHTTOEJOINT_HH
-#define J_RIGHTTOEJOINT_HH
+#ifndef COMPOSITION_HH
+#define COMPOSITION_HH
 
 #ifdef MATLAB_MEX_FILE
 // No need for external definitions
@@ -17,9 +17,9 @@
 namespace SymFunction
 {
 
-  void J_RightToeJoint_raw(double *p_output1, const double *var1);
+  void ComPosition_raw(double *p_output1, const double *var1);
 
-  inline void J_RightToeJoint(Eigen::MatrixXd &p_output1, const Eigen::VectorXd &var1)
+  inline void ComPosition(Eigen::MatrixXd &p_output1, const Eigen::VectorXd &var1)
   {
     // Check
     // - Inputs
@@ -27,7 +27,7 @@ namespace SymFunction
 
 	
     // - Outputs
-    assert_size_matrix(p_output1, 3, 22);
+    assert_size_matrix(p_output1, 1, 3);
 
 
     // set zero the matrix
@@ -35,7 +35,7 @@ namespace SymFunction
 
 
     // Call Subroutine with raw data
-    J_RightToeJoint_raw(p_output1.data(), var1.data());
+    ComPosition_raw(p_output1.data(), var1.data());
     }
   
   
@@ -43,4 +43,4 @@ namespace SymFunction
 
 #endif // MATLAB_MEX_FILE
 
-#endif // J_RIGHTTOEJOINT_HH
+#endif // COMPOSITION_HH

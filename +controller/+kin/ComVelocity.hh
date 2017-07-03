@@ -1,10 +1,10 @@
 /*
  * Automatically Generated from Mathematica.
- * Mon 3 Jul 2017 14:21:53 GMT-04:00
+ * Mon 3 Jul 2017 14:27:50 GMT-04:00
  */
 
-#ifndef LEFTTOEJOINT_HH
-#define LEFTTOEJOINT_HH
+#ifndef COMVELOCITY_HH
+#define COMVELOCITY_HH
 
 #ifdef MATLAB_MEX_FILE
 // No need for external definitions
@@ -17,13 +17,14 @@
 namespace SymFunction
 {
 
-  void LeftToeJoint_raw(double *p_output1, const double *var1);
+  void ComVelocity_raw(double *p_output1, const double *var1,const double *var2);
 
-  inline void LeftToeJoint(Eigen::MatrixXd &p_output1, const Eigen::VectorXd &var1)
+  inline void ComVelocity(Eigen::MatrixXd &p_output1, const Eigen::VectorXd &var1,const Eigen::VectorXd &var2)
   {
     // Check
     // - Inputs
     assert_size_matrix(var1, 22, 1);
+    assert_size_matrix(var2, 22, 1);
 
 	
     // - Outputs
@@ -35,7 +36,7 @@ namespace SymFunction
 
 
     // Call Subroutine with raw data
-    LeftToeJoint_raw(p_output1.data(), var1.data());
+    ComVelocity_raw(p_output1.data(), var1.data(),var2.data());
     }
   
   
@@ -43,4 +44,4 @@ namespace SymFunction
 
 #endif // MATLAB_MEX_FILE
 
-#endif // LEFTTOEJOINT_HH
+#endif // COMVELOCITY_HH

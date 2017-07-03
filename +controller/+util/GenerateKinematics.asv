@@ -67,11 +67,6 @@ dX = SymVariable('dx',[22,1]);
 com_pos = cassie.getComPosition();
 com_vel = jacobian(com_pos,X)*dX;
 
-com_pos_fun = SymFunction('ComPosition',com_pos,X);
-com_vel_fun = SymFunction('ComVelocity',com_vel,{X,dX})
-
-com_pos_fun.export(PATH, 'ForceExport', true);
-com_vel_fun.export(PATH, 'ForceExport', true);
 
 
 %% Forward Kinemtics for output control
