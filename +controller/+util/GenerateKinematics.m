@@ -10,7 +10,14 @@ frost_addpath;
 
 % Load model
 cassie = CASSIE('urdf/cassie.urdf');
+cassie.configureDynamics('DelayCoriolisSet',true);
 % cassie.ExportKinematics(PATH);
+
+% Export gravity vector
+X = SymVariable('x',[22,1]);
+G=cassie.Fvec{end};
+G_new = SymFunction('Ge_vec',G,{X});
+G_new.export(PATH, 'ForceExport', true);
 
 % Export Toe Height and Jacobians
 X = SymVariable('x',[22,1]);

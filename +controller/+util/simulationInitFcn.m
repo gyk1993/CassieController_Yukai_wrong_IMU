@@ -41,6 +41,12 @@ Data.Switch = 0;
 Data.spring_force_R = zeros(2,1);
 Data.spring_force_L = zeros(2,1);
 
+Data.torso_angle = zeros(3,1);
+Data.d_torso_angle = zeros(3,1);
+
+Data.torso_position = zeros(3,1);
+Data.torso_velocity = zeros(3,1);
+
 Data.q_abduction_R = 0;
 Data.q_rotation_R = 0;
 Data.q_thigh_R = 0;
@@ -84,6 +90,7 @@ L_Alpha([1,2,6,7],:) = -L_Alpha([1,2,6,7],:);
 ControlParams.LeftStance.HAlpha = L_Alpha;
 
 ControlParams.LeftStance.ct = 1/opt.params{1}.ptime(1);
+ControlParams.Desired_Velocity = (opt.states{1}.x(1,end) - opt.states{1}.x(1,1))/(opt.tspan{1}(end) - opt.tspan{1}(1)); 
 
 % Set initial motor positions
 cassieEtherCat.setMotorPositions([...
