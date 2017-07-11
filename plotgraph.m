@@ -12,7 +12,7 @@ plot(Data.hd.Time,reshape(Data.hd.Data(8,1,:), 1, []))
 hold off
 
 figure(2)
-plot(Data.h0.Time,reshape(Data.h0.Data(3,1,:), 1, []))
+plot(Data.h0.Time,reshape(Data.h0.Data(2,1,:), 1, []))
 hold on
 plot(Data.h0.Time,reshape(Data.h0.Data(8,1,:), 1, []))
 hold off
@@ -76,3 +76,48 @@ end
 figure(9)
 plot(Data.torso_velocity.Time,reshape(Data.torso_velocity.Data(2,1,:), 1, []))
 plot(Data.torso_position.Time,reshape(Data.torso_position.Data(2,1,:), 1, []))
+plot(torso_v.Time,reshape(torso_v.Data(:,2), 1, []))
+
+%% plot the joint valuesfigure(10)
+name = {'abduction','rotation','thigh','thigh_knee','knee_shin','thigh_shin','shin_tarsus','toe'};
+name_0 = name;
+
+% joint angle q
+name = name_0;
+for i = 1:length(name)
+    name{i}=['q_' name{i}];
+end
+
+figure
+name_R = name;
+for i = 1:length(name)
+    name_R{i} = [name{i} '_R'];
+    subplot(2,4,i)
+    eval(['plot(Data.' name_R{i} ')']);
+    title(name_0{i})
+end
+
+figure
+name_L = name;
+for i = 1:length(name)
+    name_L{i} = [name{i} '_L'];
+    subplot(2,4,i)
+    eval(['plot(Data.' name_L{i} ')']);
+    title(name_0{i})
+end
+
+% dq
+name = name_0;
+for i = 1:length(name)
+    name{i}=['dq_' name{i}];
+end
+
+figure
+name_R = name;
+for i = 1:length(name)
+    name_R{i} = [name{i} '_R'];
+    subplot(2,4,i)
+    eval(['plot(Data.' name_R{i} ')']);
+    title(name_0{i})
+end
+

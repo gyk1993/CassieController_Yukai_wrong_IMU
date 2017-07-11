@@ -49,7 +49,6 @@ pR = r_foot_frame.computeCartesianPosition;
 LeftToe = SymFunction('LeftToeJoint',pL,X);
 RightToe = SymFunction('RightToeJoint',pR,X);
 
-
 J_pL = jacobian(pL,X);
 J_pR = jacobian(pR,X);
 
@@ -61,6 +60,27 @@ J_LeftToe.export(PATH, 'ForceExport', true);
 RightToe.export(PATH, 'ForceExport', true);
 J_RightToe.export(PATH, 'ForceExport', true);
 
+
+% Export the position of the heel
+X = SymVariable('x',[22,1]);
+l_heel = cassie.ContactPoints.LeftToeBottomBack.computeCartesianPosition;
+r_heel = cassie.ContactPoints.RightToeBottomBack.computeCartesianPosition;
+
+LeftHeel = SymFunction('LeftHeel',l_heel,X);
+RightHeel = SymFunction('RightHeel',r_heel,X);
+
+
+J_l_heel = jacobian(l_heel,X);
+J_r_heel = jacobian(r_heel,X);
+
+J_LeftHeel = SymFunction('J_LeftHeel', J_l_heel, X);
+J_RightHeel = SymFunction('J_RightHeel', J_r_heel, X);
+
+J_LeftHeel.export(PATH, 'ForceExport', true);
+LeftHeel.export(PATH, 'ForceExport', true);
+J_RightHeel.export(PATH, 'ForceExport', true);
+RightHeel.export(PATH, 'ForceExport', true);
+
 %% center of mass
 X = SymVariable('x',[22,1]);
 dX = SymVariable('dx',[22,1]);
@@ -68,7 +88,7 @@ com_pos = cassie.getComPosition();
 com_vel = jacobian(com_pos,X)*dX;
 
 com_pos_fun = SymFunction('ComPosition',com_pos,X);
-com_vel_fun = SymFunction('ComVelocity',com_vel,{X,dX})
+com_vel_fun = SymFunction('ComVelocity',com_vel,{X,dX});
 
 com_pos_fun.export(PATH, 'ForceExport', true);
 com_vel_fun.export(PATH, 'ForceExport', true);

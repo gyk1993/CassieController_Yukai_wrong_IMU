@@ -6,8 +6,7 @@
 % Copyright 2015-2017 Mikhail S. Jones
 
 % Clean up workspace
-clear all; clc;
-
+clear all; 
 % Start clock at initialization (used for computing real time performance)
 initTime = tic;
 
@@ -43,9 +42,20 @@ Data.spring_force_L = zeros(2,1);
 
 Data.torso_angle = zeros(3,1);
 Data.d_torso_angle = zeros(3,1);
+Data.id_torso_angle = zeros(3,1);
 
 Data.torso_position = zeros(3,1);
 Data.torso_velocity = zeros(3,1);
+Data.torso_velocity_fil = zeros(3,1);
+Data.torso_vx = 0;
+Data.torso_vy = 0;
+Data.torso_vz = 0;
+Data.torso_vx_fil = 0;
+Data.torso_vy_fil = 0;
+Data.torso_vz_fil = 0;
+
+Data.r_foot_v = zeros(3,1);
+Data.l_foot_v = zeros(3,1);
 
 Data.com_pos = zeros(3,1);
 Data.com_vel = zeros(3,1);
@@ -68,11 +78,30 @@ Data.q_thigh_shin_L = 0;
 Data.q_shin_tarsus_L = 0;
 Data.q_toe_L = 0;
 
+
+Data.dq_abduction_R = 0;
+Data.dq_rotation_R = 0;
+Data.dq_thigh_R = 0;
+Data.dq_thigh_knee_R = 0;
+Data.dq_knee_shin_R = 0;
+Data.dq_thigh_shin_R = 0;
+Data.dq_shin_tarsus_R = 0;
+Data.dq_toe_R = 0;
+
+Data.dq_abduction_L = 0 ;
+Data.dq_rotation_L = 0;
+Data.dq_thigh_L = 0;
+Data.dq_thigh_knee_L = 0;
+Data.dq_knee_shin_L = 0;
+Data.dq_thigh_shin_L = 0;
+Data.dq_shin_tarsus_L = 0;
+Data.dq_toe_L = 0;
+
 cassieDataBusInfo = Simulink.Bus.createObject(Data);
 cassieDataBus = eval(cassieDataBusInfo.busName);
 
 %% Initialize Controller Parameter Bus
-opt = load('mat\00dms_4');
+opt = load('mat\05dms_2');
 
 % Right Stance
 

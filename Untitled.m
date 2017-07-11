@@ -1,8 +1,15 @@
-plot(Data.q_abduction_L)
-plot(Data.q_rotation_L)
-plot(Data.q_thigh_L)
-plot(Data.q_thigh_knee_L)
-plot(Data.q_knee_shin_L)
-plot(Data.q_thigh_shin_L)
-plot(Data.q_shin_tarsus_L)
-plot(Data.q_toe_L)
+syms q1 q2 q3 real
+
+Rx = [1 0 0;
+    0 cos(q1) -sin(q1);
+    0 sin(q1) cos(q1)];
+
+Ry = [cos(q2) 0 sin(q2);
+    0 1 0;
+    -sin(q2) 0 cos(q2)];
+
+Rz = [cos(q3) -sin(q3) 0;
+    sin(q3) cos(q3) 0;
+    0 0 1];
+
+Rx*Ry*Rz
