@@ -1,6 +1,6 @@
 /*
  * Automatically Generated from Mathematica.
- * Fri 23 Jun 2017 12:39:40 GMT-04:00
+ * Tue 11 Jul 2017 19:12:56 GMT-04:00
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,9 +50,9 @@ INLINE double Tanh(double x) { return tanh(x); }
  */
 static void output1(double *p_output1,const double *var1)
 {
-  double t412;
-  t412 = Power(var1[0],2);
-  p_output1[0]=-1.*ArcCos(2.5553329077757057e-46*(-3.9172204239607165e45 + 7.389631520540365e45*t412 - 1.*Sqrt(-6.096939283359201e85 + 7.196137048348655e88*t412 - 6.78756814823791e88*Power(var1[0],4))));
+  double t874;
+  t874 = Power(var1[0],2);
+  p_output1[0]=-1.*ArcCos(2.5553329077757057e-46*(-3.9172204239607165e45 + 7.389631520540365e45*t874 - 1.*Sqrt(-6.096939283359201e85 + 7.196137048348655e88*t874 - 6.78756814823791e88*Power(var1[0],4))));
 }
 
 

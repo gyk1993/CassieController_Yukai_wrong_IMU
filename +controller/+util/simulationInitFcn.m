@@ -56,6 +56,8 @@ Data.torso_vz_fil = 0;
 
 Data.r_foot_v = zeros(3,1);
 Data.l_foot_v = zeros(3,1);
+Data.r_foot_p = zeros(3,1);
+Data.l_foot_p = zeros(3,1);
 
 Data.com_pos = zeros(3,1);
 Data.com_vel = zeros(3,1);
@@ -79,6 +81,7 @@ Data.q_shin_tarsus_L = 0;
 Data.q_toe_L = 0;
 
 
+
 Data.dq_abduction_R = 0;
 Data.dq_rotation_R = 0;
 Data.dq_thigh_R = 0;
@@ -96,6 +99,25 @@ Data.dq_knee_shin_L = 0;
 Data.dq_thigh_shin_L = 0;
 Data.dq_shin_tarsus_L = 0;
 Data.dq_toe_L = 0;
+
+Data.qall_2 = zeros(22,1);
+Data.dqall_2 = zeros(22,1);
+
+Data.qq = zeros(3,1);
+Data.qaR = zeros(5,1);
+Data.qjR = zeros(3,1);
+Data.qsR = zeros(2,1);
+Data.qaL = zeros(5,1);
+Data.qjL = zeros(3,1);
+Data.qsL = zeros(2,1);
+
+Data.dqq = zeros(3,1);
+Data.dqaR = zeros(5,1);
+Data.dqjR = zeros(3,1);
+Data.dqsR = zeros(2,1);
+Data.dqaL = zeros(5,1);
+Data.dqjL = zeros(3,1);
+Data.dqsL = zeros(2,1);
 
 cassieDataBusInfo = Simulink.Bus.createObject(Data);
 cassieDataBus = eval(cassieDataBusInfo.busName);

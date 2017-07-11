@@ -121,3 +121,6 @@ for i = 1:length(name)
     title(name_0{i})
 end
 
+%% Bunch of other things
+plot(Data.qjL.Time,reshape(Data.qjL.Data(3,1,:), 1, []))
+
