@@ -447,7 +447,7 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             %       u = saturate(u, -obj.TorqueLimits, obj.TorqueLimits);
             %       u(4) = 30;
             %       u(9) = 30;
-            
+%             u = zeros(10,1);
             if t <0.1
                 GRF_R = zeros(2,1);
                 GRF_L = zeros(2,1);
