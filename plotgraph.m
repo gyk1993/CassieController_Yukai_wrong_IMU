@@ -121,6 +121,15 @@ for i = 1:length(name)
     title(name_0{i})
 end
 
+figure
+name_L = name;
+for i = 1:length(name)
+    name_L{i} = [name{i} '_L'];
+    subplot(2,4,i)
+    eval(['plot(Data.' name_L{i} ')']);
+    title(name_0{i})
+end
+
 %% Bunch of other things
 plot(Data.qjL.Time,reshape(Data.qjL.Data(3,1,:), 1, []))
 

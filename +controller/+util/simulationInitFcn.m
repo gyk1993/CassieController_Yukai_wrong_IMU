@@ -103,7 +103,7 @@ Data.dq_toe_L = 0;
 Data.qall_2 = zeros(22,1);
 Data.dqall_2 = zeros(22,1);
 
-Data.qq = zeros(3,1);
+Data.qq = zeros(4,1);
 Data.qaR = zeros(5,1);
 Data.qjR = zeros(3,1);
 Data.qsR = zeros(2,1);

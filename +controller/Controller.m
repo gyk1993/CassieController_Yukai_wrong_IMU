@@ -115,7 +115,7 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             %%%%%%%%%%%%%%%%%%% get values %%%%%%%%%%%%%%%%%%%%%%%%%%%%
             % Get current positions
             [qroll, qpitch, qyaw, dqroll, dqpitch, dqyaw] = IMU_to_Euler_v3(cassieOutputs.getVectorNavOrientation, cassieOutputs.getVectorNavAngularVelocity);
-            qq = [qroll;qpitch;qyaw];
+            qq = cassieOutputs.getVectorNavOrientation;
             qaR = cassieOutputs.getRightLegMotorPositions;
             qjR =  cassieOutputs.getRightLegJointPositions;
             qsR = cassieOutputs.getRightLegSpringDeflections;
@@ -170,6 +170,23 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             dq_thigh_shin_L = dq_thigh_knee_L+dq_knee_shin_L;
             dq_shin_tarsus_L = dqjL(2);
             dq_toe_L = dqaL(5);
+            
+            %% rotation direction looks wrong
+%             q_rotation_R = - q_rotation_R;
+%             dq_rotation_R = - dq_rotation_R;
+%             q_rotation_L = - q_rotation_L;
+%             dq_rotation_L = - dq_rotation_L;
+            %% playing with shin_tarsus
+%             q_shin_tarsus_R = q_shin_tarsus_R - qsR(1) + qsR(2);
+%             q_shin_tarsus_L = q_shin_tarsus_L - qsL(1) + qsL(2);
+%             dq_shin_tarsus_R = dq_shin_tarsus_R - dqsR(1) + dqsR(2);
+%             dq_shin_tarsus_L = dq_shin_tarsus_L - dqsL(1) + dqsL(2);
+            %% try spring angle
+%             q_knee_shin_R = - q_knee_shin_R;
+%             q_knee_shin_L = - q_knee_shin_L;
+%             dq_knee_shin_R = - dq_knee_shin_R;
+%             dq_knee_shin_L = - dq_knee_shin_L;
+              
             
             qall_1 = [  0;  0;              0;              qroll;          qpitch;             qyaw;
                         0;  q_abduction_L;	q_rotation_L;	q_thigh_L;      q_thigh_shin_L; 0;  q_shin_tarsus_L; q_toe_L;
@@ -307,6 +324,10 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
                 0;  dq_abduction_L;	dq_rotation_L;	dq_thigh_L;  dq_thigh_knee_L; dq_knee_shin_L;  dq_shin_tarsus_L; dq_toe_L;
                 0;  dq_abduction_R;	dq_rotation_R;	dq_thigh_R;  dq_thigh_knee_R; dq_knee_shin_R;  dq_shin_tarsus_R; dq_toe_R];
             
+            qall_2_test = [  0;  0;              2;              0;          0;             0;
+                0;  q_abduction_L;	q_rotation_L;	q_thigh_L;      q_thigh_knee_L;     q_knee_shin_L;      q_shin_tarsus_L;    q_toe_L;
+                0;  q_abduction_R;	q_rotation_R;	q_thigh_R;      q_thigh_knee_R;     q_knee_shin_R;      q_shin_tarsus_R;    q_toe_R];
+
             dqall_2_test = [ 0;  0;              0;              0;         0;             0;
                 0;  dq_abduction_L;	dq_rotation_L;	dq_thigh_L;  dq_thigh_knee_L; dq_knee_shin_L;  dq_shin_tarsus_L; dq_toe_L;
                 0;  dq_abduction_R;	dq_rotation_R;	dq_thigh_R;  dq_thigh_knee_R; dq_knee_shin_R;  dq_shin_tarsus_R; dq_toe_R];
@@ -314,7 +335,8 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             com_pos = controller.kin.ComPosition(qall_2);
             com_pos = com_pos';
             com_vel = controller.kin.ComVelocity(qall_2,dqall_2_g);
-            [r_foot_v l_foot_v] = get_feet_velocity(obj,qall_2,dqall_2_test);
+            [r_foot_v, l_foot_v] = get_feet_velocity(obj,qall_2,dqall_2_test);
+            [r_foot_p, l_foot_p] = get_feet_position(obj,qall_2_test,dqall_2_test);
             
             
             %% swing leg foot placement
@@ -374,7 +396,7 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             end
 
             
-            % flat the toe 
+            %% flat the toe 
             h0(sw_toe) = -qpitch + h0_fix(sw_thigh) + h0_fix(sw_toe) + deg2rad(13) + deg2rad(40);
             dh0(sw_toe) = -dqpitch + dh0_fix(sw_thigh) + + dh0_fix(sw_toe);
             hd(sw_toe) = 0;
@@ -382,15 +404,33 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             % Use toe torque to regulate the velocity
             hd(st_toe) = hd(st_toe) - obj.Kt_d*(obj.dqx_fil-obj.tg_velocity_x);
             
-            
-            
-
+%%%%%%%%%%%%% temporary test %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %             hd = [...
+% %                 0; 0; 0.4983;   -1.2018; -1.5979;...
+% %                 0; 0;     -1;       -1.2018; -1.5979];
+%             h0=[qaL; qaR];
+%             dh0 = [dqaL; dqaR];
+%             hd = [ 0; 0;     1;       -1.2018; -1.5979;...
+%                 0; 0; 0.4983;   -1.2018; -1.5979];
+%             
+%             if t > 1
+%                 hd(2) = -0.2;
+%             end
+%             
+%             if t >2
+%                 hd(1) =  0.3;
+%             end
+%             
+%             dhd = zeros(10,1);            
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
             y= h0 - hd;
             dy = dh0 - dhd;
             
-            
+
             u = - obj.Kp.*y - obj.Kd.*dy;
+            
+            
             
             %       if obj.stanceLeg == 1
             %           u(10) = 0;
@@ -403,7 +443,7 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             %       end
             
 %                   u([5,10]) = 1/10*u([5,10]) ;
-            u([5,10]) = 0 ;
+%             u([5,10]) = 0 ;
             %       u = saturate(u, -obj.TorqueLimits, obj.TorqueLimits);
             %       u(4) = 30;
             %       u(9) = 30;
@@ -466,6 +506,8 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             
             Data.r_foot_v = r_foot_v;
             Data.l_foot_v = l_foot_v;
+            Data.r_foot_p = r_foot_p;
+            Data.l_foot_p = l_foot_p;
             
             Data.com_pos = com_pos;
             Data.com_vel = com_vel;
@@ -505,6 +547,25 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             Data.dq_thigh_shin_L = dq_thigh_shin_L;
             Data.dq_shin_tarsus_L = dq_shin_tarsus_L;
             Data.dq_toe_L = dq_toe_L;
+            
+            Data.qall_2 = qall_2;
+            Data.dqall_2 = dqall_2;
+            
+            Data.qq = qq;
+            Data.qaR = qaR;
+            Data.qjR = qjR;
+            Data.qsR = qsR;
+            Data.qaL = qaL;
+            Data.qjL = qjL;
+            Data.qsL = qsL;
+            
+            Data.dqq = dqq;
+            Data.dqaR = dqaR;
+            Data.dqjR = dqjR;
+            Data.dqsR = dqsR;
+            Data.dqaL = dqaL;
+            Data.dqjL = dqjL;
+            Data.dqsL = dqsL;
             
             
             % Return the updated Cassie inputs data structure
@@ -603,7 +664,12 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             JR = controller.kin.J_RightToeJoint(q);
             JL = controller.kin.J_LeftToeJoint(q);
             r_foot_v = JR * dq;
-            l_foot_v = JR * dq;
+            l_foot_v = JL * dq;
+        end
+        
+        function [r_foot_p l_foot_p] = get_feet_position(obj,q,dq)
+            r_foot_p = controller.kin.RightToeJoint(q);
+            l_foot_p = controller.kin.LeftToeJoint(q);
         end
         
         function filtered=first_order_filter(obj,prev,new,para)

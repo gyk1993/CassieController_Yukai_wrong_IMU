@@ -405,19 +405,19 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             hd(st_toe) = hd(st_toe) - obj.Kt_d*(obj.dqx_fil-obj.tg_velocity_x);
             
 %%%%%%%%%%%%% temporary test %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%             hd = [...
-%                 0; 0; 0.4983;   -1.2018; -1.5979;...
-%                 0; 0;     -1;       -1.2018; -1.5979];
-            h0=[qaL; qaR];
-            dh0 = [dqaL; dqaR];
-            hd = [ 0; 0;     -1;       -1.2018; -1.5979;...
-                0; 0; 0.4983;   -1.2018; -1.5979];
-            
-            if t > 1
-                hd(2) = 0.3;
-            end
-            
-            dhd = zeros(10,1);            
+% %             hd = [...
+% %                 0; 0; 0.4983;   -1.2018; -1.5979;...
+% %                 0; 0;     -1;       -1.2018; -1.5979];
+%             h0=[qaL; qaR];
+%             dh0 = [dqaL; dqaR];
+%             hd = [ 0; 0;     -1;       -1.2018; -1.5979;...
+%                 0; 0; 0.4983;   -1.2018; -1.5979];
+%             
+%             if t > 1
+%                 hd(2) = 0.3;
+%             end
+%             
+%             dhd = zeros(10,1);            
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
             y= h0 - hd;
@@ -425,6 +425,8 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             
 
             u = - obj.Kp.*y - obj.Kd.*dy;
+            
+            
             
             %       if obj.stanceLeg == 1
             %           u(10) = 0;
@@ -542,6 +544,9 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
             Data.dq_shin_tarsus_L = dq_shin_tarsus_L;
             Data.dq_toe_L = dq_toe_L;
             
+            Data.qall_2 = qall_2;
+            Data.dqall_2 = dqall_2;
+            
             Data.qq = qq;
             Data.qaR = qaR;
             Data.qjR = qjR;
@@ -652,15 +657,15 @@ classdef Controller < matlab.System & matlab.system.mixin.Propagates %#codegen
         end
         
         function [r_foot_v l_foot_v] = get_feet_velocity(obj,q,dq)
-            JR = controller.kin.J_RightToeJoint(q);
-            JL = controller.kin.J_LeftToeJoint(q);
+            JR = controller.kin.J_RightHeel(q);
+            JL = controller.kin.J_LeftHeel(q);
             r_foot_v = JR * dq;
             l_foot_v = JL * dq;
         end
         
         function [r_foot_p l_foot_p] = get_feet_position(obj,q,dq)
             r_foot_p = controller.kin.RightHeel(q);
-            l_foot_p = controller.kin.LeftHe(q);
+            l_foot_p = controller.kin.LeftHeel(q);
         end
         
         function filtered=first_order_filter(obj,prev,new,para)
