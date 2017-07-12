@@ -5,7 +5,7 @@ clear; restoredefaultpath; clc;
 
 % Add paths
 addpath(genpath('../'));
-addpath(genpath('D:\Graduate\robots\SomePackage\Cassie Simulator 20170522')); % SimMechanics 
+addpath(genpath('D:\Graduate\robots\SomePackage\Cassie Simulator_wrong_IMU')); % SimMechanics 
 
 %% Generate Files if needed
 % flat_ground_walking.controller.util.GenerateKinematics
